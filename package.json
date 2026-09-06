@@ -1,0 +1,13 @@
+{
+  "name": "icc-cns-platform",
+  "version": "1.0.0",
+  "description": "ICC-CNS Conference Management Platform",
+  "private": true,
+  "scripts": {
+    "dev:backend": "npm --prefix backend run dev",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "start:backend": "npm --prefix backend start",
+    "start:frontend": "npm --prefix frontend start",
+    "reseed": "node backend/reset_db.js"
+  }
+}

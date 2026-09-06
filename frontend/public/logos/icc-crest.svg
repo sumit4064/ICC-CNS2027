@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <!-- Background Glow Filters -->
+    <radialGradient id="centralGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FF6B35" stop-opacity="0.35" />
+      <stop offset="60%" stop-color="#00A896" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#002F35" stop-opacity="0" />
+    </radialGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF8C42" />
+      <stop offset="50%" stop-color="#FF6B35" />
+      <stop offset="100%" stop-color="#D9480F" />
+    </linearGradient>
+  </defs>
+
+  <!-- Ambient Glow -->
+  <circle cx="200" cy="200" r="190" fill="url(#centralGlow)" />
+
+  <!-- Outer Petal Ring -->
+  <g transform="translate(200, 200)">
+    <!-- 16 surrounding colorful heraldic petals matching reference -->
+    <!-- Magenta / Purple -->
+    <g transform="rotate(0) translate(0, -135)">
+      <path d="M 0,-18 C 14,-18 20,4 0,22 C -20,4 -14,-18 0,-18 Z" fill="#E040FB" filter="url(#glow)"/>
+      <circle cx="0" cy="2" r="5" fill="#FFFFFF"/>
+    </g>
+    <g transform="rotate(22.5) translate(0, -135)">
+      <path d="M 0,-18 C 14,-18 20,4 0,22 C -20,4 -14,-18 0,-18 Z" fill="#EC407A"/>
+      <circle cx="0" cy="2" r="5" fill="#FFFFFF"/>
+    </g>
+    <!-- Red / Coral -->
+    <g transform="rotate(45) translate(0, -135)">
+      <path d="M 0,-18 C 14,-18 20,4 0,22 C -20,4 -14,-18 0,-18 Z" fill="#FF5252"/>
+      <circle cx="0" cy="2" r="5" fill="#FFFFFF"/>
+    </g>
+    <g transform="rotate(67.5) translate(0, -135)">
+      <path d="M 0,-18 C 14,-18 20,4 0,22 C -20,4 -14,-18 0,-18 Z" fill="#FF7043"/>
+      <circle cx="0" cy="2" r="5" fill="#FFFFFF"/>
+    </g>
+    <!-- Orange / Amber -->
+    <g transform="rotate(90) translate(0, -135)">
+      <path d="M 0,-18 C 14,-18 20,4 0,22 C -20,4 -14,-18 0,-18 Z" fill="#FFA726"/>
+      <circle cx="0" cy="2" r="5" fill="#FFFFFF"/>
+    </g>
+    <g transform="rotate(112.5) translate(0, -135)">
+      <path d="M 0,-18 C 14,-18 20,4 0,22 C -20,4 -14,-18 0,-18 Z" fill="#FFD54F"/>
+      <circle cx="0" cy="2" r="5" fill="#FFFFFF"/>
+    </g>
+    <!-- Yellow / Lime -->
+    <g transform="rotate(135) translate(0, -135)">
+      <path d="M 0,-18 C 14,-18 20,4 0,22 C -20,4 -14,-18 0,-18 Z" fill="#D4E157"/>
+      <circle cx="0" cy="2" r="5" fill="#FFFFFF"/>
+    </g>
+    <g transform="rotate(157.5) translate(0, -135)">
+      <path d="M 0,-18 C 14,-18 20,4 0,22 C -20,4 -14,-18 0,-18 Z" fill="#9CCC65"/>
+      <circle cx="0" cy="2" r="5" fill="#FFFFFF"/>
+    </g>
+    <!-- Green / Mint -->
+    <g transform="rotate(180) translate(0, -135)">
+      <path d="M 0,-18 C 14,-18 20,4 0,22 C -20,4 -14,-18 0,-18 Z" fill="#26A69A"/>
+      <circle cx="0" cy="2" r="5" fill="#FFFFFF"/>
+    </g>
+    <g transform="rotate(202.5) translate(0, -135)">
+      <path d="M 0,-18 C 14,-18 20,4 0,22 C -20,4 -14,-18 0,-18 Z" fill="#00BFA5"/>
+      <circle cx="0" cy="2" r="5" fill="#FFFFFF"/>
+    </g>
+    <!-- Cyan / Teal -->
+    <g transform="rotate(225) translate(0, -135)">
+      <path d="M 0,-18 C 14,-18 20,4 0,22 C -20,4 -14,-18 0,-18 Z" fill="#00E5FF"/>
+      <circle cx="0" cy="2" r="5" fill="#FFFFFF"/>
+    </g>
+    <g transform="rotate(247.5) translate(0, -135)">
+      <path d="M 0,-18 C 14,-18 20,4 0,22 C -20,4 -14,-18 0,-18 Z" fill="#29B6F6"/>
+      <circle cx="0" cy="2" r="5" fill="#FFFFFF"/>
+    </g>
+    <!-- Blue -->
+    <g transform="rotate(270) translate(0, -135)">
+      <path d="M 0,-18 C 14,-18 20,4 0,22 C -20,4 -14,-18 0,-18 Z" fill="#42A5F5"/>
+      <circle cx="0" cy="2" r="5" fill="#FFFFFF"/>
+    </g>
+    <g transform="rotate(292.5) translate(0, -135)">
+      <path d="M 0,-18 C 14,-18 20,4 0,22 C -20,4 -14,-18 0,-18 Z" fill="#5C6BC0"/>
+      <circle cx="0" cy="2" r="5" fill="#FFFFFF"/>
+    </g>
+    <!-- Indigo / Violet -->
+    <g transform="rotate(315) translate(0, -135)">
+      <path d="M 0,-18 C 14,-18 20,4 0,22 C -20,4 -14,-18 0,-18 Z" fill="#7E57C2"/>
+      <circle cx="0" cy="2" r="5" fill="#FFFFFF"/>
+    </g>
+    <g transform="rotate(337.5) translate(0, -135)">
+      <path d="M 0,-18 C 14,-18 20,4 0,22 C -20,4 -14,-18 0,-18 Z" fill="#AB47BC"/>
+      <circle cx="0" cy="2" r="5" fill="#FFFFFF"/>
+    </g>
+  </g>
+
+  <!-- Middle Decorative Ring -->
+  <circle cx="200" cy="200" r="96" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="2" stroke-dasharray="4,4" />
+  <circle cx="200" cy="200" r="88" fill="#00353B" stroke="rgba(255,107,53,0.6)" stroke-width="3" />
+
+  <!-- Shield Crest Background -->
+  <g transform="translate(140, 130) scale(0.6)">
+    <!-- Fort De Kock Crest Outline -->
+    <path d="M 100,0 L 170,25 L 170,120 C 170,180 100,220 100,220 C 100,220 30,180 30,120 L 30,25 Z" 
+          fill="url(#shieldGrad)" stroke="#FFFFFF" stroke-width="4" filter="url(#glow)"/>
+    
+    <!-- Inner building motif & crown -->
+    <path d="M 60,60 L 100,30 L 140,60 L 140,110 L 60,110 Z" fill="#FFFFFF" opacity="0.9" />
+    <rect x="75" y="70" width="16" height="24" rx="2" fill="#D9480F" />
+    <rect x="109" y="70" width="16" height="24" rx="2" fill="#D9480F" />
+    
+    <!-- Banner Text -->
+    <rect x="45" y="125" width="110" height="26" rx="4" fill="#002F35" stroke="#FFFFFF" stroke-width="1.5" />
+    <text x="100" y="142" font-family="'Inter', sans-serif" font-size="11" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">FORT DE KOCK</text>
+    
+    <!-- Leaves / Laurel Base -->
+    <path d="M 60,165 C 80,180 120,180 140,165" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" />
+  </g>
+</svg>

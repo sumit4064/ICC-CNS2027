@@ -1,0 +1,651 @@
+/* ==========================================================================
+   ICC-CNS 2027 THREE-ZONE NAVBAR ARCHITECTURE
+   Brand (Left) | Navigation Links (Center) | Actions (Right)
+   Zero Overlap across all Zoom levels (80%, 90%, 100%, 110%, 125%, 150%)
+   ========================================================================== */
+
+.navbar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 100%;
+  z-index: 1000;
+  background: rgba(0, 47, 53, 0.88);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-sizing: border-box;
+  transition: background 300ms ease, border-color 300ms ease, box-shadow 300ms ease;
+}
+
+.navbar-container.scrolled {
+  background: rgba(0, 31, 36, 0.96);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* ==========================================================================
+   FLEX CONTAINER (3 Independent Layout Zones — No Collision)
+   ========================================================================== */
+
+.navbar-grid {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   ZONE 1: BRAND (Left — Never Shrinks)
+   ========================================================================== */
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+  min-width: max-content;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.brand-logo-wrap {
+  background: #FFFFFF;
+  padding: 3px 8px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.brand:hover .brand-logo-wrap {
+  transform: scale(1.02);
+}
+
+.logo {
+  width: auto;
+  height: 40px;
+  max-width: 125px;
+  object-fit: contain;
+  display: block;
+}
+
+.brand-divider {
+  width: 1px;
+  height: 28px;
+  background: rgba(255, 255, 255, 0.18);
+  flex-shrink: 0;
+}
+
+.brand-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.conference-name {
+  font-family: var(--font-heading, 'Outfit', sans-serif);
+  font-size: 28px;
+  font-weight: 800;
+  white-space: nowrap;
+  line-height: 1;
+  letter-spacing: -0.025em;
+  color: #F8FAFC;
+  margin: 0;
+}
+
+.conference-name-accent {
+  color: #FF6B35;
+  margin-left: 1px;
+}
+
+.university-name {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.72);
+  margin-top: 3px;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   ZONE 2: NAVIGATION LINKS (Center — Flexible, Balanced, Zero Collision)
+   ========================================================================== */
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 auto;
+  gap: clamp(12px, 1.3vw, 24px);
+  min-width: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 2px;
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.88);
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: color 0.2s ease;
+}
+
+/* Orange Active / Hover Underline (No layout shift) */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #FF6B35;
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.2s ease;
+  box-shadow: 0 0 8px rgba(255, 107, 53, 0.6);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #FF6B35;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  transform: scaleX(1);
+}
+
+/* More Dropdown */
+.more-dropdown-wrap {
+  display: inline-flex;
+  position: relative;
+  padding: 4px 0;
+  flex-shrink: 0;
+}
+
+.more-dropdown-btn {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.88);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 4px;
+  border-radius: 8px;
+  position: relative;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.more-dropdown-btn:hover,
+.more-dropdown-btn.active,
+.more-dropdown-btn.open {
+  color: #FF6B35;
+}
+
+.more-dropdown-panel {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  background: rgba(0, 24, 28, 0.98);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 8px;
+  min-width: 170px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.65);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  z-index: 1020;
+  animation: dropdownFade 0.2s ease;
+}
+
+/* Invisible hover bridge */
+.more-dropdown-panel::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 0;
+  width: 100%;
+  height: 12px;
+  background: transparent;
+}
+
+.more-dropdown-panel a {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 14px;
+  font-weight: 500;
+  color: #F8FAFC;
+  text-decoration: none;
+  padding: 9px 14px;
+  border-radius: 8px;
+  display: block;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.more-dropdown-panel a:hover,
+.more-dropdown-panel a.active {
+  background: rgba(255, 107, 53, 0.18);
+  color: #FF6B35;
+  transform: translateX(3px);
+}
+
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+   ZONE 3: ACTIONS (Right — Never Collides with Nav)
+   ========================================================================== */
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  flex-shrink: 0;
+  min-width: max-content;
+  white-space: nowrap;
+}
+
+.login-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 4px;
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 15px;
+  font-weight: 600;
+  color: #F8FAFC;
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.login-button:hover {
+  color: #FF6B35;
+}
+
+.admin-badge-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 12px;
+  border-radius: 8px;
+  background: rgba(255, 107, 53, 0.18);
+  border: 1px solid rgba(255, 107, 53, 0.5);
+  color: #FF6B35;
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 13.5px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.admin-badge-button:hover {
+  background: rgba(255, 107, 53, 0.28);
+  box-shadow: 0 0 10px rgba(255, 107, 53, 0.4);
+}
+
+.logout-icon-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.logout-icon-button:hover {
+  background: rgba(239, 68, 68, 0.2);
+  border-color: #EF4444;
+  color: #EF4444;
+}
+
+.register-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 44px;
+  padding: 0 20px;
+  border-radius: 12px;
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 15px;
+  font-weight: 700;
+  color: #FFFFFF !important;
+  background: linear-gradient(135deg, #FF6B35 0%, #E65100 100%);
+  box-shadow: 0 4px 16px rgba(255, 107, 53, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.register-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255, 107, 53, 0.6);
+}
+
+.register-button svg {
+  transition: transform 0.2s ease;
+}
+
+.register-button:hover svg {
+  transform: translateX(3px);
+}
+
+.mobile-hamburger-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #F8FAFC;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.mobile-hamburger-btn:hover {
+  background: rgba(255, 255, 255, 0.16);
+  color: #FF6B35;
+  border-color: rgba(255, 107, 53, 0.4);
+}
+
+/* ==========================================================================
+   BREAKPOINTS & RESPONSIVE COMPACTING
+   Desktop navigation is preserved across all zoom levels and resolutions
+   ========================================================================== */
+
+/* Intermediate Desktop (1050px – 1280px) -> Fluid Spacing Compression */
+@media (min-width: 1050px) and (max-width: 1280px) {
+  .navbar-grid {
+    padding: 0 16px;
+    gap: 12px;
+  }
+  .nav-links {
+    gap: clamp(10px, 1.1vw, 16px);
+  }
+  .nav-links a {
+    font-size: 14px;
+    padding: 6px 1px;
+  }
+  .more-dropdown-btn {
+    font-size: 14px;
+    padding: 6px 2px;
+  }
+  .conference-name {
+    font-size: 24px;
+  }
+  .logo {
+    height: 38px;
+    max-width: 115px;
+  }
+  .register-button {
+    height: 42px;
+    padding: 0 16px;
+    font-size: 14.5px;
+  }
+}
+
+/* Tablet Breakpoint (641px – 1049px) -> Brand + Register + Hamburger */
+@media (min-width: 641px) and (max-width: 1049px) {
+  .navbar-grid {
+    height: 70px;
+    padding: 0 20px;
+    gap: 14px;
+  }
+  .nav-links {
+    display: none;
+  }
+  .login-button {
+    display: none;
+  }
+  .mobile-hamburger-btn {
+    display: flex;
+  }
+  .conference-name {
+    font-size: 22px;
+  }
+  .logo {
+    height: 36px;
+  }
+  .register-button {
+    height: 40px;
+    padding: 0 16px;
+    font-size: 14px;
+  }
+}
+
+/* Mobile Breakpoint (<= 640px) -> Brand + Hamburger */
+@media (max-width: 640px) {
+  .navbar-grid {
+    height: 64px;
+    padding: 0 16px;
+    gap: 10px;
+  }
+  .nav-links {
+    display: none;
+  }
+  .login-button {
+    display: none;
+  }
+  .register-button {
+    display: none;
+  }
+  .mobile-hamburger-btn {
+    display: flex;
+    width: 38px;
+    height: 38px;
+  }
+  .brand-logo-wrap {
+    height: 38px;
+    padding: 2px 5px;
+  }
+  .logo {
+    height: 30px;
+    max-width: 90px;
+  }
+  .brand {
+    gap: 8px;
+  }
+  .brand-divider {
+    height: 20px;
+  }
+  .conference-name {
+    font-size: 19px;
+  }
+  .university-name {
+    font-size: 8.5px;
+    letter-spacing: 0.8px;
+  }
+}
+
+@media (max-width: 380px) {
+  .university-name {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   MOBILE FULL-SCREEN SLIDE-OVER DRAWER
+   ========================================================================== */
+
+.mobile-overlay-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 15, 18, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1050;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.mobile-overlay-backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-drawer-view {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 85%;
+  max-width: 380px;
+  background: rgba(0, 31, 36, 0.98);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.6);
+  z-index: 1100;
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.mobile-drawer-view.open {
+  transform: translateX(0);
+}
+
+.mobile-drawer-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 1.25rem;
+}
+
+.mobile-drawer-close-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #F8FAFC;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mobile-drawer-close-btn:hover {
+  background: rgba(255, 107, 53, 0.2);
+  color: #FF6B35;
+  border-color: #FF6B35;
+}
+
+.mobile-drawer-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  list-style: none;
+  margin: 0 0 1.5rem 0;
+  padding: 0;
+}
+
+.mobile-drawer-item-link {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 28px;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  padding: 10px 14px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.2s ease;
+}
+
+.mobile-drawer-item-link:hover {
+  color: #FF6B35;
+  background: rgba(255, 107, 53, 0.1);
+  transform: translateX(4px);
+}
+
+.mobile-drawer-item-link.active {
+  color: #FF6B35;
+  background: rgba(255, 107, 53, 0.15);
+  font-weight: 700;
+  border-left: 3px solid #FF6B35;
+}
+
+.mobile-drawer-bottom {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}

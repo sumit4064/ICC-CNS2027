@@ -1,0 +1,301 @@
+/* ========================================================
+   ICC-CNS 2027 — Conference Technology Intro Animation Overlay
+   ======================================================== */
+
+.conference-intro-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99999;
+  background-color: var(--bg-darkest, #001F24);
+  background-image: 
+    radial-gradient(circle at 50% 40%, rgba(0, 180, 216, 0.15) 0%, transparent 65%),
+    radial-gradient(circle at 50% 50%, rgba(255, 107, 53, 0.08) 0%, transparent 50%),
+    linear-gradient(180deg, #00171B 0%, #001F24 40%, #002B30 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  pointer-events: all;
+  opacity: 1;
+  transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.45s ease;
+  will-change: opacity;
+}
+
+.conference-intro-overlay.intro-fade-out {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+/* Background Canvas Layer */
+.intro-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 1;
+}
+
+/* Atmospheric Glow Elements */
+.intro-glow-core {
+  position: absolute;
+  width: min(600px, 80vw);
+  height: min(600px, 80vw);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 229, 255, 0.18) 0%, rgba(0, 180, 216, 0.08) 45%, transparent 70%);
+  filter: blur(40px);
+  pointer-events: none;
+  z-index: 0;
+  animation: introPulseGlow 3s ease-in-out infinite alternate;
+}
+
+.intro-glow-accent {
+  position: absolute;
+  width: min(400px, 60vw);
+  height: min(400px, 60vw);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 107, 53, 0.12) 0%, transparent 65%);
+  filter: blur(50px);
+  pointer-events: none;
+  z-index: 0;
+  transform: translate(20%, -15%);
+}
+
+/* Intro Foreground Content Container */
+.intro-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1.5rem;
+  max-width: 900px;
+  width: 92%;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Visual Brain/Network Spacer to balance canvas silhouette */
+.intro-visual-anchor {
+  height: clamp(140px, 22vh, 210px);
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.8rem;
+}
+
+/* Phase 4: ICC-CNS 2027 Branding */
+.intro-branding-row {
+  opacity: 0;
+  transform: translateY(14px) scale(0.96);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+  margin-bottom: 0.75rem;
+}
+
+.intro-branding-row.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.intro-brand-title {
+  font-family: var(--font-heading, 'Outfit', sans-serif);
+  font-size: clamp(2.4rem, 6.5vw, 4.4rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.1em;
+  text-shadow: 0 0 35px rgba(0, 229, 255, 0.35);
+}
+
+.intro-text-white {
+  color: #FFFFFF;
+}
+
+.intro-text-orange {
+  color: var(--accent-orange, #FF6B35);
+  text-shadow: 0 0 28px rgba(255, 107, 53, 0.55);
+}
+
+/* Phase 5: Full Conference Title */
+.intro-title-block {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1), transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.intro-title-block.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.intro-sub-prefix {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: clamp(0.95rem, 2vw, 1.25rem);
+  font-weight: 400;
+  color: #E2ECEE;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.intro-main-topic {
+  font-family: var(--font-heading, 'Outfit', sans-serif);
+  font-size: clamp(1.15rem, 3.2vw, 2.05rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  color: #FFFFFF;
+  max-width: 780px;
+}
+
+.intro-main-topic .topic-highlight {
+  color: var(--accent-orange, #FF6B35);
+  font-weight: 800;
+}
+
+/* Sub-meta tag */
+.intro-meta-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: 9999px;
+  background: rgba(0, 180, 216, 0.12);
+  border: 1px solid rgba(0, 180, 216, 0.35);
+  color: #48CAE4;
+  font-size: clamp(0.75rem, 1.4vw, 0.85rem);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  margin-top: 0.6rem;
+}
+
+.intro-meta-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-orange, #FF6B35);
+  box-shadow: 0 0 8px #FF6B35;
+  animation: introPulseGlow 1.5s infinite alternate;
+}
+
+/* Skip Intro Button */
+.intro-skip-button {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 10;
+  pointer-events: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.55rem 1.15rem;
+  background: rgba(0, 36, 41, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 9999px;
+  color: #C2D7DA;
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.intro-skip-button:hover {
+  background: rgba(0, 50, 56, 0.85);
+  border-color: rgba(255, 107, 53, 0.5);
+  color: #FFFFFF;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4), 0 0 12px rgba(255, 107, 53, 0.3);
+}
+
+.intro-skip-button:focus-visible {
+  outline: 2px solid var(--accent-orange, #FF6B35);
+  outline-offset: 2px;
+}
+
+.intro-skip-arrow {
+  transition: transform 0.2s ease;
+  font-size: 1rem;
+}
+
+.intro-skip-button:hover .intro-skip-arrow {
+  transform: translateX(2px);
+  color: var(--accent-orange, #FF6B35);
+}
+
+/* Keyframe animations */
+@keyframes introPulseGlow {
+  0% {
+    opacity: 0.6;
+    transform: scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+}
+
+/* Reduced Motion Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .conference-intro-overlay {
+    transition: opacity 0.3s ease;
+  }
+  .intro-branding-row,
+  .intro-title-block {
+    transition: opacity 0.2s ease;
+    transform: none !important;
+  }
+  .intro-glow-core,
+  .intro-meta-dot {
+    animation: none !important;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .intro-skip-button {
+    bottom: 1.2rem;
+    right: 1.2rem;
+    padding: 0.45rem 0.9rem;
+    font-size: 0.8rem;
+  }
+  .intro-visual-anchor {
+    height: clamp(100px, 18vh, 150px);
+  }
+  .intro-content {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .intro-brand-title {
+    font-size: 2.1rem;
+  }
+  .intro-sub-prefix {
+    font-size: 0.82rem;
+  }
+  .intro-main-topic {
+    font-size: 1.1rem;
+  }
+}

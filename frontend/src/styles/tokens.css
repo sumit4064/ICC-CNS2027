@@ -1,0 +1,88 @@
+:root {
+  /* Color Palette - Dark Teal & Vibrant Orange */
+  --bg-darkest: #001F24;
+  --bg-primary: #002B30;
+  --bg-secondary: #003A41;
+  --bg-tertiary: #004D56;
+  --bg-card: rgba(0, 43, 48, 0.65);
+  --bg-card-hover: rgba(0, 60, 67, 0.85);
+  --bg-glass: rgba(0, 50, 56, 0.55);
+  --bg-glass-strong: rgba(0, 35, 39, 0.82);
+
+  /* Primary Accent: Radiant Orange */
+  --accent-orange: #FF6B35;
+  --accent-orange-hover: #FF7D4D;
+  --accent-orange-dark: #E65100;
+  --accent-orange-glow: rgba(255, 107, 53, 0.35);
+  --accent-orange-subtle: rgba(255, 107, 53, 0.12);
+
+  /* Secondary Accents */
+  --accent-teal: #00B4D8;
+  --accent-cyan: #48CAE4;
+  --accent-emerald: #10B981;
+  --accent-emerald-glow: rgba(16, 185, 129, 0.25);
+  --accent-blue: #0EA5E9;
+  --accent-blue-glow: rgba(14, 165, 233, 0.25);
+  --accent-purple: #A855F7;
+
+  /* Typography */
+  --text-pure-white: #FFFFFF;
+  --text-primary: #F0F6F7;
+  --text-secondary: #C2D7DA;
+  --text-muted: #8AA8AC;
+  --text-dim: #5C7B80;
+  --text-orange: #FF7D4D;
+
+  /* Glass Borders */
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --glass-border-hover: rgba(255, 255, 255, 0.25);
+  --glass-border-orange: rgba(255, 107, 53, 0.4);
+  --glass-border-teal: rgba(0, 180, 216, 0.35);
+
+  /* Shadows & Glows */
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.45);
+  --shadow-orange-glow: 0 0 25px rgba(255, 107, 53, 0.45);
+  --shadow-teal-glow: 0 0 30px rgba(0, 180, 216, 0.25);
+
+  /* Radius */
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-full: 9999px;
+
+  /* Fonts */
+  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Typography Scales & Hierarchy */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --font-weight-black: 900;
+
+  --line-height-tight: 1.15;
+  --line-height-heading: 1.25;
+  --line-height-snug: 1.38;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.65;
+  --line-height-loose: 1.75;
+
+  --tracking-tight: -0.025em;
+  --tracking-subtle: -0.015em;
+  --tracking-normal: 0em;
+  --tracking-wide: 0.025em;
+  --tracking-wider: 0.05em;
+  --tracking-widest: 0.08em;
+
+  /* Transitions */
+  --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
