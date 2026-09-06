@@ -1,189 +1,263 @@
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
-import { getDb, saveDb } from '../config/db.js';
+import { Speaker } from '../models/index.js';
+import { uploadObject, deleteObject } from '../services/b2StorageService.js';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-export const getSpeakers = (req, res) => {
-  const db = getDb();
-  res.json({ success: true, data: db.speakers || [] });
+export const getSpeakers = async (req, res) => {
+  try {
+    const speakers = await Speaker.find().lean();
+    res.json({ success: true, data: speakers || [] });
+  } catch (error) {
+    console.error('Error in getSpeakers:', error.message);
+    res.status(500).json({ success: false, message: 'Failed to fetch speakers.' });
+  }
 };
 
-export const getSpeakerById = (req, res) => {
-  const db = getDb();
-  const speaker = (db.speakers || []).find((s) => s.id === req.params.id);
-  if (!speaker) {
-    return res.status(404).json({ success: false, message: 'Speaker not found.' });
+export const getSpeakerById = async (req, res) => {
+  try {
+    const speaker = await Speaker.findOne({ id: req.params.id }).lean();
+    if (!speaker) {
+      return res.status(404).json({ success: false, message: 'Speaker not found.' });
+    }
+    res.json({ success: true, data: speaker });
+  } catch (error) {
+    console.error('Error in getSpeakerById:', error.message);
+    res.status(500).json({ success: false, message: 'Failed to fetch speaker.' });
   }
-  res.json({ success: true, data: speaker });
 };
 
-export const createSpeaker = (req, res) => {
-  const db = getDb();
-  const { name, designation, institution, country, track, topic, bio, image, type } = req.body;
+export const createSpeaker = async (req, res) => {
+  try {
+    const { name, designation, institution, country, track, topic, bio, image, imageStorageKey, type } = req.body;
 
-  if (!name || !institution) {
-    return res.status(400).json({ success: false, message: 'Speaker name and institution are required.' });
-  }
+    if (!name || !institution) {
+      return res.status(400).json({ success: false, message: 'Speaker name and institution are required.' });
+    }
 
-  const newSpeaker = {
-    id: `sp-${Date.now()}`,
-    name,
-    designation: designation || 'Keynote Speaker',
-    institution,
-    country: country || 'International',
-    track: track || 'Cognitive Computing',
-    topic: topic || 'Advances in Cognitive Networking',
-    bio: bio || 'Distinguished academic and industry expert contributing key insights to ICC-CNS.',
-    image: image || null,
-    type: type || 'Keynote'
-  };
+    const newSpeaker = {
+      id: `sp-${Date.now()}`,
+      name,
+      designation: designation || 'Keynote Speaker',
+      institution,
+      country: country || 'International',
+      track: track || 'Cognitive Computing',
+      topic: topic || 'Advances in Cognitive Networking',
+      bio: bio || 'Distinguished academic and industry expert contributing key insights to ICC-CNS.',
+      image: image || null,
+      imageStorageKey: imageStorageKey || null,
+      type: type || 'Keynote'
+    };
 
-  db.speakers = db.speakers || [];
-  db.speakers.push(newSpeaker);
-
-  if (saveDb(db)) {
-    res.status(201).json({ success: true, message: 'Speaker added successfully.', data: newSpeaker });
-  } else {
+    const created = await Speaker.create(newSpeaker);
+    res.status(201).json({ success: true, message: 'Speaker added successfully.', data: created });
+  } catch (error) {
+    console.error('Error in createSpeaker:', error.message);
     res.status(500).json({ success: false, message: 'Failed to add speaker.' });
   }
 };
 
-export const updateSpeaker = (req, res) => {
-  const db = getDb();
-  const { id } = req.params;
-  const index = (db.speakers || []).findIndex((s) => s.id === id);
+export const updateSpeaker = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const existing = await Speaker.findOne({ id });
 
-  if (index === -1) {
-    return res.status(404).json({ success: false, message: 'Speaker not found.' });
-  }
+    if (!existing) {
+      return res.status(404).json({ success: false, message: 'Speaker not found.' });
+    }
 
-  db.speakers[index] = {
-    ...db.speakers[index],
-    ...req.body,
-    id: db.speakers[index].id
-  };
+    const updated = await Speaker.findOneAndUpdate(
+      { id },
+      { $set: { ...req.body, id } },
+      { returnDocument: 'after', new: true }
+    ).lean();
 
-  if (saveDb(db)) {
-    res.json({ success: true, message: 'Speaker updated successfully.', data: db.speakers[index] });
-  } else {
+    res.json({ success: true, message: 'Speaker updated successfully.', data: updated });
+  } catch (error) {
+    console.error('Error in updateSpeaker:', error.message);
     res.status(500).json({ success: false, message: 'Failed to update speaker.' });
   }
 };
 
-export const uploadSpeakerImage = (req, res) => {
+export const uploadSpeakerImage = async (req, res) => {
+  let uploadedStorageKey = null;
+
   try {
-    if (!req.file) {
-      return res.status(400).json({ success: false, message: 'Please upload a JPG, PNG, or WEBP image under 5 MB.' });
+    if (!req.file || !req.file.buffer) {
+      return res.status(400).json({
+        success: false,
+        message: 'Please upload a JPG, PNG, or WEBP image under 5 MB.'
+      });
     }
 
-    const db = getDb();
-    const index = (db.speakers || []).findIndex((s) => s.id === req.params.id);
+    const { id } = req.params;
+    const speaker = await Speaker.findOne({ id });
 
-    if (index === -1) {
+    if (!speaker) {
       return res.status(404).json({ success: false, message: 'Speaker not found.' });
     }
 
-    const oldImage = db.speakers[index].image;
-    // Clean up previous image if it was local in uploads/speakers/
-    if (oldImage && oldImage.startsWith('/uploads/speakers/')) {
-      const oldFilePath = path.join(__dirname, '..', oldImage);
-      try {
-        if (fs.existsSync(oldFilePath)) {
-          fs.unlinkSync(oldFilePath);
-        }
-      } catch (err) {
-        console.warn('Could not delete old speaker image file:', err.message);
-      }
-    }
+    // Preserve previous B2 storage key for post-commit deletion
+    const oldImageStorageKey = speaker.imageStorageKey;
 
-    const imageUrl = `/uploads/speakers/${req.file.filename}`;
-    db.speakers[index].image = imageUrl;
+    const safeName = (req.file.originalname || 'photo.webp').replace(/[^a-zA-Z0-9._-]/g, '_');
+    const imageStorageKey = `speakers/${speaker.id}/${safeName}`;
+    const imageUrl = imageStorageKey;
 
-    if (saveDb(db)) {
-      res.json({
-        success: true,
-        message: 'Speaker photograph uploaded successfully.',
-        imageUrl,
-        data: db.speakers[index]
-      });
-    } else {
-      res.status(500).json({ success: false, message: 'Failed to save speaker image reference.' });
-    }
-  } catch (error) {
-    console.error('Error in uploadSpeakerImage:', error);
-    res.status(500).json({ success: false, message: error.message || 'Failed to upload speaker photograph.' });
-  }
-};
-
-export const deleteSpeakerImage = (req, res) => {
-  try {
-    const db = getDb();
-    const index = (db.speakers || []).findIndex((s) => s.id === req.params.id);
-
-    if (index === -1) {
-      return res.status(404).json({ success: false, message: 'Speaker not found.' });
-    }
-
-    const currentImage = db.speakers[index].image;
-    if (currentImage && currentImage.startsWith('/uploads/speakers/')) {
-      const filePath = path.join(__dirname, '..', currentImage);
-      try {
-        if (fs.existsSync(filePath)) {
-          fs.unlinkSync(filePath);
-        }
-      } catch (err) {
-        console.warn('Could not delete speaker image file:', err.message);
-      }
-    }
-
-    db.speakers[index].image = null;
-
-    if (saveDb(db)) {
-      res.json({
-        success: true,
-        message: 'Speaker photograph removed successfully.',
-        data: db.speakers[index]
-      });
-    } else {
-      res.status(500).json({ success: false, message: 'Failed to remove speaker image reference.' });
-    }
-  } catch (error) {
-    console.error('Error in deleteSpeakerImage:', error);
-    res.status(500).json({ success: false, message: error.message || 'Failed to delete speaker image.' });
-  }
-};
-
-export const deleteSpeaker = (req, res) => {
-  const db = getDb();
-  const { id } = req.params;
-  const initialLen = (db.speakers || []).length;
-  const speakerToDelete = (db.speakers || []).find((s) => s.id === id);
-
-  if (!speakerToDelete) {
-    return res.status(404).json({ success: false, message: 'Speaker not found.' });
-  }
-
-  // Clean up uploaded image if in /uploads/speakers/
-  if (speakerToDelete.image && speakerToDelete.image.startsWith('/uploads/speakers/')) {
-    const filePath = path.join(__dirname, '..', speakerToDelete.image);
+    // 1. Upload new image buffer directly to Backblaze B2 cloud storage
     try {
-      if (fs.existsSync(filePath)) {
-        fs.unlinkSync(filePath);
-      }
-    } catch (err) {
-      console.warn('Could not delete speaker image file:', err.message);
+      await uploadObject({
+        key: imageStorageKey,
+        buffer: req.file.buffer,
+        contentType: req.file.mimetype || 'image/jpeg',
+        metadata: {
+          speakerId: String(speaker.id),
+          speakerName: speaker.name || ''
+        }
+      });
+      uploadedStorageKey = imageStorageKey;
+      console.log(`[Speaker] Successfully uploaded photograph to B2: ${imageStorageKey}`);
+    } catch (uploadErr) {
+      console.error(`[Speaker] B2 storage upload failed for speaker ${speaker.id}:`, uploadErr.message);
+      return res.status(500).json({
+        success: false,
+        message: 'Failed to upload speaker photograph to cloud storage.'
+      });
     }
-  }
 
-  db.speakers = (db.speakers || []).filter((s) => s.id !== id);
+    // 2. Persist updated fields in MongoDB
+    let updated;
+    try {
+      updated = await Speaker.findOneAndUpdate(
+        { id },
+        {
+          $set: {
+            image: imageUrl,
+            imageStorageKey: imageStorageKey
+          }
+        },
+        { returnDocument: 'after', new: true }
+      ).lean();
+    } catch (dbErr) {
+      console.error(`[Speaker] MongoDB update failed for speaker ${speaker.id}:`, dbErr.message);
 
-  if (saveDb(db)) {
-    res.json({ success: true, message: 'Speaker deleted successfully.' });
-  } else {
-    res.status(500).json({ success: false, message: 'Failed to delete speaker.' });
+      // Rollback newly uploaded B2 object if database persistence failed
+      if (uploadedStorageKey) {
+        try {
+          console.log(`[Speaker] Rolling back B2 object: ${uploadedStorageKey}`);
+          await deleteObject({ key: uploadedStorageKey });
+          console.log(`[Speaker] B2 rollback successful for: ${uploadedStorageKey}`);
+        } catch (rollbackErr) {
+          console.error(`[Speaker] Failed to rollback B2 object ${uploadedStorageKey}:`, rollbackErr.message);
+        }
+      }
+
+      return res.status(500).json({
+        success: false,
+        message: 'Internal server error while updating speaker record.'
+      });
+    }
+
+    // 3. Clean up replaced B2 object only AFTER successful MongoDB update
+    if (oldImageStorageKey && oldImageStorageKey !== imageStorageKey) {
+      try {
+        console.log(`[Speaker] Cleaning up replaced B2 object: ${oldImageStorageKey}`);
+        await deleteObject({ key: oldImageStorageKey });
+      } catch (delOldErr) {
+        console.warn(`[Speaker] Failed to delete replaced B2 object ${oldImageStorageKey}:`, delOldErr.message);
+      }
+    }
+
+    return res.json({
+      success: true,
+      message: 'Speaker photograph uploaded successfully.',
+      imageUrl,
+      imageStorageKey,
+      data: updated
+    });
+  } catch (error) {
+    console.error('Error in uploadSpeakerImage:', error.message);
+
+    // Rollback if unexpected failure occurred after upload
+    if (uploadedStorageKey) {
+      try {
+        await deleteObject({ key: uploadedStorageKey });
+      } catch (e) {}
+    }
+
+    return res.status(500).json({
+      success: false,
+      message: error.message || 'Failed to upload speaker photograph.'
+    });
   }
 };
+
+export const deleteSpeakerImage = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const speaker = await Speaker.findOne({ id });
+
+    if (!speaker) {
+      return res.status(404).json({ success: false, message: 'Speaker not found.' });
+    }
+
+    const oldImageStorageKey = speaker.imageStorageKey;
+
+    const updated = await Speaker.findOneAndUpdate(
+      { id },
+      { $set: { image: null, imageStorageKey: null } },
+      { returnDocument: 'after', new: true }
+    ).lean();
+
+    // Clean up B2 object if speaker was backed by B2 storage
+    if (oldImageStorageKey) {
+      try {
+        await deleteObject({ key: oldImageStorageKey });
+        console.log(`[Speaker] Deleted B2 object: ${oldImageStorageKey}`);
+      } catch (delErr) {
+        console.warn(`[Speaker] Failed to delete B2 object ${oldImageStorageKey}:`, delErr.message);
+      }
+    }
+
+    return res.json({
+      success: true,
+      message: 'Speaker photograph removed successfully.',
+      data: updated
+    });
+  } catch (error) {
+    console.error('Error in deleteSpeakerImage:', error.message);
+    return res.status(500).json({
+      success: false,
+      message: error.message || 'Failed to delete speaker image.'
+    });
+  }
+};
+
+export const deleteSpeaker = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const speakerToDelete = await Speaker.findOne({ id });
+
+    if (!speakerToDelete) {
+      return res.status(404).json({ success: false, message: 'Speaker not found.' });
+    }
+
+    const oldImageStorageKey = speakerToDelete.imageStorageKey;
+
+    await Speaker.findOneAndDelete({ id });
+
+    // Clean up B2 object if speaker had a B2 object
+    if (oldImageStorageKey) {
+      try {
+        await deleteObject({ key: oldImageStorageKey });
+        console.log(`[Speaker] Deleted B2 object on speaker deletion: ${oldImageStorageKey}`);
+      } catch (delErr) {
+        console.warn(`[Speaker] Failed to delete B2 object ${oldImageStorageKey}:`, delErr.message);
+      }
+    }
+
+    return res.json({ success: true, message: 'Speaker deleted successfully.' });
+  } catch (error) {
+    console.error('Error in deleteSpeaker:', error.message);
+    return res.status(500).json({ success: false, message: 'Failed to delete speaker.' });
+  }
+};
+
 

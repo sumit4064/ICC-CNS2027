@@ -4,6 +4,7 @@ import { useAuth } from '../context/AuthContext';
 import { api } from '../services/api';
 import { useToast } from '../components/Toast';
 import { ErrorBoundary } from '../components/ErrorBoundary';
+import { resolveImageUrl } from '../utils/imageUrl';
 import {
   Users,
   Calendar,
@@ -387,11 +388,22 @@ export const AdminDashboard = () => {
   };
 
   // --- SUBMISSIONS STATUS & WORKFLOW ---
-  const handleOpenPdfReview = (paper) => {
+  const handleOpenPdfReview = async (paper) => {
     setViewingPaper(paper);
     setPdfZoom(100);
     setPdfActiveTab('pdf');
     setPdfFullscreen(false);
+
+    if (token && paper && (paper.fileStorageKey || paper.id || paper._id)) {
+      try {
+        const res = await api.getSubmissionDownloadUrl(paper.id || paper._id, token);
+        if (res && res.downloadUrl) {
+          setViewingPaper((prev) => (prev && (prev.id === paper.id || prev._id === paper._id) ? { ...prev, filePath: res.downloadUrl } : prev));
+        }
+      } catch (err) {
+        console.error('Failed to get presigned manuscript URL:', err);
+      }
+    }
   };
 
   const handleConfirmAccept = async () => {
@@ -940,7 +952,7 @@ export const AdminDashboard = () => {
                               <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                                 {sp.image ? (
                                   <img
-                                    src={sp.image}
+                                    src={resolveImageUrl(sp.image)}
                                     alt={sp.name}
                                     style={{ width: '36px', height: '36px', borderRadius: '50%', objectFit: 'cover' }}
                                     onError={(e) => {
@@ -1159,7 +1171,7 @@ export const AdminDashboard = () => {
                                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                                       {mem.imageUrl ? (
                                         <img
-                                          src={mem.imageUrl}
+                                          src={resolveImageUrl(mem.imageUrl)}
                                           alt={mem.name || 'Member'}
                                           style={{
                                             width: '40px',
@@ -1639,7 +1651,7 @@ export const AdminDashboard = () => {
                 }}>
                   {speakerPhotoPreview || (!speakerPhotoRemoved && editingSpeaker.image) ? (
                     <img
-                      src={speakerPhotoPreview || editingSpeaker.image}
+                      src={speakerPhotoPreview || resolveImageUrl(editingSpeaker.image)}
                       alt="Speaker Preview"
                       style={{
                         width: '100%',
@@ -2379,7 +2391,7 @@ export const AdminDashboard = () => {
                 }}>
                   {photoPreview || editingCommitteeMember.imageUrl ? (
                     <img
-                      src={photoPreview || editingCommitteeMember.imageUrl}
+                      src={photoPreview || resolveImageUrl(editingCommitteeMember.imageUrl)}
                       alt="Cutout Preview"
                       style={{
                         width: '100%',

@@ -1,5 +1,6 @@
 import React from 'react';
 import { X, MapPin, Building, BookOpen, Award } from 'lucide-react';
+import { resolveImageUrl } from '../utils/imageUrl';
 
 const getInitials = (name) => {
   if (!name) return 'SP';
@@ -11,6 +12,7 @@ const getInitials = (name) => {
 
 export const SpeakerModal = ({ speaker, onClose }) => {
   if (!speaker) return null;
+  const imageUrl = resolveImageUrl(speaker.image);
 
   return (
     <div className="modal-backdrop" onClick={onClose}>
@@ -33,9 +35,9 @@ export const SpeakerModal = ({ speaker, onClose }) => {
             justifyContent: 'center',
             position: 'relative'
           }}>
-            {speaker.image ? (
+            {imageUrl ? (
               <img
-                src={speaker.image}
+                src={imageUrl}
                 alt={speaker.name}
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 onError={(e) => {

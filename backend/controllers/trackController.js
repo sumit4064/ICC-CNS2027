@@ -1,79 +1,88 @@
-import { getDb, saveDb } from '../config/db.js';
+import { Track } from '../models/index.js';
 
-export const getTracks = (req, res) => {
-  const db = getDb();
-  res.json({ success: true, data: db.tracks || [] });
+export const getTracks = async (req, res) => {
+  try {
+    const tracks = await Track.find().lean();
+    res.json({ success: true, data: tracks || [] });
+  } catch (error) {
+    console.error('Error in getTracks:', error.message);
+    res.status(500).json({ success: false, message: 'Failed to fetch tracks.' });
+  }
 };
 
-export const createTrack = (req, res) => {
-  const db = getDb();
-  const { number, code, name, color, accent, summary, topics } = req.body;
+export const createTrack = async (req, res) => {
+  try {
+    const { number, code, name, color, accent, summary, topics } = req.body;
 
-  if (!name) {
-    return res.status(400).json({ success: false, message: 'Track name is required.' });
-  }
+    if (!name) {
+      return res.status(400).json({ success: false, message: 'Track name is required.' });
+    }
 
-  const newTrack = {
-    id: `t-${Date.now()}`,
-    number: number || `0${(db.tracks || []).length + 1}`,
-    code: code || `TRACK-${(db.tracks || []).length + 1}`,
-    name,
-    color: color || '#FF6B35',
-    accent: accent || 'orange',
-    summary: summary || 'Cutting edge research areas and topics.',
-    topics: Array.isArray(topics) ? topics : (topics ? topics.split('\n').filter(Boolean) : [])
-  };
+    const count = await Track.countDocuments();
+    const newTrack = {
+      id: `t-${Date.now()}`,
+      number: number || `0${count + 1}`,
+      code: code || `TRACK-${count + 1}`,
+      name,
+      color: color || '#FF6B35',
+      accent: accent || 'orange',
+      summary: summary || 'Cutting edge research areas and topics.',
+      topics: Array.isArray(topics) ? topics : (topics ? topics.split('\n').filter(Boolean) : [])
+    };
 
-  db.tracks = db.tracks || [];
-  db.tracks.push(newTrack);
-
-  if (saveDb(db)) {
-    res.status(201).json({ success: true, message: 'Track added successfully.', data: newTrack });
-  } else {
+    const created = await Track.create(newTrack);
+    res.status(201).json({ success: true, message: 'Track added successfully.', data: created });
+  } catch (error) {
+    console.error('Error in createTrack:', error.message);
     res.status(500).json({ success: false, message: 'Failed to add track.' });
   }
 };
 
-export const updateTrack = (req, res) => {
-  const db = getDb();
-  const { id } = req.params;
-  const index = (db.tracks || []).findIndex((t) => t.id === id);
+export const updateTrack = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const existing = await Track.findOne({ id });
 
-  if (index === -1) {
-    return res.status(404).json({ success: false, message: 'Track not found.' });
-  }
+    if (!existing) {
+      return res.status(404).json({ success: false, message: 'Track not found.' });
+    }
 
-  const updatedTopics = req.body.topics 
-    ? (Array.isArray(req.body.topics) ? req.body.topics : req.body.topics.split('\n').filter(Boolean))
-    : db.tracks[index].topics;
+    const updatedTopics = req.body.topics 
+      ? (Array.isArray(req.body.topics) ? req.body.topics : req.body.topics.split('\n').filter(Boolean))
+      : existing.topics;
 
-  db.tracks[index] = {
-    ...db.tracks[index],
-    ...req.body,
-    topics: updatedTopics,
-    id: db.tracks[index].id
-  };
+    const updated = await Track.findOneAndUpdate(
+      { id },
+      {
+        $set: {
+          ...req.body,
+          topics: updatedTopics,
+          id
+        }
+      },
+      { new: true }
+    ).lean();
 
-  if (saveDb(db)) {
-    res.json({ success: true, message: 'Track updated successfully.', data: db.tracks[index] });
-  } else {
+    res.json({ success: true, message: 'Track updated successfully.', data: updated });
+  } catch (error) {
+    console.error('Error in updateTrack:', error.message);
     res.status(500).json({ success: false, message: 'Failed to update track.' });
   }
 };
 
-export const deleteTrack = (req, res) => {
-  const db = getDb();
-  const { id } = req.params;
-  const initialLen = (db.tracks || []).length;
-  db.tracks = (db.tracks || []).filter((t) => t.id !== id);
+export const deleteTrack = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const deleted = await Track.findOneAndDelete({ id });
 
-  if (db.tracks.length === initialLen) {
-    return res.status(404).json({ success: false, message: 'Track not found.' });
-  }
+    if (!deleted) {
+      return res.status(404).json({ success: false, message: 'Track not found.' });
+    }
 
-  if (saveDb(db)) {
     res.json({ success: true, message: 'Track deleted successfully.' });
-  } else {
+  } catch (error) {
+    console.error('Error in deleteTrack:', error.message);
     res.status(500).json({ success: false, message: 'Failed to delete track.' });
   }
 };
+

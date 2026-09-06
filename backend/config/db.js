@@ -3,27 +3,39 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import bcrypt from 'bcryptjs';
 import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+import dns from 'dns';
+
+dotenv.config();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const DB_PATH = path.join(__dirname, '..', 'data', 'db.json');
 
+// Ensure DNS resolver fallback for Windows SRV queries (_mongodb._tcp)
+try {
+  dns.setServers(['8.8.8.8', '1.1.1.1', '8.8.4.4']);
+} catch (e) {}
+
 // MongoDB Connection Helper
-export const connectMongo = async () => {
+export const connectDatabase = async () => {
   const mongoUri = process.env.MONGODB_URI;
   if (!mongoUri) {
-    console.log('[DB] No MONGODB_URI provided in environment. Using atomic persistent JSON storage.');
-    return false;
+    throw new Error('MONGODB_URI environment variable is not defined.');
   }
   try {
-    await mongoose.connect(mongoUri);
-    console.log('[DB] Connected to MongoDB database successfully.');
+    await mongoose.connect(mongoUri, {
+      serverSelectionTimeoutMS: 10000
+    });
+    console.log('[DB] Connected to MongoDB Atlas successfully.');
     return true;
   } catch (err) {
-    console.warn('[DB] MongoDB connection failed. Falling back to persistent JSON storage:', err.message);
-    return false;
+    console.error('[DB] MongoDB Atlas connection failed:', err.name, err.message);
+    throw err;
   }
 };
+
+export const connectMongo = connectDatabase;
 
 export const getInitialData = () => {
   const salt = bcrypt.genSaltSync(10);

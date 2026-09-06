@@ -1,4 +1,4 @@
-const BASE_URL = '/api';
+const BASE_URL = (import.meta.env.VITE_API_BASE_URL || '/api').replace(/\/+$/, '');
 
 async function request(endpoint, options = {}) {
   const url = `${BASE_URL}${endpoint}`;
@@ -162,6 +162,10 @@ export const api = {
       headers: { Authorization: `Bearer ${token}` }
     }),
   trackPaper: (query) => request(`/submissions/track/${encodeURIComponent(query)}`),
+  getSubmissionDownloadUrl: (id, token) =>
+    request(`/submissions/${encodeURIComponent(id)}/download`, {
+      headers: { Authorization: `Bearer ${token}` }
+    }),
   updateSubmission: (id, data, token) =>
     request(`/submissions/${id}`, {
       method: 'PUT',

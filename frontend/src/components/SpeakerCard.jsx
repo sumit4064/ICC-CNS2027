@@ -1,4 +1,5 @@
 import React from 'react';
+import { resolveImageUrl } from '../utils/imageUrl';
 
 const getInitials = (name) => {
   if (!name) return 'SP';
@@ -9,12 +10,14 @@ const getInitials = (name) => {
 };
 
 export const SpeakerCard = ({ speaker, onClick }) => {
+  const imageUrl = resolveImageUrl(speaker.image);
+
   return (
     <div className="speaker-card" onClick={() => onClick && onClick(speaker)}>
       <div className="speaker-img-box">
-        {speaker.image ? (
+        {imageUrl ? (
           <img
-            src={speaker.image}
+            src={imageUrl}
             alt={speaker.name}
             className="speaker-img"
             loading="lazy"

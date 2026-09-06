@@ -1,11 +1,17 @@
 import jwt from 'jsonwebtoken';
 
-const JWT_SECRET = process.env.JWT_SECRET || 'icc_cns_secret_key_2026_conference';
+export const getJwtSecret = () => {
+  const secret = process.env.JWT_SECRET;
+  if (!secret || typeof secret !== 'string' || !secret.trim()) {
+    throw new Error('JWT_SECRET environment variable is missing or empty.');
+  }
+  return secret.trim();
+};
 
 export const generateToken = (user) => {
   return jwt.sign(
     { id: user.id, email: user.email, role: user.role, name: user.name },
-    JWT_SECRET,
+    getJwtSecret(),
     { expiresIn: '7d' }
   );
 };
@@ -18,7 +24,7 @@ export const requireAuth = (req, res, next) => {
 
   const token = authHeader.split(' ')[1];
   try {
-    const decoded = jwt.verify(token, JWT_SECRET);
+    const decoded = jwt.verify(token, getJwtSecret());
     req.user = decoded;
     next();
   } catch (err) {

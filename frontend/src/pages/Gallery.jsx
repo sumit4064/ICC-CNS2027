@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { api } from '../services/api';
+import { resolveImageUrl } from '../utils/imageUrl';
 import { Image, ZoomIn, X, Sparkles } from 'lucide-react';
 
 export const Gallery = () => {
@@ -75,7 +76,7 @@ export const Gallery = () => {
               >
                 <div style={{ position: 'relative', height: '220px', overflow: 'hidden' }}>
                   <img
-                    src={item.image}
+                    src={resolveImageUrl(item.image)}
                     alt={item.title}
                     style={{
                       width: '100%',
@@ -141,7 +142,7 @@ export const Gallery = () => {
               <X size={20} />
             </button>
             <img
-              src={lightboxImg.image}
+              src={resolveImageUrl(lightboxImg.image)}
               alt={lightboxImg.title}
               style={{ width: '100%', maxHeight: '75vh', objectFit: 'contain', borderRadius: 'var(--radius-lg)' }}
             />

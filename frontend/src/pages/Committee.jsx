@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { api } from '../services/api';
 import { ErrorBoundary } from '../components/ErrorBoundary';
+import { resolveImageUrl } from '../utils/imageUrl';
 import {
   Shield,
   Award,
@@ -366,7 +367,8 @@ export const Committee = () => {
               {/* Members Grid */}
               <div className="committee-grid">
                 {group.members.map((member) => {
-                  const hasPhoto = Boolean(member.imageUrl);
+                  const resolvedPhotoUrl = resolveImageUrl(member.imageUrl);
+                  const hasPhoto = Boolean(resolvedPhotoUrl);
                   const institutionText = member.institution || member.org || '';
 
                   return (
@@ -380,7 +382,7 @@ export const Committee = () => {
                       <div className="member-photo-wrapper">
                         {hasPhoto ? (
                           <img
-                            src={member.imageUrl}
+                            src={resolvedPhotoUrl}
                             alt={member.name}
                             className="member-photo"
                             loading="lazy"
@@ -462,9 +464,9 @@ export const Committee = () => {
 
             {/* Modal Left: Portrait Cutout */}
             <div className="committee-modal-left">
-              {selectedMember.imageUrl ? (
+              {resolveImageUrl(selectedMember.imageUrl) ? (
                 <img
-                  src={selectedMember.imageUrl}
+                  src={resolveImageUrl(selectedMember.imageUrl)}
                   alt={selectedMember.name}
                   className="committee-modal-photo"
                 />

@@ -1,35 +1,45 @@
-import { getDb, saveDb } from '../config/db.js';
+import { Conference, Speaker, Registration, Submission } from '../models/index.js';
 
-export const getConference = (req, res) => {
-  const db = getDb();
-  // calculate dynamic stats from arrays
-  const speakerCount = (db.speakers || []).length;
-  const regCount = (db.registrations || []).length;
-  const paperCount = (db.submissions || []).length;
+export const getConference = async (req, res) => {
+  try {
+    const confDoc = await Conference.findOne().lean();
+    const conf = confDoc || {};
 
-  const conf = {
-    ...db.conference,
-    dynamicStats: {
-      speakers: `${speakerCount}+`,
-      countries: "6+",
-      registered: `${regCount}+`,
-      papersSubmitted: `${paperCount}+`
-    }
-  };
+    const [speakerCount, regCount, paperCount] = await Promise.all([
+      Speaker.countDocuments(),
+      Registration.countDocuments(),
+      Submission.countDocuments()
+    ]);
 
-  res.json({ success: true, data: conf });
+    const data = {
+      ...conf,
+      dynamicStats: {
+        speakers: `${speakerCount}+`,
+        countries: '6+',
+        registered: `${regCount}+`,
+        papersSubmitted: `${paperCount}+`
+      }
+    };
+
+    res.json({ success: true, data });
+  } catch (error) {
+    console.error('Error in getConference:', error.message);
+    res.status(500).json({ success: false, message: 'Failed to fetch conference details.' });
+  }
 };
 
-export const updateConference = (req, res) => {
-  const db = getDb();
-  db.conference = {
-    ...db.conference,
-    ...req.body
-  };
+export const updateConference = async (req, res) => {
+  try {
+    const updated = await Conference.findOneAndUpdate(
+      {},
+      { $set: req.body },
+      { new: true, upsert: true }
+    ).lean();
 
-  if (saveDb(db)) {
-    res.json({ success: true, message: 'Conference details updated successfully.', data: db.conference });
-  } else {
+    res.json({ success: true, message: 'Conference details updated successfully.', data: updated });
+  } catch (error) {
+    console.error('Error in updateConference:', error.message);
     res.status(500).json({ success: false, message: 'Failed to update conference details.' });
   }
 };
+
