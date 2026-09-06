@@ -23,3 +23,8 @@ Thumbs.db
 # IDE files
 .vscode/
 .idea/
+# Backend runtime data
+backend/data/db.json
+
+# Uploaded user/submission files
+backend/uploads/papers/
