@@ -137,7 +137,9 @@ export const Submission = () => {
               style={{
                 padding: '0.75rem 1.8rem',
                 fontSize: '1rem',
-                background: activeTab === 'submit' ? 'var(--accent-orange)' : 'rgba(0, 36, 41, 0.7)'
+                background: activeTab === 'submit' ? 'var(--primary-cyan)' : 'var(--surface-white)',
+                color: activeTab === 'submit' ? '#FFF' : 'var(--primary-navy)',
+                borderColor: activeTab === 'submit' ? 'var(--primary-cyan)' : 'var(--border-subtle)'
               }}
             >
               <UploadCloud size={18} />
@@ -150,7 +152,9 @@ export const Submission = () => {
               style={{
                 padding: '0.75rem 1.8rem',
                 fontSize: '1rem',
-                background: activeTab === 'track' ? 'var(--accent-orange)' : 'rgba(0, 36, 41, 0.7)'
+                background: activeTab === 'track' ? 'var(--primary-cyan)' : 'var(--surface-white)',
+                color: activeTab === 'track' ? '#FFF' : 'var(--primary-navy)',
+                borderColor: activeTab === 'track' ? 'var(--primary-cyan)' : 'var(--border-subtle)'
               }}
             >
               <Search size={18} />
@@ -181,7 +185,7 @@ export const Submission = () => {
                   <span className="badge badge-emerald" style={{ marginBottom: '0.8rem' }}>
                     Submission Received
                   </span>
-                  <h2 style={{ fontSize: '2.2rem', color: '#FFF', marginBottom: '0.5rem' }}>
+                  <h2 style={{ fontSize: '2.2rem', color: 'var(--primary-navy)', marginBottom: '0.5rem' }}>
                     Thank You for Submitting to ICC-CNS 2027!
                   </h2>
                   <p style={{ color: 'var(--text-secondary)', maxWidth: '540px', margin: '0 auto 1.8rem' }}>
@@ -189,28 +193,28 @@ export const Submission = () => {
                   </p>
 
                   <div style={{
-                    background: 'rgba(0, 24, 28, 0.8)',
+                    background: 'var(--background-light)',
                     borderRadius: 'var(--radius-lg)',
                     padding: '2rem',
                     maxWidth: '600px',
                     margin: '0 auto 2rem',
                     textAlign: 'left',
-                    border: '1px solid var(--glass-border)'
+                    border: '1px solid var(--border-subtle)'
                   }}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid var(--glass-border)', paddingBottom: '0.8rem', marginBottom: '1rem' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid var(--border-subtle)', paddingBottom: '0.8rem', marginBottom: '1rem' }}>
                       <span style={{ color: 'var(--text-muted)' }}>Paper ID:</span>
-                      <span style={{ fontFamily: 'var(--font-heading)', color: 'var(--accent-orange)', fontWeight: 800, fontSize: '1.2rem' }}>
+                      <span style={{ fontFamily: 'var(--font-heading)', color: 'var(--primary-cyan)', fontWeight: 800, fontSize: '1.2rem' }}>
                         {submissionReceipt.id}
                       </span>
                     </div>
                     <div style={{ marginBottom: '0.8rem' }}>
                       <span style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>Paper Title:</span>
-                      <div style={{ color: '#FFF', fontWeight: 600, fontSize: '1.05rem' }}>{submissionReceipt.title}</div>
+                      <div style={{ color: 'var(--primary-navy)', fontWeight: 600, fontSize: '1.05rem' }}>{submissionReceipt.title}</div>
                     </div>
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', fontSize: '0.9rem' }}>
                       <div>
                         <span style={{ color: 'var(--text-muted)' }}>Track:</span>
-                        <div style={{ color: '#00B4D8' }}>{submissionReceipt.track}</div>
+                        <div style={{ color: 'var(--primary-cyan)' }}>{submissionReceipt.track}</div>
                       </div>
                       <div>
                         <span style={{ color: 'var(--text-muted)' }}>Status:</span>
@@ -258,7 +262,7 @@ export const Submission = () => {
                 <div style={{ display: 'grid', gridTemplateColumns: '1.4fr 0.8fr', gap: '2.5rem' }}>
                   {/* Left: Upload Form */}
                   <div className="form-wrapper">
-                    <h3 style={{ fontSize: '1.5rem', color: '#FFF', marginBottom: '1.5rem' }}>
+                    <h3 style={{ fontSize: '1.5rem', color: 'var(--primary-navy)', marginBottom: '1.5rem' }}>
                       Manuscript Submission Details
                     </h3>
 
@@ -415,45 +419,45 @@ export const Submission = () => {
                   {/* Right: Author Guidelines */}
                   <div>
                     <div className="glass-panel" style={{ padding: '2rem', marginBottom: '2rem' }}>
-                      <h4 style={{ fontSize: '1.2rem', color: '#FFF', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                        <BookOpen size={18} color="var(--accent-orange)" /> Author Guidelines
+                      <h4 style={{ fontSize: '1.2rem', color: 'var(--primary-navy)', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                        <BookOpen size={18} color="var(--primary-cyan)" /> Author Guidelines
                       </h4>
                       <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.85rem', fontSize: '0.88rem', color: 'var(--text-secondary)' }}>
                         <li style={{ display: 'flex', gap: '0.5rem' }}>
-                          <span style={{ color: 'var(--accent-orange)' }}>1.</span>
+                          <span style={{ color: 'var(--primary-cyan)' }}>1.</span>
                           <span>Manuscripts must be strictly original and not submitted elsewhere concurrently.</span>
                         </li>
                         <li style={{ display: 'flex', gap: '0.5rem' }}>
-                          <span style={{ color: 'var(--accent-orange)' }}>2.</span>
+                          <span style={{ color: 'var(--primary-cyan)' }}>2.</span>
                           <span>Length: Standard full research papers should be 6 to 8 pages (including figures & references).</span>
                         </li>
                         <li style={{ display: 'flex', gap: '0.5rem' }}>
-                          <span style={{ color: 'var(--accent-orange)' }}>3.</span>
+                          <span style={{ color: 'var(--primary-cyan)' }}>3.</span>
                           <span>Double-blind review: Please ensure author names and affiliations are omitted from initial review copies.</span>
                         </li>
                         <li style={{ display: 'flex', gap: '0.5rem' }}>
-                          <span style={{ color: 'var(--accent-orange)' }}>4.</span>
+                          <span style={{ color: 'var(--primary-cyan)' }}>4.</span>
                           <span>Plagiarism threshold must be under 15% (Turnitin/iThenticate).</span>
                         </li>
                       </ul>
                     </div>
 
-                    <div className="glass-panel" style={{ padding: '1.8rem', background: 'rgba(0, 24, 28, 0.7)' }}>
-                      <h4 style={{ fontSize: '1.1rem', color: '#FFF', marginBottom: '0.8rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                        <Clock size={18} color="#00B4D8" /> Key Deadlines
+                    <div className="glass-panel" style={{ padding: '1.8rem', background: 'var(--surface-white)' }}>
+                      <h4 style={{ fontSize: '1.1rem', color: 'var(--primary-navy)', marginBottom: '0.8rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                        <Clock size={18} color="var(--primary-cyan)" /> Key Deadlines
                       </h4>
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem', fontSize: '0.85rem' }}>
                         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                           <span style={{ color: 'var(--text-muted)' }}>Submission Due:</span>
-                          <span style={{ color: 'var(--accent-orange)', fontWeight: 700 }}>10 APR 2027</span>
+                          <span style={{ color: 'var(--primary-cyan)', fontWeight: 700 }}>10 APR 2027</span>
                         </div>
                         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                           <span style={{ color: 'var(--text-muted)' }}>Acceptance Notice:</span>
-                          <span style={{ color: '#00B4D8', fontWeight: 600 }}>30 APR 2027</span>
+                          <span style={{ color: 'var(--primary-navy)', fontWeight: 600 }}>30 APR 2027</span>
                         </div>
                         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                           <span style={{ color: 'var(--text-muted)' }}>Camera Ready:</span>
-                          <span style={{ color: '#FFF', fontWeight: 600 }}>15 MAY 2027</span>
+                          <span style={{ color: 'var(--primary-navy)', fontWeight: 600 }}>15 MAY 2027</span>
                         </div>
                       </div>
                     </div>
@@ -466,10 +470,10 @@ export const Submission = () => {
           {/* TAB 2: TRACK PAPER STATUS */}
           {activeTab === 'track' && (
             <div className="form-wrapper" style={{ maxWidth: '750px', margin: '0 auto' }}>
-              <h3 style={{ fontSize: '1.6rem', color: '#FFF', marginBottom: '0.6rem', textAlign: 'center' }}>
+              <h3 style={{ fontSize: '1.6rem', color: 'var(--primary-navy)', marginBottom: '0.6rem', textAlign: 'center' }}>
                 Track Manuscript Review Status
               </h3>
-              <p style={{ color: 'var(--text-muted)', fontSize: '0.92rem', textAlign: 'center', marginBottom: '2rem' }}>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.92rem', textAlign: 'center', marginBottom: '2rem' }}>
                 Enter your Paper ID (e.g. ICC-CNS-2027-001) or Primary Author Email Address.
               </p>
 
@@ -494,7 +498,7 @@ export const Submission = () => {
                   borderRadius: 'var(--radius-md)',
                   background: 'rgba(239, 68, 68, 0.15)',
                   border: '1px solid #EF4444',
-                  color: '#FCA5A5',
+                  color: '#B91C1C',
                   display: 'flex',
                   alignItems: 'center',
                   gap: '0.6rem'
@@ -508,11 +512,11 @@ export const Submission = () => {
                 <div className="status-result-card">
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.2rem', flexWrap: 'wrap', gap: '0.5rem' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                      <span style={{ fontFamily: 'var(--font-heading)', fontSize: '1.3rem', fontWeight: 800, color: 'var(--accent-orange)' }}>
+                      <span style={{ fontFamily: 'var(--font-heading)', fontSize: '1.3rem', fontWeight: 800, color: 'var(--primary-cyan)' }}>
                         {trackedPaper.id}
                       </span>
                       {trackedPaper.isLocked && (
-                        <span className="badge" style={{ fontSize: '0.72rem', background: 'rgba(255, 255, 255, 0.08)', color: '#CBD5E1' }}>
+                        <span className="badge" style={{ fontSize: '0.72rem', background: 'rgba(11, 45, 107, 0.08)', color: 'var(--primary-navy)' }}>
                           <Lock size={12} style={{ marginRight: '4px' }} /> Locked
                         </span>
                       )}
@@ -524,7 +528,7 @@ export const Submission = () => {
                     </span>
                   </div>
 
-                  <h4 style={{ fontSize: '1.2rem', color: '#FFF', marginBottom: '0.6rem' }}>
+                  <h4 style={{ fontSize: '1.2rem', color: 'var(--primary-navy)', marginBottom: '0.6rem' }}>
                     {trackedPaper.title}
                   </h4>
 

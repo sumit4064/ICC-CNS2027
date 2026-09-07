@@ -1,10 +1,23 @@
 import { Gallery } from '../models/index.js';
 import { uploadObject, deleteObject } from '../services/b2StorageService.js';
+import { serverCache } from '../utils/cache.js';
+
+const CACHE_KEY = 'gallery:all';
 
 export const getGallery = async (req, res) => {
   try {
+    const cached = serverCache.get(CACHE_KEY);
+    if (cached) {
+      res.setHeader('Cache-Control', 'public, max-age=60, stale-while-revalidate=30');
+      return res.json({ success: true, data: cached });
+    }
+
     const gallery = await Gallery.find().lean();
-    res.json({ success: true, data: gallery || [] });
+    const data = gallery || [];
+    serverCache.set(CACHE_KEY, data, 60);
+
+    res.setHeader('Cache-Control', 'public, max-age=60, stale-while-revalidate=30');
+    res.json({ success: true, data });
   } catch (error) {
     console.error('Error in getGallery:', error.message);
     res.status(500).json({ success: false, message: 'Failed to fetch gallery items.' });
@@ -83,6 +96,8 @@ export const addGalleryItem = async (req, res) => {
       });
     }
 
+    serverCache.del(CACHE_KEY);
+
     res.status(201).json({ success: true, message: 'Photo added to gallery.', data: created });
   } catch (error) {
     console.error('Error in addGalleryItem:', error.message);
@@ -119,6 +134,8 @@ export const deleteGalleryItem = async (req, res) => {
         console.warn(`[Gallery] Failed to delete B2 object ${oldImageStorageKey}:`, delErr.message);
       }
     }
+
+    serverCache.del(CACHE_KEY);
 
     res.json({ success: true, message: 'Gallery item deleted.' });
   } catch (error) {

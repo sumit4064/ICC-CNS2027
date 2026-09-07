@@ -27,25 +27,25 @@ export const ToastProvider = ({ children }) => {
           bottom: '2rem',
           right: '2rem',
           zIndex: 3000,
-          background: toast.type === 'error' ? 'rgba(127, 29, 29, 0.95)' : 'rgba(0, 36, 41, 0.95)',
-          border: `1px solid ${toast.type === 'error' ? '#EF4444' : 'var(--accent-orange)'}`,
-          boxShadow: '0 10px 30px rgba(0, 0, 0, 0.5)',
+          background: toast.type === 'error' ? 'rgba(185, 28, 28, 0.95)' : 'var(--surface-white)',
+          border: `1px solid ${toast.type === 'error' ? '#EF4444' : 'var(--primary-cyan)'}`,
+          boxShadow: '0 10px 30px rgba(11, 45, 107, 0.15)',
           borderRadius: 'var(--radius-md)',
           padding: '1rem 1.4rem',
           display: 'flex',
           alignItems: 'center',
           gap: '0.8rem',
-          color: '#FFF',
+          color: toast.type === 'error' ? '#FFF' : 'var(--primary-navy)',
           backdropFilter: 'blur(16px)',
           animation: 'fadeIn 0.25s ease-out'
         }}>
           {toast.type === 'error' ? (
             <AlertCircle size={20} color="#EF4444" />
           ) : (
-            <CheckCircle size={20} color="var(--accent-orange)" />
+            <CheckCircle size={20} color="var(--primary-cyan)" />
           )}
           <span style={{ fontSize: '0.92rem', fontWeight: 600 }}>{toast.message}</span>
-          <button onClick={() => setToast(null)} style={{ color: 'var(--text-muted)', marginLeft: '0.5rem' }}>
+          <button onClick={() => setToast(null)} style={{ color: 'var(--text-muted)', marginLeft: '0.5rem', background: 'transparent', border: 'none', cursor: 'pointer' }}>
             <X size={16} />
           </button>
         </div>

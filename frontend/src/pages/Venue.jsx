@@ -25,16 +25,16 @@ export const Venue = () => {
                 style={{ width: '100%', height: '340px', objectFit: 'cover', borderRadius: 'var(--radius-lg)' }}
               />
               <div style={{ padding: '1.2rem 0.5rem 0.2rem' }}>
-                <h3 style={{ color: '#FFF', fontSize: '1.3rem' }}>A-Block Academic Complex & Convention Halls</h3>
-                <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>
+                <h3 style={{ color: 'var(--primary-navy)', fontSize: '1.3rem' }}>A-Block Academic Complex & Convention Halls</h3>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
                   Central conference venue with modern air-conditioned auditoriums, seminar halls, and hybrid streaming infrastructure.
                 </p>
               </div>
             </div>
 
             <div>
-              <span className="badge badge-orange" style={{ marginBottom: '1rem' }}>Campus Overview</span>
-              <h2 style={{ fontSize: '2.2rem', color: '#FFF', marginBottom: '1.2rem' }}>
+              <span className="badge badge-cyan" style={{ marginBottom: '1rem' }}>Campus Overview</span>
+              <h2 style={{ fontSize: '2.2rem', color: 'var(--primary-navy)', marginBottom: '1.2rem' }}>
                 Welcome to Vignan University Vadlamudi Campus
               </h2>
               <p style={{ color: 'var(--text-secondary)', fontSize: '1.05rem', lineHeight: '1.7', marginBottom: '1.2rem' }}>
@@ -42,11 +42,11 @@ export const Venue = () => {
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem', color: 'var(--text-primary)', fontSize: '0.95rem' }}>
                 <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem' }}>
-                  <MapPin size={18} color="var(--accent-orange)" style={{ flexShrink: 0, marginTop: '3px' }} />
+                  <MapPin size={18} color="var(--primary-cyan)" style={{ flexShrink: 0, marginTop: '3px' }} />
                   <span><strong>Address:</strong> Department of CSE, School of Computing and Informatics, VFSTR, Vadlamudi, Guntur-522213, Andhra Pradesh, India</span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
-                  <Navigation size={18} color="#00B4D8" />
+                  <Navigation size={18} color="var(--primary-cyan)" />
                   <span><strong>Campus Location:</strong> Vadlamudi, Guntur District, AP</span>
                 </div>
               </div>
@@ -54,26 +54,26 @@ export const Venue = () => {
           </div>
 
           {/* Travel & Transit Directions */}
-          <h2 style={{ fontSize: '2rem', color: '#FFF', marginBottom: '1.8rem', textAlign: 'center' }}>
+          <h2 style={{ fontSize: '2rem', color: 'var(--primary-navy)', marginBottom: '1.8rem', textAlign: 'center' }}>
             How to Reach the Venue
           </h2>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.8rem', marginBottom: '4rem' }}>
             <div className="glass-panel" style={{ padding: '2rem' }}>
-              <div style={{ width: '48px', height: '48px', borderRadius: 'var(--radius-md)', background: 'rgba(0, 180, 216, 0.15)', color: '#00B4D8', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.2rem' }}>
+              <div style={{ width: '48px', height: '48px', borderRadius: 'var(--radius-md)', background: 'rgba(0, 163, 199, 0.15)', color: 'var(--primary-cyan)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.2rem' }}>
                 <Plane size={24} />
               </div>
-              <h3 style={{ fontSize: '1.25rem', color: '#FFF', marginBottom: '0.6rem' }}>By Air (Vijayawada Airport)</h3>
+              <h3 style={{ fontSize: '1.25rem', color: 'var(--primary-navy)', marginBottom: '0.6rem' }}>By Air (Vijayawada Airport)</h3>
               <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: '1.6' }}>
                 Vijayawada International Airport (VGA - Gannavaram) is approx 38 km from the campus. Regular domestic flights connect from Delhi, Mumbai, Bengaluru, Hyderabad, and Chennai.
               </p>
             </div>
 
             <div className="glass-panel" style={{ padding: '2rem' }}>
-              <div style={{ width: '48px', height: '48px', borderRadius: 'var(--radius-md)', background: 'rgba(255, 107, 53, 0.15)', color: 'var(--accent-orange)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.2rem' }}>
+              <div style={{ width: '48px', height: '48px', borderRadius: 'var(--radius-md)', background: 'rgba(0, 163, 199, 0.15)', color: 'var(--primary-cyan)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.2rem' }}>
                 <Train size={24} />
               </div>
-              <h3 style={{ fontSize: '1.25rem', color: '#FFF', marginBottom: '0.6rem' }}>By Train (Vijayawada & Guntur)</h3>
+              <h3 style={{ fontSize: '1.25rem', color: 'var(--primary-navy)', marginBottom: '0.6rem' }}>By Train (Vijayawada & Guntur)</h3>
               <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: '1.6' }}>
                 Vijayawada Junction (BZA) is a major national railway hub (15 km). Guntur Railway Station (GNT) is 18 km away and Tenali Junction (TEL) is 14 km away. Taxis and buses are readily available.
               </p>
@@ -83,7 +83,7 @@ export const Venue = () => {
               <div style={{ width: '48px', height: '48px', borderRadius: 'var(--radius-md)', background: 'rgba(16, 185, 129, 0.15)', color: '#10B981', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.2rem' }}>
                 <Hotel size={24} />
               </div>
-              <h3 style={{ fontSize: '1.25rem', color: '#FFF', marginBottom: '0.6rem' }}>Accommodation</h3>
+              <h3 style={{ fontSize: '1.25rem', color: 'var(--primary-navy)', marginBottom: '0.6rem' }}>Accommodation</h3>
               <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: '1.6' }}>
                 University Guest House rooms are available for registered delegates on a prior booking basis. Reputed hotels and business stays in Guntur and Vijayawada are within a 20-minute drive.
               </p>
@@ -92,8 +92,8 @@ export const Venue = () => {
 
           {/* Interactive Google Map Embed */}
           <div className="glass-panel" style={{ padding: '1.5rem', overflow: 'hidden' }}>
-            <h3 style={{ color: '#FFF', fontSize: '1.3rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <MapPin size={20} color="var(--accent-orange)" /> Interactive Campus Map
+            <h3 style={{ color: 'var(--primary-navy)', fontSize: '1.3rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <MapPin size={20} color="var(--primary-cyan)" /> Interactive Campus Map
             </h3>
             <div style={{ borderRadius: 'var(--radius-md)', overflow: 'hidden', height: '380px' }}>
               <iframe

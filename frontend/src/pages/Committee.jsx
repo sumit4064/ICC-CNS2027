@@ -298,13 +298,14 @@ export const Committee = () => {
             <div style={{
               textAlign: 'center',
               padding: '4rem 2rem',
-              background: 'rgba(255, 107, 53, 0.08)',
-              border: '1px solid rgba(255, 107, 53, 0.25)',
+              background: 'var(--surface-white)',
+              border: '1px solid rgba(239, 68, 68, 0.25)',
               borderRadius: '20px',
               maxWidth: '540px',
-              margin: '0 auto'
+              margin: '0 auto',
+              boxShadow: 'var(--card-shadow)'
             }}>
-              <p style={{ color: '#FFF', fontSize: '1.1rem', marginBottom: '1.2rem' }}>
+              <p style={{ color: 'var(--primary-navy)', fontSize: '1.1rem', marginBottom: '1.2rem' }}>
                 {error}
               </p>
               <button
@@ -323,12 +324,13 @@ export const Committee = () => {
             <div style={{
               textAlign: 'center',
               padding: '5rem 2rem',
-              background: 'rgba(0, 36, 41, 0.5)',
-              border: '1px solid var(--glass-border)',
-              borderRadius: '24px'
+              background: 'var(--surface-white)',
+              border: '1px solid var(--border-subtle)',
+              borderRadius: '24px',
+              boxShadow: 'var(--card-shadow)'
             }}>
-              <Users size={48} color="var(--text-muted)" style={{ marginBottom: '1rem', opacity: 0.6 }} />
-              <h3 style={{ color: '#FFF', fontSize: '1.3rem', marginBottom: '0.5rem' }}>
+              <Users size={48} color="var(--primary-cyan)" style={{ marginBottom: '1rem', opacity: 0.6 }} />
+              <h3 style={{ color: 'var(--primary-navy)', fontSize: '1.3rem', marginBottom: '0.5rem' }}>
                 No committee members found
               </h3>
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', marginBottom: '1.5rem' }}>
@@ -378,7 +380,7 @@ export const Committee = () => {
                       onClick={() => setSelectedMember(member)}
                       title="Click to view member profile"
                     >
-                      {/* Photo Area with 3D Cutout */}
+                      {/* Photo Area with Balanced Rounded Frame */}
                       <div className="member-photo-wrapper">
                         {hasPhoto ? (
                           <img
@@ -386,6 +388,7 @@ export const Committee = () => {
                             alt={member.name}
                             className="member-photo"
                             loading="lazy"
+                            decoding="async"
                             onError={(e) => {
                               e.target.style.display = 'none';
                               const placeholderEl = e.target.parentElement?.querySelector('.member-placeholder');
@@ -406,15 +409,18 @@ export const Committee = () => {
                         </div>
                       </div>
 
+                      {/* Subtle Visual Divider */}
+                      <div className="member-card-divider" />
+
                       {/* Information Area */}
                       <div className="member-info-content">
                         <h3 className="member-name">
                           {member.name}
                         </h3>
 
-                        {member.role && (
+                        {(member.role || member.designation) && (
                           <div className="member-role">
-                            {member.role}
+                            {member.role || member.designation}
                           </div>
                         )}
 

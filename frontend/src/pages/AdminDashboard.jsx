@@ -646,7 +646,7 @@ export const AdminDashboard = () => {
                 <>
                   <div className="admin-metrics-grid">
                     <div className="metric-card">
-                      <div className="metric-icon-wrap" style={{ background: 'rgba(255, 107, 53, 0.15)', color: 'var(--accent-orange)' }}>
+                      <div className="metric-icon-wrap" style={{ background: 'rgba(0, 163, 199, 0.12)', color: 'var(--primary-cyan)' }}>
                         <Users size={24} />
                       </div>
                       <div>
@@ -656,7 +656,7 @@ export const AdminDashboard = () => {
                     </div>
 
                     <div className="metric-card">
-                      <div className="metric-icon-wrap" style={{ background: 'rgba(16, 185, 129, 0.15)', color: '#10B981' }}>
+                      <div className="metric-icon-wrap" style={{ background: 'rgba(16, 185, 129, 0.12)', color: '#10B981' }}>
                         <UserCheck size={24} />
                       </div>
                       <div>
@@ -666,7 +666,7 @@ export const AdminDashboard = () => {
                     </div>
 
                     <div className="metric-card">
-                      <div className="metric-icon-wrap" style={{ background: 'rgba(0, 180, 216, 0.15)', color: '#00B4D8' }}>
+                      <div className="metric-icon-wrap" style={{ background: 'rgba(0, 163, 199, 0.12)', color: 'var(--primary-cyan)' }}>
                         <FileText size={24} />
                       </div>
                       <div>
@@ -676,7 +676,7 @@ export const AdminDashboard = () => {
                     </div>
 
                     <div className="metric-card">
-                      <div className="metric-icon-wrap" style={{ background: 'rgba(234, 179, 8, 0.15)', color: '#EAB308' }}>
+                      <div className="metric-icon-wrap" style={{ background: 'rgba(234, 179, 8, 0.12)', color: '#D97706' }}>
                         <Clock size={24} />
                       </div>
                       <div>
@@ -686,7 +686,7 @@ export const AdminDashboard = () => {
                     </div>
 
                     <div className="metric-card">
-                      <div className="metric-icon-wrap" style={{ background: 'rgba(168, 85, 247, 0.15)', color: '#A855F7' }}>
+                      <div className="metric-icon-wrap" style={{ background: 'rgba(168, 85, 247, 0.12)', color: '#9333EA' }}>
                         <Shield size={24} />
                       </div>
                       <div>
@@ -699,7 +699,7 @@ export const AdminDashboard = () => {
                   {/* Recent Submissions Quick Table */}
                   <div className="admin-panel">
                     <div className="admin-panel-header">
-                      <h3 style={{ color: '#FFF', fontSize: '1.25rem' }}>Recent Paper Submissions</h3>
+                      <h3 style={{ color: 'var(--primary-navy)', fontSize: '1.25rem' }}>Recent Paper Submissions</h3>
                       <button onClick={() => setActiveTab('submissions')} className="card-link-more">
                         View All Papers →
                       </button>
@@ -727,9 +727,9 @@ export const AdminDashboard = () => {
                           ) : (
                             submissions.slice(0, 5).map((sub) => (
                               <tr key={sub.id}>
-                                <td style={{ fontWeight: 700, color: 'var(--accent-orange)' }}>{sub.id}</td>
-                                <td style={{ color: '#FFF', fontWeight: 600 }}>{sub.title}</td>
-                                <td style={{ color: '#00B4D8' }}>{sub.track}</td>
+                                <td style={{ fontWeight: 700, color: 'var(--primary-cyan)' }}>{sub.id}</td>
+                                <td style={{ color: 'var(--primary-navy)', fontWeight: 600 }}>{sub.title}</td>
+                                <td style={{ color: 'var(--primary-cyan)' }}>{sub.track}</td>
                                 <td>{sub.primaryAuthorEmail}</td>
                                 <td>
                                   <span className={`status-tag ${sub.status === 'Accepted' ? 'accepted' : sub.status === 'Rejected' ? 'rejected' : 'review'}`}>
@@ -751,7 +751,7 @@ export const AdminDashboard = () => {
                 <div className="admin-panel">
                   <div className="admin-panel-header">
                     <div>
-                      <h3 style={{ color: '#FFF', fontSize: '1.3rem' }}>Submitted Manuscripts (2027)</h3>
+                      <h3 style={{ color: 'var(--primary-navy)', fontSize: '1.3rem' }}>Submitted Manuscripts (2027)</h3>
                       <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>Review peer-review evaluations and update manuscript status.</p>
                     </div>
                   </div>
@@ -771,8 +771,8 @@ export const AdminDashboard = () => {
                         {submissions.length === 0 ? (
                           <tr>
                             <td colSpan="5" style={{ textAlign: 'center', padding: '3.5rem 1.5rem', color: 'var(--text-muted)' }}>
-                              <FileText size={40} color="var(--accent-orange)" style={{ margin: '0 auto 0.8rem', display: 'block', opacity: 0.6 }} />
-                              <div style={{ color: '#FFF', fontSize: '1.15rem', fontWeight: 600, marginBottom: '0.35rem' }}>
+                              <FileText size={40} color="var(--primary-cyan)" style={{ margin: '0 auto 0.8rem', display: 'block', opacity: 0.6 }} />
+                              <div style={{ color: 'var(--primary-navy)', fontSize: '1.15rem', fontWeight: 600, marginBottom: '0.35rem' }}>
                                 No manuscript submissions available yet.
                               </div>
                               <p style={{ color: 'var(--text-muted)', fontSize: '0.88rem', maxWidth: '420px', margin: '0 auto' }}>
@@ -783,10 +783,10 @@ export const AdminDashboard = () => {
                         ) : (
                           submissions.map((paper) => (
                             <tr key={paper.id}>
-                              <td style={{ fontWeight: 800, color: 'var(--accent-orange)' }}>{paper.id}</td>
+                              <td style={{ fontWeight: 800, color: 'var(--primary-cyan)' }}>{paper.id}</td>
                               <td>
-                                <div style={{ fontWeight: 600, color: '#FFF' }}>{paper.title}</div>
-                                <div style={{ fontSize: '0.8rem', color: '#00B4D8' }}>{paper.track}</div>
+                                <div style={{ fontWeight: 600, color: 'var(--primary-navy)' }}>{paper.title}</div>
+                                <div style={{ fontSize: '0.8rem', color: 'var(--primary-cyan)' }}>{paper.track}</div>
                               </td>
                               <td>
                                 <div>{paper.authors}</div>
@@ -856,7 +856,7 @@ export const AdminDashboard = () => {
                 <div className="admin-panel">
                   <div className="admin-panel-header">
                     <div>
-                      <h3 style={{ color: '#FFF', fontSize: '1.3rem' }}>Participant Registrations</h3>
+                      <h3 style={{ color: 'var(--primary-navy)', fontSize: '1.3rem' }}>Participant Registrations</h3>
                       <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>List of registered authors, scholars, and attendees.</p>
                     </div>
                   </div>
@@ -877,20 +877,20 @@ export const AdminDashboard = () => {
                       <tbody>
                         {registrations.map((reg) => (
                           <tr key={reg.id}>
-                            <td style={{ fontWeight: 700, color: 'var(--accent-orange)' }}>{reg.id}</td>
+                            <td style={{ fontWeight: 700, color: 'var(--primary-cyan)' }}>{reg.id}</td>
                             <td>
-                              <div style={{ color: '#FFF', fontWeight: 600 }}>{reg.fullName}</div>
+                              <div style={{ color: 'var(--primary-navy)', fontWeight: 600 }}>{reg.fullName}</div>
                               <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>{reg.email}</div>
-                              <div style={{ fontSize: '0.78rem', color: 'var(--text-dim)' }}>{reg.institution}</div>
+                              <div style={{ fontSize: '0.78rem', color: 'var(--text-secondary)' }}>{reg.institution}</div>
                             </td>
                             <td>{reg.participantType}</td>
                             <td>
-                              <span className={`badge ${reg.mode.includes('Online') ? 'badge-teal' : 'badge-emerald'}`}>
+                              <span className={`badge ${reg.mode.includes('Online') ? 'badge-cyan' : 'badge-emerald'}`}>
                                 {reg.mode}
                               </span>
                             </td>
                             <td>{reg.paperId || 'N/A'}</td>
-                            <td style={{ fontWeight: 700, color: 'var(--accent-orange)' }}>{reg.amountPaid}</td>
+                            <td style={{ fontWeight: 700, color: 'var(--primary-navy)' }}>{reg.amountPaid}</td>
                             <td>
                               <span className="badge badge-emerald">{reg.status}</span>
                             </td>
@@ -907,7 +907,7 @@ export const AdminDashboard = () => {
                 <div className="admin-panel">
                   <div className="admin-panel-header">
                     <div>
-                      <h3 style={{ color: '#FFF', fontSize: '1.3rem' }}>Keynote & Invited Speakers</h3>
+                      <h3 style={{ color: 'var(--primary-navy)', fontSize: '1.3rem' }}>Keynote & Invited Speakers</h3>
                       <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>Manage keynote speaker profiles and session topics.</p>
                     </div>
                     <button
@@ -966,21 +966,21 @@ export const AdminDashboard = () => {
                                     width: '36px',
                                     height: '36px',
                                     borderRadius: '50%',
-                                    background: 'rgba(0, 50, 56, 0.9)',
-                                    border: '1px solid rgba(0, 180, 216, 0.4)',
+                                    background: 'rgba(0, 163, 199, 0.1)',
+                                    border: '1px solid rgba(0, 163, 199, 0.3)',
                                     display: sp.image ? 'none' : 'flex',
                                     alignItems: 'center',
                                     justifyContent: 'center',
                                     fontWeight: 700,
                                     fontSize: '0.8rem',
-                                    color: '#48CAE4',
+                                    color: 'var(--primary-cyan)',
                                     flexShrink: 0
                                   }}
                                 >
                                   {sp.name ? sp.name.replace(/^(Dr\.|Prof\.|Mr\.|Mrs\.|Ms\.)\s+/i, '').charAt(0).toUpperCase() : 'S'}
                                 </div>
                                 <div>
-                                  <div style={{ fontWeight: 700, color: '#FFF' }}>{sp.name}</div>
+                                  <div style={{ fontWeight: 700, color: 'var(--primary-navy)' }}>{sp.name}</div>
                                   <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>{sp.designation}</div>
                                 </div>
                               </div>
@@ -988,7 +988,7 @@ export const AdminDashboard = () => {
                             <td>{sp.institution} ({sp.country})</td>
                             <td style={{ color: 'var(--text-primary)', maxWidth: '240px' }}>{sp.topic}</td>
                             <td>
-                              <span className="badge badge-orange">{sp.type}</span>
+                              <span className="badge badge-cyan">{sp.type}</span>
                             </td>
                             <td>
                               <div className="action-btn-group">
@@ -1031,7 +1031,7 @@ export const AdminDashboard = () => {
                   <div className="admin-panel">
                     <div className="admin-panel-header" style={{ flexWrap: 'wrap', gap: '1rem' }}>
                       <div>
-                        <h3 style={{ color: '#FFF', fontSize: '1.3rem' }}>
+                        <h3 style={{ color: 'var(--primary-navy)', fontSize: '1.3rem' }}>
                           Committee Members & Leadership ({filteredCommitteeForAdmin.length})
                         </h3>
                         <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>
@@ -1099,9 +1099,9 @@ export const AdminDashboard = () => {
                       gap: '1rem',
                       marginBottom: '1.5rem',
                       padding: '1rem',
-                      background: 'rgba(0, 20, 24, 0.6)',
+                      background: 'var(--surface-light)',
                       borderRadius: 'var(--radius-md)',
-                      border: '1px solid var(--glass-border)'
+                      border: '1px solid var(--border-cyan)'
                     }}>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', flex: 1, minWidth: '240px' }}>
                         <Search size={16} color="var(--text-muted)" />
@@ -1178,8 +1178,8 @@ export const AdminDashboard = () => {
                                             height: '40px',
                                             borderRadius: '50%',
                                             objectFit: 'contain',
-                                            background: 'rgba(0, 180, 216, 0.1)',
-                                            border: '1px solid rgba(0, 180, 216, 0.3)'
+                                            background: 'rgba(0, 163, 199, 0.1)',
+                                            border: '1px solid rgba(0, 163, 199, 0.3)'
                                           }}
                                           onError={(e) => {
                                             e.target.onerror = null;
@@ -1192,21 +1192,21 @@ export const AdminDashboard = () => {
                                           width: '40px',
                                           height: '40px',
                                           borderRadius: '50%',
-                                          background: 'rgba(0, 50, 56, 0.8)',
-                                          color: 'var(--accent-teal)',
+                                          background: 'rgba(0, 163, 199, 0.1)',
+                                          color: 'var(--primary-cyan)',
                                           display: 'flex',
                                           alignItems: 'center',
                                           justifyContent: 'center',
                                           fontWeight: 700,
                                           fontSize: '0.9rem',
-                                          border: '1px dashed rgba(0, 180, 216, 0.3)',
+                                          border: '1px dashed rgba(0, 163, 199, 0.4)',
                                           flexShrink: 0
                                         }}>
                                           {((mem.name || 'C').trim())[0]}
                                         </div>
                                       )}
                                       <div>
-                                        <div style={{ fontWeight: 700, color: '#FFF' }}>{mem.name || 'Unnamed Member'}</div>
+                                        <div style={{ fontWeight: 700, color: 'var(--primary-navy)' }}>{mem.name || 'Unnamed Member'}</div>
                                         <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
                                           {mem.designation || mem.email || mem.country || '—'}
                                         </div>
@@ -1214,7 +1214,7 @@ export const AdminDashboard = () => {
                                     </div>
                                   </td>
                                   <td>
-                                    <span style={{ color: 'var(--accent-orange)', fontWeight: 600, fontSize: '0.88rem' }}>
+                                    <span style={{ color: 'var(--primary-cyan)', fontWeight: 600, fontSize: '0.88rem' }}>
                                       {mem.role || '—'}
                                     </span>
                                   </td>
@@ -1233,7 +1233,7 @@ export const AdminDashboard = () => {
                                       </div>
                                     )}
                                   </td>
-                                  <td style={{ textAlign: 'center', fontWeight: 700, color: 'var(--accent-cyan)' }}>
+                                  <td style={{ textAlign: 'center', fontWeight: 700, color: 'var(--primary-cyan)' }}>
                                     {mem.displayOrder || '—'}
                                   </td>
                                   <td>
@@ -1284,7 +1284,7 @@ export const AdminDashboard = () => {
                 <div className="admin-panel">
                   <div className="admin-panel-header">
                     <div>
-                      <h3 style={{ color: '#FFF', fontSize: '1.3rem' }}>Important Dates & Deadlines</h3>
+                      <h3 style={{ color: 'var(--primary-navy)', fontSize: '1.3rem' }}>Important Dates & Deadlines</h3>
                       <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>Update deadlines dynamically from the dashboard.</p>
                     </div>
                     <button
@@ -1319,11 +1319,11 @@ export const AdminDashboard = () => {
                       <tbody>
                         {dates.map((d) => (
                           <tr key={d.id}>
-                            <td style={{ fontWeight: 800, color: 'var(--accent-orange)' }}>
+                            <td style={{ fontWeight: 800, color: 'var(--primary-cyan)' }}>
                               {d.displayDate || d.date}
                             </td>
-                            <td style={{ color: '#FFF', fontWeight: 600 }}>{d.title}</td>
-                            <td style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>{d.description}</td>
+                            <td style={{ color: 'var(--primary-navy)', fontWeight: 600 }}>{d.title}</td>
+                            <td style={{ color: 'var(--text-secondary)', fontSize: '0.85rem' }}>{d.description}</td>
                             <td>
                               <span className={`badge ${d.status === 'Open' ? 'badge-emerald' : 'badge-outline'}`}>
                                 {d.status}
@@ -1360,7 +1360,7 @@ export const AdminDashboard = () => {
                 <div className="admin-panel">
                   <div className="admin-panel-header">
                     <div>
-                      <h3 style={{ color: '#FFF', fontSize: '1.3rem' }}>Conference Tracks & Topics</h3>
+                      <h3 style={{ color: 'var(--primary-navy)', fontSize: '1.3rem' }}>Conference Tracks & Topics</h3>
                       <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>Manage research tracks and technical sub-topics.</p>
                     </div>
                     <button
@@ -1385,8 +1385,8 @@ export const AdminDashboard = () => {
                       <div key={track.id} className="glass-panel" style={{ padding: '1.5rem' }}>
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.8rem' }}>
                           <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
-                            <div className="track-num-badge orange">{track.number}</div>
-                            <h4 style={{ color: '#FFF', fontSize: '1.2rem' }}>{track.name}</h4>
+                            <div className="track-num-badge">{track.number}</div>
+                            <h4 style={{ color: 'var(--primary-navy)', fontSize: '1.2rem' }}>{track.name}</h4>
                           </div>
                           <div className="action-btn-group">
                             <button onClick={() => setEditingTrack(track)} className="action-icon-btn edit">
@@ -1397,7 +1397,6 @@ export const AdminDashboard = () => {
                             </button>
                           </div>
                         </div>
-                        <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginBottom: '0.8rem' }}>{track.summary}</p>
                         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
                           {(track.topics || []).map((tp, idx) => (
                             <span key={idx} className="badge badge-outline" style={{ fontSize: '0.75rem' }}>
@@ -1420,7 +1419,7 @@ export const AdminDashboard = () => {
                   <div className="admin-panel">
                     <div className="admin-panel-header">
                       <div>
-                        <h3 style={{ color: '#FFF', fontSize: '1.3rem' }}>Conference & Publication Settings</h3>
+                        <h3 style={{ color: 'var(--primary-navy)', fontSize: '1.3rem' }}>Conference & Publication Settings</h3>
                         <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>
                           Configure institutional titles, year (2027/2028), venue, countdown date, and publication information.
                         </p>
@@ -1531,12 +1530,12 @@ export const AdminDashboard = () => {
                         marginTop: '1.5rem',
                         padding: '1.2rem',
                         borderRadius: 'var(--radius-md)',
-                        background: 'rgba(0, 24, 28, 0.6)',
-                        border: '1px solid var(--glass-border)'
+                        background: 'var(--surface-light)',
+                        border: '1px solid var(--border-cyan)'
                       }}>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.8rem' }}>
-                          <BookOpen size={18} color="var(--accent-orange)" />
-                          <h4 style={{ color: '#FFF', fontSize: '1.1rem' }}>Publication & Proceedings Settings</h4>
+                          <BookOpen size={18} color="var(--primary-cyan)" />
+                          <h4 style={{ color: 'var(--primary-navy)', fontSize: '1.1rem' }}>Publication & Proceedings Settings</h4>
                         </div>
 
                         <div className="form-group">
@@ -1609,7 +1608,7 @@ export const AdminDashboard = () => {
         <div className="modal-backdrop" onClick={() => setEditingSpeaker(null)}>
           <div className="modal-card" style={{ maxWidth: '640px' }} onClick={(e) => e.stopPropagation()}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.2rem' }}>
-              <h3 style={{ color: '#FFF', fontSize: '1.4rem' }}>
+              <h3 style={{ color: 'var(--primary-navy)', fontSize: '1.4rem' }}>
                 {editingSpeaker.id.startsWith('new-') ? 'Add Keynote Speaker' : 'Edit Speaker Profile'}
               </h3>
               <button
@@ -1624,8 +1623,8 @@ export const AdminDashboard = () => {
             <form onSubmit={handleSaveSpeaker}>
               {/* Speaker Photo Upload & Management Section */}
               <div style={{
-                background: 'rgba(0, 20, 24, 0.7)',
-                border: '1px solid var(--glass-border)',
+                background: 'var(--surface-light)',
+                border: '1px solid var(--border-cyan)',
                 borderRadius: 'var(--radius-md)',
                 padding: '1.2rem',
                 marginBottom: '1.5rem',
@@ -1639,14 +1638,14 @@ export const AdminDashboard = () => {
                   width: '96px',
                   height: '112px',
                   borderRadius: '16px',
-                  background: '#001F24',
-                  border: '1px dashed rgba(0, 180, 216, 0.4)',
+                  background: 'var(--background-light)',
+                  border: '1px dashed rgba(0, 163, 199, 0.4)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   overflow: 'hidden',
                   flexShrink: 0,
-                  boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
+                  boxShadow: '0 4px 12px rgba(11, 45, 107, 0.08)',
                   position: 'relative'
                 }}>
                   {speakerPhotoPreview || (!speakerPhotoRemoved && editingSpeaker.image) ? (
@@ -1662,7 +1661,7 @@ export const AdminDashboard = () => {
                     />
                   ) : (
                     <div style={{ textAlign: 'center', color: 'var(--text-muted)', fontSize: '0.75rem', padding: '0.5rem' }}>
-                      <ImageIcon size={26} color="var(--accent-cyan)" style={{ marginBottom: '0.2rem' }} />
+                      <ImageIcon size={26} color="var(--primary-cyan)" style={{ marginBottom: '0.2rem' }} />
                       <div>No Photo</div>
                     </div>
                   )}
@@ -1671,7 +1670,7 @@ export const AdminDashboard = () => {
                 {/* Upload, Change & Remove Controls */}
                 <div style={{ flex: 1, minWidth: '220px' }}>
                   <label className="form-label" style={{ marginBottom: '0.4rem', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                    <Upload size={15} color="var(--accent-orange)" />
+                    <Upload size={15} color="var(--primary-cyan)" />
                     Speaker Photo
                   </label>
 
@@ -1830,7 +1829,7 @@ export const AdminDashboard = () => {
       {editingDate && (
         <div className="modal-backdrop" onClick={() => setEditingDate(null)}>
           <div className="modal-card" onClick={(e) => e.stopPropagation()}>
-            <h3 style={{ color: '#FFF', fontSize: '1.4rem', marginBottom: '1.2rem' }}>
+            <h3 style={{ color: 'var(--primary-navy)', fontSize: '1.4rem', marginBottom: '1.2rem' }}>
               {editingDate.id.startsWith('new-') ? 'Add Important Date' : 'Edit Date Milestone'}
             </h3>
 
@@ -1911,7 +1910,7 @@ export const AdminDashboard = () => {
       {editingTrack && (
         <div className="modal-backdrop" onClick={() => setEditingTrack(null)}>
           <div className="modal-card" onClick={(e) => e.stopPropagation()}>
-            <h3 style={{ color: '#FFF', fontSize: '1.4rem', marginBottom: '1.2rem' }}>
+            <h3 style={{ color: 'var(--primary-navy)', fontSize: '1.4rem', marginBottom: '1.2rem' }}>
               {editingTrack.id.startsWith('new-') ? 'Add Track' : 'Edit Track Details'}
             </h3>
 
@@ -1993,19 +1992,19 @@ export const AdminDashboard = () => {
             <div className="pdf-review-header">
               <div style={{ flex: 1, minWidth: '240px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', marginBottom: '0.3rem', flexWrap: 'wrap' }}>
-                  <span style={{ fontFamily: 'var(--font-heading)', color: 'var(--accent-orange)', fontWeight: 800, fontSize: '1.25rem', letterSpacing: '0.05em' }}>
+                  <span style={{ fontFamily: 'var(--font-heading)', color: 'var(--primary-cyan)', fontWeight: 800, fontSize: '1.25rem', letterSpacing: '0.05em' }}>
                     {viewingPaper.id}
                   </span>
                   <span className={`status-tag ${viewingPaper.status === 'Accepted' ? 'accepted' : viewingPaper.status === 'Rejected' ? 'rejected' : 'review'}`}>
                     {viewingPaper.status === 'Accepted' ? '✓ Accepted' : viewingPaper.status === 'Rejected' ? '✕ Rejected' : '⏳ Under Review'}
                   </span>
                   {viewingPaper.isLocked && (
-                    <span className="badge" style={{ fontSize: '0.72rem', background: 'rgba(255, 255, 255, 0.08)', color: '#CBD5E1' }}>
+                    <span className="badge" style={{ fontSize: '0.72rem', background: 'rgba(11, 45, 107, 0.06)', color: 'var(--text-muted)' }}>
                       <Lock size={12} style={{ marginRight: '4px' }} /> Locked
                     </span>
                   )}
                 </div>
-                <h3 style={{ color: '#FFF', fontSize: '1.15rem', fontWeight: 600, lineHeight: '1.35', margin: 0 }}>
+                <h3 style={{ color: 'var(--primary-navy)', fontSize: '1.15rem', fontWeight: 600, lineHeight: '1.35', margin: 0 }}>
                   {viewingPaper.title}
                 </h3>
               </div>
@@ -2022,7 +2021,7 @@ export const AdminDashboard = () => {
                   type="button"
                   onClick={() => setViewingPaper(null)}
                   style={{
-                    background: 'rgba(255, 255, 255, 0.08)',
+                    background: 'var(--surface-light)',
                     border: '1px solid var(--glass-border)',
                     color: 'var(--text-muted)',
                     cursor: 'pointer',
@@ -2070,7 +2069,7 @@ export const AdminDashboard = () => {
                   >
                     <ZoomOut size={15} />
                   </button>
-                  <span style={{ fontSize: '0.8rem', color: 'var(--accent-cyan)', fontWeight: 600, minWidth: '42px', textAlign: 'center' }}>
+                  <span style={{ fontSize: '0.8rem', color: 'var(--primary-cyan)', fontWeight: 600, minWidth: '42px', textAlign: 'center' }}>
                     {pdfZoom}%
                   </span>
                   <button
@@ -2124,27 +2123,27 @@ export const AdminDashboard = () => {
                       href={viewingPaper.filePath ? (viewingPaper.filePath.startsWith('http') ? viewingPaper.filePath : viewingPaper.filePath.startsWith('/') ? viewingPaper.filePath : '/' + viewingPaper.filePath) : '/uploads/papers/sample_paper.pdf'}
                       target="_blank"
                       rel="noreferrer"
-                      style={{ color: 'var(--accent-orange)', textDecoration: 'underline', fontWeight: 600 }}
+                      style={{ color: 'var(--primary-cyan)', textDecoration: 'underline', fontWeight: 600 }}
                     >
                       Download Original PDF
                     </a>
                   </div>
                 </div>
               ) : (
-                <div style={{ background: 'rgba(0, 20, 24, 0.7)', padding: '1.25rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--glass-border)' }}>
+                <div style={{ background: 'var(--surface-light)', padding: '1.25rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--glass-border)' }}>
                   <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1rem', fontSize: '0.88rem', color: 'var(--text-secondary)', marginBottom: '1.25rem' }}>
-                    <div><strong style={{ color: '#FFF' }}>Primary Author:</strong> {viewingPaper.authors}</div>
-                    <div><strong style={{ color: '#FFF' }}>Author Email:</strong> {viewingPaper.primaryAuthorEmail}</div>
-                    <div><strong style={{ color: '#FFF' }}>Institution:</strong> {viewingPaper.institution}</div>
-                    <div><strong style={{ color: '#FFF' }}>Country:</strong> {viewingPaper.country || 'India'}</div>
-                    <div><strong style={{ color: '#FFF' }}>Conference Track:</strong> <span style={{ color: 'var(--accent-cyan)' }}>{viewingPaper.track}</span></div>
-                    <div><strong style={{ color: '#FFF' }}>Submission Date:</strong> {new Date(viewingPaper.submittedAt).toLocaleDateString()}</div>
-                    <div><strong style={{ color: '#FFF' }}>Uploaded File:</strong> {viewingPaper.fileName || 'manuscript.pdf'}</div>
-                    <div><strong style={{ color: '#FFF' }}>Keywords:</strong> {viewingPaper.keywords || 'N/A'}</div>
+                    <div><strong style={{ color: 'var(--primary-navy)' }}>Primary Author:</strong> {viewingPaper.authors}</div>
+                    <div><strong style={{ color: 'var(--primary-navy)' }}>Author Email:</strong> {viewingPaper.primaryAuthorEmail}</div>
+                    <div><strong style={{ color: 'var(--primary-navy)' }}>Institution:</strong> {viewingPaper.institution}</div>
+                    <div><strong style={{ color: 'var(--primary-navy)' }}>Country:</strong> {viewingPaper.country || 'India'}</div>
+                    <div><strong style={{ color: 'var(--primary-navy)' }}>Conference Track:</strong> <span style={{ color: 'var(--primary-cyan)', fontWeight: 600 }}>{viewingPaper.track}</span></div>
+                    <div><strong style={{ color: 'var(--primary-navy)' }}>Submission Date:</strong> {new Date(viewingPaper.submittedAt).toLocaleDateString()}</div>
+                    <div><strong style={{ color: 'var(--primary-navy)' }}>Uploaded File:</strong> {viewingPaper.fileName || 'manuscript.pdf'}</div>
+                    <div><strong style={{ color: 'var(--primary-navy)' }}>Keywords:</strong> {viewingPaper.keywords || 'N/A'}</div>
                   </div>
 
-                  <div style={{ background: 'rgba(0, 15, 18, 0.8)', padding: '1rem', borderRadius: 'var(--radius-sm)', border: '1px solid rgba(0, 180, 216, 0.2)' }}>
-                    <div style={{ fontSize: '0.78rem', color: 'var(--accent-orange)', fontWeight: 700, letterSpacing: '0.05em', marginBottom: '0.5rem' }}>
+                  <div style={{ background: '#FFF', padding: '1rem', borderRadius: 'var(--radius-sm)', border: '1px solid var(--glass-border)' }}>
+                    <div style={{ fontSize: '0.78rem', color: 'var(--primary-cyan)', fontWeight: 700, letterSpacing: '0.05em', marginBottom: '0.5rem' }}>
                       ABSTRACT SUMMARY
                     </div>
                     <p style={{ fontSize: '0.9rem', color: 'var(--text-primary)', lineHeight: '1.6', margin: 0, whiteSpace: 'pre-line' }}>
@@ -2167,7 +2166,7 @@ export const AdminDashboard = () => {
                     Decided by <strong>{viewingPaper.decidedBy || 'Conference Administrator'}</strong> on {viewingPaper.decisionDate ? new Date(viewingPaper.decisionDate).toLocaleString() : new Date(viewingPaper.updatedAt || viewingPaper.submittedAt).toLocaleString()}
                   </div>
                   {viewingPaper.reviewNotes && (
-                    <div style={{ fontSize: '0.85rem', color: '#FFF', marginTop: '0.35rem', fontStyle: 'italic' }}>
+                    <div style={{ fontSize: '0.85rem', color: 'var(--primary-navy)', marginTop: '0.35rem', fontStyle: 'italic' }}>
                       "{viewingPaper.reviewNotes}"
                     </div>
                   )}
@@ -2184,7 +2183,7 @@ export const AdminDashboard = () => {
             ) : (
               <div className="decision-audit-banner review">
                 <div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 700, color: 'var(--accent-cyan)', fontSize: '0.95rem' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 700, color: 'var(--primary-cyan)', fontSize: '0.95rem' }}>
                     <Clock size={16} />
                     <span>MANUSCRIPT UNDER ACTIVE PEER REVIEW</span>
                   </div>
@@ -2228,14 +2227,14 @@ export const AdminDashboard = () => {
           <div className="modal-card" style={{ maxWidth: '520px' }} onClick={(e) => e.stopPropagation()}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem', color: '#10B981' }}>
               <CheckCircle2 size={28} />
-              <h3 style={{ color: '#FFF', fontSize: '1.25rem', margin: 0 }}>Confirm Manuscript Acceptance</h3>
+              <h3 style={{ color: 'var(--primary-navy)', fontSize: '1.25rem', margin: 0 }}>Confirm Manuscript Acceptance</h3>
             </div>
 
             <div style={{ background: 'rgba(16, 185, 129, 0.08)', border: '1px solid rgba(16, 185, 129, 0.3)', borderRadius: 'var(--radius-md)', padding: '1rem', marginBottom: '1.2rem' }}>
-              <div style={{ fontWeight: 700, color: 'var(--accent-orange)', fontSize: '0.9rem', marginBottom: '0.25rem' }}>
+              <div style={{ fontWeight: 700, color: 'var(--primary-cyan)', fontSize: '0.9rem', marginBottom: '0.25rem' }}>
                 {acceptConfirmPaper.id}
               </div>
-              <div style={{ color: '#FFF', fontSize: '0.95rem', fontWeight: 600, marginBottom: '0.4rem' }}>
+              <div style={{ color: 'var(--primary-navy)', fontSize: '0.95rem', fontWeight: 600, marginBottom: '0.4rem' }}>
                 {acceptConfirmPaper.title}
               </div>
               <div style={{ fontSize: '0.82rem', color: 'var(--text-secondary)' }}>
@@ -2291,14 +2290,14 @@ export const AdminDashboard = () => {
           <div className="modal-card" style={{ maxWidth: '520px' }} onClick={(e) => e.stopPropagation()}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem', color: '#EF4444' }}>
               <XCircle size={28} />
-              <h3 style={{ color: '#FFF', fontSize: '1.25rem', margin: 0 }}>Confirm Manuscript Rejection</h3>
+              <h3 style={{ color: 'var(--primary-navy)', fontSize: '1.25rem', margin: 0 }}>Confirm Manuscript Rejection</h3>
             </div>
 
             <div style={{ background: 'rgba(239, 68, 68, 0.08)', border: '1px solid rgba(239, 68, 68, 0.3)', borderRadius: 'var(--radius-md)', padding: '1rem', marginBottom: '1.2rem' }}>
-              <div style={{ fontWeight: 700, color: 'var(--accent-orange)', fontSize: '0.9rem', marginBottom: '0.25rem' }}>
+              <div style={{ fontWeight: 700, color: 'var(--primary-cyan)', fontSize: '0.9rem', marginBottom: '0.25rem' }}>
                 {rejectConfirmPaper.id}
               </div>
-              <div style={{ color: '#FFF', fontSize: '0.95rem', fontWeight: 600, marginBottom: '0.4rem' }}>
+              <div style={{ color: 'var(--primary-navy)', fontSize: '0.95rem', fontWeight: 600, marginBottom: '0.4rem' }}>
                 {rejectConfirmPaper.title}
               </div>
               <div style={{ fontSize: '0.82rem', color: 'var(--text-secondary)' }}>
@@ -2352,7 +2351,7 @@ export const AdminDashboard = () => {
         <div className="modal-backdrop" onClick={() => setEditingCommitteeMember(null)}>
           <div className="modal-card" style={{ maxWidth: '650px' }} onClick={(e) => e.stopPropagation()}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.2rem' }}>
-              <h3 style={{ color: '#FFF', fontSize: '1.4rem' }}>
+              <h3 style={{ color: 'var(--primary-navy)', fontSize: '1.4rem' }}>
                 {editingCommitteeMember.id.startsWith('new-') ? 'Add Committee Member' : 'Edit Committee Member'}
               </h3>
               <button
@@ -2366,7 +2365,7 @@ export const AdminDashboard = () => {
             <form onSubmit={handleSaveCommitteeMember}>
               {/* Photo Upload & Preview Section */}
               <div style={{
-                background: 'rgba(0, 20, 24, 0.7)',
+                background: 'var(--surface-light)',
                 border: '1px solid var(--glass-border)',
                 borderRadius: 'var(--radius-md)',
                 padding: '1.2rem',
@@ -2381,8 +2380,8 @@ export const AdminDashboard = () => {
                   width: '90px',
                   height: '100px',
                   borderRadius: '16px',
-                  background: 'rgba(0, 36, 41, 0.9)',
-                  border: '1px dashed rgba(0, 180, 216, 0.4)',
+                  background: '#FFFFFF',
+                  border: '1px dashed var(--primary-cyan)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -2397,12 +2396,12 @@ export const AdminDashboard = () => {
                         width: '100%',
                         height: '100%',
                         objectFit: 'contain',
-                        filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.5))'
+                        filter: 'drop-shadow(0 4px 8px rgba(11, 45, 107, 0.15))'
                       }}
                     />
                   ) : (
                     <div style={{ textAlign: 'center', color: 'var(--text-muted)', fontSize: '0.75rem', padding: '0.5rem' }}>
-                      <ImageIcon size={24} color="var(--accent-cyan)" style={{ marginBottom: '0.2rem' }} />
+                      <ImageIcon size={24} color="var(--primary-cyan)" style={{ marginBottom: '0.2rem' }} />
                       <div>No Photo</div>
                     </div>
                   )}
@@ -2411,7 +2410,7 @@ export const AdminDashboard = () => {
                 {/* Upload & Actions */}
                 <div style={{ flex: 1, minWidth: '200px' }}>
                   <label className="form-label" style={{ marginBottom: '0.4rem', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                    <Upload size={15} color="var(--accent-orange)" />
+                    <Upload size={15} color="var(--primary-cyan)" />
                     Member Portrait / Photo
                   </label>
                   <input
@@ -2563,9 +2562,9 @@ export const AdminDashboard = () => {
                     id="member-active-toggle"
                     checked={editingCommitteeMember.isActive !== false}
                     onChange={(e) => setEditingCommitteeMember({ ...editingCommitteeMember, isActive: e.target.checked })}
-                    style={{ width: '18px', height: '18px', accentColor: 'var(--accent-orange)' }}
+                    style={{ width: '18px', height: '18px', accentColor: 'var(--primary-cyan)' }}
                   />
-                  <label htmlFor="member-active-toggle" style={{ color: '#FFF', fontSize: '0.9rem', cursor: 'pointer' }}>
+                  <label htmlFor="member-active-toggle" style={{ color: 'var(--primary-navy)', fontSize: '0.9rem', cursor: 'pointer' }}>
                     Active (Visible on public Committee page)
                   </label>
                 </div>

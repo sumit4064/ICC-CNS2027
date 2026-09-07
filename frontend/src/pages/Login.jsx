@@ -64,7 +64,9 @@ export const Login = () => {
                 className={`btn-card-action ${loginRole === 'admin' ? 'btn-primary-glow' : ''}`}
                 style={{
                   justifyContent: 'center',
-                  background: loginRole === 'admin' ? 'var(--accent-orange)' : 'rgba(0, 24, 28, 0.6)'
+                  background: loginRole === 'admin' ? 'var(--primary-cyan)' : 'var(--surface-white)',
+                  color: loginRole === 'admin' ? '#FFF' : 'var(--primary-navy)',
+                  borderColor: loginRole === 'admin' ? 'var(--primary-cyan)' : 'var(--border-subtle)'
                 }}
               >
                 <ShieldCheck size={16} /> Admin Login
@@ -80,7 +82,9 @@ export const Login = () => {
                 className={`btn-card-action ${loginRole === 'participant' ? 'btn-primary-glow' : ''}`}
                 style={{
                   justifyContent: 'center',
-                  background: loginRole === 'participant' ? 'var(--accent-orange)' : 'rgba(0, 24, 28, 0.6)'
+                  background: loginRole === 'participant' ? 'var(--primary-cyan)' : 'var(--surface-white)',
+                  color: loginRole === 'participant' ? '#FFF' : 'var(--primary-navy)',
+                  borderColor: loginRole === 'participant' ? 'var(--primary-cyan)' : 'var(--border-subtle)'
                 }}
               >
                 <User size={16} /> Author / Attendee
@@ -90,7 +94,7 @@ export const Login = () => {
             <form onSubmit={handleSubmit}>
               <div className="form-group">
                 <label className="form-label">
-                  <Mail size={15} color="var(--accent-orange)" /> Email Address
+                  <Mail size={15} color="var(--primary-cyan)" /> Email Address
                 </label>
                 <input
                   type="email"
@@ -105,7 +109,7 @@ export const Login = () => {
 
               <div className="form-group">
                 <label className="form-label">
-                  <Lock size={15} color="var(--accent-orange)" /> Password
+                  <Lock size={15} color="var(--primary-cyan)" /> Password
                 </label>
                 <input
                   type="password"

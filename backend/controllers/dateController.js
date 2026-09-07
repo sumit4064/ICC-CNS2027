@@ -1,9 +1,22 @@
 import { DateModel } from '../models/index.js';
+import { serverCache } from '../utils/cache.js';
+
+const CACHE_KEY = 'dates:all';
 
 export const getDates = async (req, res) => {
   try {
+    const cached = serverCache.get(CACHE_KEY);
+    if (cached) {
+      res.setHeader('Cache-Control', 'public, max-age=60, stale-while-revalidate=30');
+      return res.json({ success: true, data: cached });
+    }
+
     const dates = await DateModel.find().lean();
-    res.json({ success: true, data: dates || [] });
+    const data = dates || [];
+    serverCache.set(CACHE_KEY, data, 60);
+
+    res.setHeader('Cache-Control', 'public, max-age=60, stale-while-revalidate=30');
+    res.json({ success: true, data });
   } catch (error) {
     console.error('Error in getDates:', error.message);
     res.status(500).json({ success: false, message: 'Failed to fetch dates.' });
@@ -29,6 +42,9 @@ export const createDate = async (req, res) => {
     };
 
     const created = await DateModel.create(newDate);
+
+    serverCache.del(CACHE_KEY);
+
     res.status(201).json({ success: true, message: 'Date added successfully.', data: created });
   } catch (error) {
     console.error('Error in createDate:', error.message);
@@ -51,6 +67,8 @@ export const updateDate = async (req, res) => {
       { new: true }
     ).lean();
 
+    serverCache.del(CACHE_KEY);
+
     res.json({ success: true, message: 'Date updated successfully.', data: updated });
   } catch (error) {
     console.error('Error in updateDate:', error.message);
@@ -66,6 +84,8 @@ export const deleteDate = async (req, res) => {
     if (!deleted) {
       return res.status(404).json({ success: false, message: 'Date not found.' });
     }
+
+    serverCache.del(CACHE_KEY);
 
     res.json({ success: true, message: 'Date deleted successfully.' });
   } catch (error) {

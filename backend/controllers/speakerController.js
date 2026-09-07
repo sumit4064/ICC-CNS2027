@@ -1,10 +1,23 @@
 import { Speaker } from '../models/index.js';
 import { uploadObject, deleteObject } from '../services/b2StorageService.js';
+import { serverCache } from '../utils/cache.js';
+
+const CACHE_KEY_ALL = 'speakers:all';
 
 export const getSpeakers = async (req, res) => {
   try {
+    const cached = serverCache.get(CACHE_KEY_ALL);
+    if (cached) {
+      res.setHeader('Cache-Control', 'public, max-age=60, stale-while-revalidate=30');
+      return res.json({ success: true, data: cached });
+    }
+
     const speakers = await Speaker.find().lean();
-    res.json({ success: true, data: speakers || [] });
+    const data = speakers || [];
+    serverCache.set(CACHE_KEY_ALL, data, 60);
+
+    res.setHeader('Cache-Control', 'public, max-age=60, stale-while-revalidate=30');
+    res.json({ success: true, data });
   } catch (error) {
     console.error('Error in getSpeakers:', error.message);
     res.status(500).json({ success: false, message: 'Failed to fetch speakers.' });
@@ -13,10 +26,20 @@ export const getSpeakers = async (req, res) => {
 
 export const getSpeakerById = async (req, res) => {
   try {
+    const cacheKey = `speaker:${req.params.id}`;
+    const cached = serverCache.get(cacheKey);
+    if (cached) {
+      res.setHeader('Cache-Control', 'public, max-age=60, stale-while-revalidate=30');
+      return res.json({ success: true, data: cached });
+    }
+
     const speaker = await Speaker.findOne({ id: req.params.id }).lean();
     if (!speaker) {
       return res.status(404).json({ success: false, message: 'Speaker not found.' });
     }
+
+    serverCache.set(cacheKey, speaker, 60);
+    res.setHeader('Cache-Control', 'public, max-age=60, stale-while-revalidate=30');
     res.json({ success: true, data: speaker });
   } catch (error) {
     console.error('Error in getSpeakerById:', error.message);
@@ -47,6 +70,11 @@ export const createSpeaker = async (req, res) => {
     };
 
     const created = await Speaker.create(newSpeaker);
+
+    // Invalidate cache
+    serverCache.delPrefix('speaker');
+    serverCache.del('conference:details');
+
     res.status(201).json({ success: true, message: 'Speaker added successfully.', data: created });
   } catch (error) {
     console.error('Error in createSpeaker:', error.message);
@@ -68,6 +96,9 @@ export const updateSpeaker = async (req, res) => {
       { $set: { ...req.body, id } },
       { returnDocument: 'after', new: true }
     ).lean();
+
+    // Invalidate cache
+    serverCache.delPrefix('speaker');
 
     res.json({ success: true, message: 'Speaker updated successfully.', data: updated });
   } catch (error) {
@@ -165,6 +196,8 @@ export const uploadSpeakerImage = async (req, res) => {
       }
     }
 
+    serverCache.delPrefix('speaker');
+
     return res.json({
       success: true,
       message: 'Speaker photograph uploaded successfully.',
@@ -216,6 +249,8 @@ export const deleteSpeakerImage = async (req, res) => {
       }
     }
 
+    serverCache.delPrefix('speaker');
+
     return res.json({
       success: true,
       message: 'Speaker photograph removed successfully.',
@@ -252,6 +287,9 @@ export const deleteSpeaker = async (req, res) => {
         console.warn(`[Speaker] Failed to delete B2 object ${oldImageStorageKey}:`, delErr.message);
       }
     }
+
+    serverCache.delPrefix('speaker');
+    serverCache.del('conference:details');
 
     return res.json({ success: true, message: 'Speaker deleted successfully.' });
   } catch (error) {

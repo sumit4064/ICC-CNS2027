@@ -1,4 +1,5 @@
 import { Registration } from '../models/index.js';
+import { serverCache } from '../utils/cache.js';
 
 export const getRegistrations = async (req, res) => {
   try {
@@ -69,6 +70,8 @@ export const createRegistration = async (req, res) => {
     };
 
     const created = await Registration.create(newReg);
+    serverCache.del('conference:details');
+
     res.status(201).json({
       success: true,
       message: 'Registration submitted successfully!',

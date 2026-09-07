@@ -1,6 +1,60 @@
 const BASE_URL = (import.meta.env.VITE_API_BASE_URL || '/api').replace(/\/+$/, '');
 
+// In-memory cache for safe, public read-only requests
+const clientCache = new Map();
+const inFlightRequests = new Map();
+
+const CACHE_TTL_MS = 60 * 1000; // 60 seconds
+
+// Safe endpoints eligible for client-side caching
+const CACHEABLE_ENDPOINTS = [
+  '/conference',
+  '/dates',
+  '/speakers',
+  '/tracks',
+  '/committee',
+  '/gallery',
+  '/registrations/categories'
+];
+
+const isCacheable = (endpoint, options) => {
+  const method = (options.method || 'GET').toUpperCase();
+  if (method !== 'GET') return false;
+  // If authorization header is present on non-public endpoints, do not cache
+  if (options.headers?.Authorization && !endpoint.startsWith('/committee')) return false;
+  return CACHEABLE_ENDPOINTS.some((prefix) => endpoint.startsWith(prefix));
+};
+
+export const clearClientCache = (prefix) => {
+  if (!prefix) {
+    clientCache.clear();
+    return;
+  }
+  for (const key of clientCache.keys()) {
+    if (key.startsWith(prefix)) {
+      clientCache.delete(key);
+    }
+  }
+};
+
 async function request(endpoint, options = {}) {
+  const method = (options.method || 'GET').toUpperCase();
+  const shouldCache = isCacheable(endpoint, options);
+  const cacheKey = endpoint;
+
+  // 1. Check in-memory cache
+  if (shouldCache) {
+    const cached = clientCache.get(cacheKey);
+    if (cached && Date.now() < cached.expiry) {
+      return cached.data;
+    }
+
+    // 2. Deduplicate simultaneous in-flight requests
+    if (inFlightRequests.has(cacheKey)) {
+      return inFlightRequests.get(cacheKey);
+    }
+  }
+
   const url = `${BASE_URL}${endpoint}`;
   const headers = {
     ...options.headers
@@ -10,34 +64,67 @@ async function request(endpoint, options = {}) {
     headers['Content-Type'] = 'application/json';
   }
 
-  let response;
-  try {
-    response = await fetch(url, {
-      ...options,
-      headers
-    });
-  } catch (err) {
-    throw new Error('Could not connect to backend server. Make sure the backend is running on port 5000.');
-  }
-
-  let data;
-  try {
-    data = await response.json();
-  } catch (e) {
-    data = {};
-  }
-
-  if (!response.ok) {
-    if (response.status === 502 || response.status === 504 || response.status === 500) {
-      if (data.message) {
-        throw new Error(data.message);
-      }
-      throw new Error('Backend server is not responding (port 5000 offline or proxy error).');
+  const fetchPromise = (async () => {
+    let response;
+    try {
+      response = await fetch(url, {
+        ...options,
+        headers
+      });
+    } catch (err) {
+      throw new Error('Could not connect to backend server. Make sure the backend is running on port 5000.');
     }
-    throw new Error(data.message || 'An error occurred with the request.');
+
+    let data;
+    try {
+      data = await response.json();
+    } catch (e) {
+      data = {};
+    }
+
+    if (!response.ok) {
+      if (response.status === 502 || response.status === 504 || response.status === 500) {
+        if (data.message) {
+          throw new Error(data.message);
+        }
+        throw new Error('Backend server is not responding (port 5000 offline or proxy error).');
+      }
+      throw new Error(data.message || 'An error occurred with the request.');
+    }
+
+    // Store in cache if successful
+    if (shouldCache && data.success) {
+      clientCache.set(cacheKey, {
+        data,
+        expiry: Date.now() + CACHE_TTL_MS
+      });
+    }
+
+    // Invalidate cache on mutations
+    if (method !== 'GET') {
+      if (endpoint.startsWith('/speakers')) clearClientCache('/speakers');
+      else if (endpoint.startsWith('/committee')) clearClientCache('/committee');
+      else if (endpoint.startsWith('/tracks')) clearClientCache('/tracks');
+      else if (endpoint.startsWith('/dates')) clearClientCache('/dates');
+      else if (endpoint.startsWith('/conference')) clearClientCache('/conference');
+      else if (endpoint.startsWith('/gallery')) clearClientCache('/gallery');
+      else if (endpoint.startsWith('/registrations')) clearClientCache('/registrations');
+      else clearClientCache();
+    }
+
+    return data;
+  })();
+
+  if (shouldCache) {
+    inFlightRequests.set(cacheKey, fetchPromise);
+    try {
+      return await fetchPromise;
+    } finally {
+      inFlightRequests.delete(cacheKey);
+    }
   }
 
-  return data;
+  return fetchPromise;
 }
 
 export const api = {
@@ -234,5 +321,8 @@ export const api = {
   getMessages: (token) =>
     request('/contact', {
       headers: { Authorization: `Bearer ${token}` }
-    })
+    }),
+
+  // Cache Control
+  clearCache: clearClientCache
 };

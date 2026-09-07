@@ -17,5 +17,7 @@ const speakerSchema = new mongoose.Schema({
   versionKey: false
 });
 
+speakerSchema.index({ type: 1 });
+
 export const Speaker = mongoose.models.Speaker || mongoose.model('Speaker', speakerSchema);
 export default Speaker;

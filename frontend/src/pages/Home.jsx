@@ -6,12 +6,14 @@ import { StatCounter } from '../components/StatCounter';
 import { SpeakerCard } from '../components/SpeakerCard';
 import { SpeakerModal } from '../components/SpeakerModal';
 import { ConferenceIntro } from '../components/ConferenceIntro';
+import { HeroBackground } from '../components/HeroBackground';
 import {
   Calendar,
   MapPin,
   Laptop,
   ArrowRight,
   Sparkles,
+  Settings,
   ChevronRight,
   ChevronDown,
   Building,
@@ -71,32 +73,32 @@ export const Home = () => {
 
   const whyAttendCards = [
     {
-      icon: <Lightbulb size={24} color="#FF6B35" />,
+      icon: <Lightbulb size={24} color="#00A3C7" />,
       title: "Research & Innovation",
       desc: "Engage with groundbreaking paradigms in Cognitive AI, Deep Neural Architectures, and 5G/6G autonomous networking systems."
     },
     {
-      icon: <Users size={24} color="#00B4D8" />,
+      icon: <Users size={24} color="#0284C7" />,
       title: "Academic Collaboration",
       desc: "Foster cross-institutional research partnerships with leading scholars from top global universities and research laboratories."
     },
     {
-      icon: <Building size={24} color="#10B981" />,
+      icon: <Building size={24} color="#059669" />,
       title: "Industry Interaction",
       desc: "Connect with high-tech enterprise leaders deploying cognitive IoT, zero-trust cloud infrastructure, and distributed AI."
     },
     {
-      icon: <Globe2 size={24} color="#A855F7" />,
+      icon: <Globe2 size={24} color="#14B8D4" />,
       title: "Global Networking",
       desc: "Hybrid mode infrastructure allowing seamless in-person and virtual interactive sessions with scholars worldwide."
     },
     {
-      icon: <Award size={24} color="#FF6B35" />,
+      icon: <Award size={24} color="#00A3C7" />,
       title: "Knowledge Exchange",
       desc: "Doctoral symposiums, interactive poster sessions, and keynote presentations by renowned IEEE and international scientists."
     },
     {
-      icon: <FileCheck size={24} color="#00B4D8" />,
+      icon: <FileCheck size={24} color="#0284C7" />,
       title: "Publication Opportunities",
       desc: "Accepted and presented papers will be submitted for indexing in conference proceedings series as announced by organizers."
     }
@@ -145,94 +147,65 @@ export const Home = () => {
           1. HERO SECTION (Vignan University 2027 International Conference)
          ======================================================== */}
       <section className="hero-section">
-        {/* Layered Background Atmosphere System */}
-        <div className="hero-bg-layer" aria-hidden="true">
-          <div className="hero-glow-bg" />
-          <div className="hero-glow-left" />
-          <div className="hero-glow-accent" />
-          <div className="hero-vignette-overlay" />
-
-          {/* Subtle Technology / Network Constellation Background */}
-          <svg className="hero-bg-network-svg" viewBox="0 0 1440 800" fill="none" preserveAspectRatio="none">
-            <g opacity="0.35">
-              {/* Soft Network Grid & Connection Lines */}
-              <line x1="850" y1="120" x2="1100" y2="240" stroke="#00B4D8" strokeWidth="1" strokeDasharray="4 4" />
-              <line x1="1100" y1="240" x2="1320" y2="180" stroke="#00E5FF" strokeWidth="1.2" />
-              <line x1="1100" y1="240" x2="1200" y2="420" stroke="#FF6B35" strokeWidth="1" strokeDasharray="6 4" />
-              <line x1="1200" y1="420" x2="1380" y2="480" stroke="#00B4D8" strokeWidth="1" />
-              <line x1="950" y1="360" x2="1200" y2="420" stroke="#00E5FF" strokeWidth="1.2" />
-              <line x1="850" y1="120" x2="950" y2="360" stroke="#00B4D8" strokeWidth="0.8" />
-              <line x1="680" y1="200" x2="850" y2="120" stroke="#00B4D8" strokeWidth="0.8" strokeDasharray="3 3" />
-              <line x1="680" y1="200" x2="950" y2="360" stroke="#00E5FF" strokeWidth="1" />
-              <line x1="950" y1="360" x2="1050" y2="580" stroke="#FF6B35" strokeWidth="1" />
-
-              {/* Glowing Constellation Nodes */}
-              <circle cx="850" cy="120" r="3.5" fill="#00E5FF" opacity="0.8" />
-              <circle cx="1100" cy="240" r="4.5" fill="#FF6B35" opacity="0.85" />
-              <circle cx="1320" cy="180" r="3" fill="#00E5FF" opacity="0.7" />
-              <circle cx="1200" cy="420" r="5" fill="#00B4D8" opacity="0.8" />
-              <circle cx="1380" cy="480" r="3" fill="#FF6B35" opacity="0.7" />
-              <circle cx="950" cy="360" r="4" fill="#00E5FF" opacity="0.9" />
-              <circle cx="680" cy="200" r="3" fill="#00B4D8" opacity="0.6" />
-              <circle cx="1050" cy="580" r="3.5" fill="#FFA726" opacity="0.75" />
-
-              {/* Orbital Synapse Rings */}
-              <circle cx="1100" cy="240" r="60" stroke="#00B4D8" strokeWidth="0.75" strokeDasharray="5 5" opacity="0.25" />
-              <circle cx="1200" cy="420" r="90" stroke="#FF6B35" strokeWidth="0.75" strokeDasharray="6 6" opacity="0.2" />
-            </g>
-          </svg>
-        </div>
+        {/* Dedicated Cognitive Network Field Decorative Background */}
+        <HeroBackground />
 
         <div className="content-container">
           <div className="hero-grid">
             {/* HERO LEFT COLUMN */}
             <div className="hero-left">
-              {/* Badges */}
+              {/* Top Badges (Exact Pill Shape to Reference) */}
               <div className="hero-badges">
                 <span className="hero-badge-date">
-                  <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#FF6B35' }} />
-                  {conference?.dates || '11 – 13 JUNE 2027'}
+                  <Calendar size={15} color="#00A3C7" style={{ marginRight: '2px' }} />
+                  {conference?.dates || '11 - 13 JUNE 2027'}
                 </span>
                 <span className="hero-badge-mode">
                   {conference?.mode || 'HYBRID MODE'}
                 </span>
               </div>
 
-              {/* Main Headline with Orange Accent */}
+              {/* Main Headline with Exact Navy & Cyan Contrast */}
               <h1 className="hero-title">
                 {conference?.year || '2027'} International Conference on
                 <span className="title-accent">Cognitive Computing and Networking Systems</span>
               </h1>
 
               {/* Subtitles: Vignan Department & University */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.35rem', marginTop: '0.2rem' }}>
                 <div className="hero-subtitle">
-                  <Sparkles size={16} color="#FF6B35" />
+                  <Settings size={18} color="#0B2D6B" style={{ flexShrink: 0 }} />
                   <span>{conference?.subTitle || 'ORGANIZED BY DEPARTMENT OF COMPUTER SCIENCE & ENGINEERING'}</span>
                 </div>
-                <div style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', fontWeight: 500 }}>
+                <div style={{ fontSize: '0.92rem', color: '#4B6987', fontWeight: 500, lineHeight: '1.4' }}>
                   {conference?.school || 'School of Computing and Informatics'} •{' '}
-                  <span style={{ color: '#00B4D8' }}>
+                  <span style={{ color: '#4B6987', fontWeight: 500 }}>
                     {conference?.institution || "Vignan's Foundation for Science, Technology and Research (Deemed to be University)"}
                   </span>
                 </div>
               </div>
 
-              {/* Description */}
-              <p className="hero-description">
-                {conference?.description ||
-                  "ICC-CNS 2027 is a premier international forum hosted by the Department of Computer Science & Engineering at Vignan's Foundation for Science, Technology and Research (VFSTR), Vadlamudi. The conference brings together leading academicians, researchers, scientists, and industry innovators to exchange and share breakthrough findings in Cognitive Computing, Artificial Intelligence, and Next-Generation Networking Systems."}
-              </p>
-
-              {/* Dynamic Stats Row */}
+              {/* Dynamic Stats Row with Solid Cyan Icons */}
               <div className="hero-stats-row">
-                <StatCounter value={stats.speakers || '6+'} label="Speakers" />
-                <StatCounter value={stats.countries || '6+'} label="Countries" />
-                <StatCounter value={stats.registered || '1+'} label="Registered" />
+                <StatCounter
+                  value={stats.speakers || '6+'}
+                  label="SPEAKERS"
+                  icon={<Users size={34} color="#00A3C7" />}
+                />
+                <StatCounter
+                  value={stats.countries || '6+'}
+                  label="COUNTRIES"
+                  icon={<Globe2 size={34} color="#00A3C7" />}
+                />
+                <StatCounter
+                  value={stats.registered || '1+'}
+                  label="REGISTERED"
+                  icon={<Users size={34} color="#00A3C7" />}
+                />
               </div>
 
-              {/* Action Buttons */}
-              <div className="hero-cta-group">
+              {/* Action Buttons & Real-time Countdown */}
+              <div className="hero-cta-group" style={{ marginTop: '0.5rem' }}>
                 <Link to="/registration" className="btn-primary-glow">
                   <span>Register Now</span>
                   <ArrowRight size={18} />
@@ -252,35 +225,41 @@ export const Home = () => {
                 </Link>
               </div>
 
-              {/* Real-time Configurable Countdown Timer */}
+              {/* Configurable Countdown Timer */}
               <Countdown targetDate={conference?.targetDate || '2027-06-11T09:00:00.000Z'} />
             </div>
 
-            {/* HERO RIGHT COLUMN: Technical Co-Sponsorship Asset */}
+            {/* HERO RIGHT COLUMN: Technical Co-Sponsorship Asset Card */}
             <div className="hero-right">
               <div className="hero-emblem-container">
                 <div style={{
                   position: 'relative',
                   width: '100%',
-                  maxWidth: '440px',
-                  borderRadius: 'var(--radius-xl)',
+                  maxWidth: '460px',
+                  borderRadius: '28px',
                   overflow: 'hidden',
-                  border: '1px solid var(--glass-border-light)',
-                  boxShadow: 'var(--shadow-lg), 0 0 35px rgba(0, 180, 216, 0.25)',
-                  background: 'rgba(0, 36, 41, 0.85)',
-                  backdropFilter: 'blur(16px)',
+                  border: '1px solid #BFE8F1',
+                  boxShadow: '0 16px 40px rgba(11, 45, 107, 0.08), 0 0 25px rgba(0, 163, 199, 0.12)',
+                  background: '#FFFFFF',
                   display: 'flex',
                   alignItems: 'center',
-                  justifyContent: 'center'
+                  justifyContent: 'center',
+                  padding: '4px'
                 }}>
                   <img
                     src="/images/technical_cosponsorship.png"
                     alt="Technical Co-Sponsorship by IEEE, IEEE ComSoc, ICC-CNS, Vignan's"
+                    loading="eager"
+                    fetchpriority="high"
+                    decoding="async"
+                    width="460"
+                    height="460"
                     style={{
                       width: '100%',
                       height: 'auto',
                       objectFit: 'contain',
-                      display: 'block'
+                      display: 'block',
+                      borderRadius: '24px'
                     }}
                   />
                 </div>
@@ -341,6 +320,10 @@ export const Home = () => {
                       src="/images/vignan_ablock_campus.webp"
                       alt="Vignan Campus"
                       className="about-bento-img"
+                      loading="lazy"
+                      decoding="async"
+                      width="400"
+                      height="160"
                     />
                   </div>
                   <p className="about-bento-text">
@@ -418,9 +401,9 @@ export const Home = () => {
       {/* ========================================================
           3. WHY ATTEND ICC-CNS 2027 (6 Modern Cards)
          ======================================================== */}
-      <section style={{ padding: '3rem 0 5rem' }}>
+      <section style={{ padding: '2.5rem 0 3rem' }}>
         <div className="content-container">
-          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+          <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
             <span className="page-header-badge">Why Participate</span>
             <h2 className="section-title">Key Conference Highlights</h2>
             <p style={{ color: 'var(--text-secondary)', maxWidth: '650px', margin: '0.8rem auto 0' }}>
@@ -447,7 +430,7 @@ export const Home = () => {
                     minWidth: '50px',
                     flexShrink: 0,
                     borderRadius: 'var(--radius-md)',
-                    background: 'rgba(255, 255, 255, 0.05)',
+                    background: 'var(--surface-light)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -455,7 +438,7 @@ export const Home = () => {
                   }}>
                     {card.icon}
                   </div>
-                  <h3 style={{ fontSize: '1.25rem', color: '#FFF', margin: 0, lineHeight: '1.35' }}>
+                  <h3 style={{ fontSize: '1.25rem', color: 'var(--primary-navy)', margin: 0, lineHeight: '1.35' }}>
                     {card.title}
                   </h3>
                 </div>
@@ -499,25 +482,25 @@ export const Home = () => {
       {/* ========================================================
           5. PUBLICATION INFORMATION NOTICE (Configurable)
          ======================================================== */}
-      <section style={{ padding: '2rem 0 4rem' }}>
+      <section style={{ padding: '1.5rem 0 2.5rem' }}>
         <div className="content-container">
           <div className="glass-panel" style={{
-            padding: '2.5rem',
-            background: 'rgba(0, 31, 36, 0.88)',
-            borderLeft: '4px solid var(--accent-orange)'
+            padding: '2.2rem',
+            background: 'var(--surface-white)',
+            borderLeft: '4px solid var(--primary-cyan)'
           }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', marginBottom: '1rem' }}>
-              <BookOpen size={24} color="var(--accent-orange)" />
-              <h3 style={{ color: '#FFF', fontSize: '1.4rem' }}>Publication & Proceedings Information</h3>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', marginBottom: '0.8rem' }}>
+              <BookOpen size={24} color="var(--primary-cyan)" />
+              <h3 style={{ color: 'var(--primary-navy)', fontSize: '1.35rem' }}>Publication & Proceedings Information</h3>
             </div>
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: '1.7', marginBottom: '1rem' }}>
               {conference?.publicationInfo?.notice ||
                 'All accepted, registered, and presented papers will be submitted for publication and indexation in indexed conference proceedings (Scopus / IEEE / Springer indexed series) subject to official conference approval.'}
             </p>
-            <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', fontSize: '0.88rem', color: 'var(--text-muted)' }}>
-              <span><strong>Status:</strong> {conference?.publicationInfo?.status || 'Announced by Organizers'}</span>
-              <span><strong>Publisher:</strong> {conference?.publicationInfo?.publisher || 'Conference Proceedings Series'}</span>
-              <span><strong>ISBN / Indexing:</strong> {conference?.publicationInfo?.isbn || 'To be announced'}</span>
+            <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', fontSize: '0.88rem', color: 'var(--text-secondary)' }}>
+              <span><strong style={{ color: 'var(--primary-navy)' }}>Status:</strong> {conference?.publicationInfo?.status || 'Announced by Organizers'}</span>
+              <span><strong style={{ color: 'var(--primary-navy)' }}>Publisher:</strong> {conference?.publicationInfo?.publisher || 'Conference Proceedings Series'}</span>
+              <span><strong style={{ color: 'var(--primary-navy)' }}>ISBN / Indexing:</strong> {conference?.publicationInfo?.isbn || 'To be announced'}</span>
             </div>
           </div>
         </div>
@@ -526,33 +509,33 @@ export const Home = () => {
       {/* ========================================================
           6. FREQUENTLY ASKED QUESTIONS (FAQ Accordion)
          ======================================================== */}
-      <section style={{ padding: '2rem 0 5rem' }}>
+      <section style={{ padding: '1.5rem 0 2.5rem' }}>
         <div className="content-container" style={{ maxWidth: '900px' }}>
-          <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
+          <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
             <span className="page-header-badge">Common Queries</span>
             <h2 className="section-title">Frequently Asked Questions</h2>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.9rem' }}>
             {faqs.map((faq, idx) => (
               <div
                 key={idx}
                 className="glass-panel"
                 style={{
-                  padding: '1.2rem 1.6rem',
+                  padding: '1.1rem 1.5rem',
                   cursor: 'pointer',
                   transition: 'all var(--transition-fast)'
                 }}
                 onClick={() => setActiveFaq(activeFaq === idx ? null : idx)}
               >
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '1rem' }}>
-                  <h4 style={{ color: '#FFF', fontSize: '1.05rem', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
-                    <HelpCircle size={18} color="var(--accent-orange)" />
+                  <h4 style={{ color: 'var(--primary-navy)', fontSize: '1.02rem', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+                    <HelpCircle size={18} color="var(--primary-cyan)" />
                     {faq.q}
                   </h4>
                   <ChevronDown
                     size={20}
-                    color="var(--text-muted)"
+                    color="var(--primary-cyan)"
                     style={{
                       transform: activeFaq === idx ? 'rotate(180deg)' : 'rotate(0deg)',
                       transition: 'transform var(--transition-normal)'
@@ -566,7 +549,7 @@ export const Home = () => {
                     lineHeight: '1.6',
                     marginTop: '0.8rem',
                     paddingTop: '0.8rem',
-                    borderTop: '1px solid var(--glass-border)'
+                    borderTop: '1px solid var(--border)'
                   }}>
                     {faq.a}
                   </p>
@@ -580,31 +563,32 @@ export const Home = () => {
       {/* ========================================================
           7. REGISTRATION CTA BANNER
          ======================================================== */}
-      <section style={{ padding: '0 0 6rem' }}>
+      <section style={{ padding: '1rem 0 2.5rem' }}>
         <div className="content-container">
           <div
             className="glass-panel glass-panel-glow"
             style={{
-              padding: '3.5rem 2.5rem',
+              padding: '2.8rem 2rem',
               textAlign: 'center',
               background:
-                'radial-gradient(circle at 50% 50%, rgba(255, 107, 53, 0.15) 0%, rgba(0, 43, 48, 0.85) 70%)',
+                'radial-gradient(circle at 50% 50%, rgba(0, 163, 199, 0.15) 0%, rgba(200, 241, 250, 0.6) 70%)',
               position: 'relative',
               overflow: 'hidden'
             }}
           >
-            <span className="badge badge-orange" style={{ marginBottom: '1.2rem' }}>
+            <span className="badge badge-cyan" style={{ marginBottom: '1rem' }}>
               Registrations Are Open for 2027
             </span>
-            <h2 style={{ fontSize: '2.5rem', color: '#FFF', marginBottom: '1rem' }}>
+            <h2 style={{ fontSize: '2.2rem', color: 'var(--primary-navy)', marginBottom: '0.8rem' }}>
               Join Global Researchers at Vignan University for ICC-CNS 2027
             </h2>
             <p
               style={{
                 maxWidth: '640px',
-                margin: '0 auto 2rem',
-                fontSize: '1.05rem',
-                color: 'var(--text-secondary)'
+                margin: '0 auto 1.8rem',
+                fontSize: '1rem',
+                color: 'var(--text-secondary)',
+                lineHeight: '1.6'
               }}
             >
               Present your research paper, interact with international keynote scientists, and participate in technical tracks either in-person at Vadlamudi or online via hybrid streaming.

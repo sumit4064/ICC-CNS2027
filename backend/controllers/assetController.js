@@ -13,6 +13,7 @@
  */
 
 import { getPresignedDownloadUrl, isB2Configured } from '../services/b2StorageService.js';
+import { serverCache } from '../utils/cache.js';
 
 const ALLOWED_PREFIXES = ['speakers/', 'committee/', 'gallery/'];
 
@@ -112,14 +113,22 @@ export const getPublicAsset = async (req, res) => {
       return res.status(400).json({ success: false, message: error });
     }
 
-    // Generate 10-minute short-lived presigned GET URL (600 seconds)
-    const presignedUrl = await getPresignedDownloadUrl({
-      key,
-      expiresIn: 600 // 10 minutes
-    });
+    const cacheKey = `b2:presigned:${key}`;
+    let presignedUrl = serverCache.get(cacheKey);
+
+    if (!presignedUrl) {
+      // Generate 10-minute short-lived presigned GET URL (600 seconds)
+      presignedUrl = await getPresignedDownloadUrl({
+        key,
+        expiresIn: 600 // 10 minutes
+      });
+      // Cache URL in memory for 300 seconds (5 minutes)
+      serverCache.set(cacheKey, presignedUrl, 300);
+    }
 
     // If client requested JSON response
     if (req.query.json === 'true' || req.query.format === 'json') {
+      res.setHeader('Cache-Control', 'public, max-age=300');
       return res.json({
         success: true,
         url: presignedUrl,

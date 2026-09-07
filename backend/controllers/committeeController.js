@@ -1,20 +1,37 @@
 import { Committee } from '../models/index.js';
 import { uploadObject, deleteObject } from '../services/b2StorageService.js';
+import { serverCache } from '../utils/cache.js';
 
 // GET /api/committee (Public & Admin)
 export const getCommittee = async (req, res) => {
   try {
     const includeInactive = req.query.includeInactive === 'true' || req.query.all === 'true';
+    const cacheKey = includeInactive ? 'committee:all' : 'committee:active';
+
+    const cached = serverCache.get(cacheKey);
+    if (cached) {
+      res.setHeader('Cache-Control', 'public, max-age=60, stale-while-revalidate=30');
+      return res.json({
+        success: true,
+        count: cached.length,
+        data: cached
+      });
+    }
+
     const filter = includeInactive ? {} : { isActive: { $ne: false } };
 
     const members = await Committee.find(filter)
       .sort({ displayOrder: 1, name: 1 })
       .lean();
 
+    const data = members || [];
+    serverCache.set(cacheKey, data, 60);
+
+    res.setHeader('Cache-Control', 'public, max-age=60, stale-while-revalidate=30');
     res.json({
       success: true,
-      count: members.length,
-      data: members
+      count: data.length,
+      data
     });
   } catch (error) {
     console.error('Error in getCommittee:', error.message);
@@ -26,12 +43,22 @@ export const getCommittee = async (req, res) => {
 export const getCommitteeMemberById = async (req, res) => {
   try {
     const { id } = req.params;
+    const cacheKey = `committee:member:${id}`;
+
+    const cached = serverCache.get(cacheKey);
+    if (cached) {
+      res.setHeader('Cache-Control', 'public, max-age=60, stale-while-revalidate=30');
+      return res.json({ success: true, data: cached });
+    }
+
     const member = await Committee.findOne({ $or: [{ id }, { _id: id }] }).lean();
 
     if (!member) {
       return res.status(404).json({ success: false, message: 'Committee member not found.' });
     }
 
+    serverCache.set(cacheKey, member, 60);
+    res.setHeader('Cache-Control', 'public, max-age=60, stale-while-revalidate=30');
     res.json({ success: true, data: member });
   } catch (error) {
     console.error('Error in getCommitteeMemberById:', error.message);
@@ -65,6 +92,9 @@ export const createCommitteeMember = async (req, res) => {
     };
 
     const created = await Committee.create(newMember);
+
+    serverCache.delPrefix('committee');
+
     res.status(201).json({
       success: true,
       message: 'Committee member created successfully.',
@@ -100,6 +130,8 @@ export const updateCommitteeMember = async (req, res) => {
       { returnDocument: 'after', new: true }
     ).lean();
 
+    serverCache.delPrefix('committee');
+
     res.json({
       success: true,
       message: 'Committee member updated successfully.',
@@ -134,6 +166,8 @@ export const deleteCommitteeMember = async (req, res) => {
         console.warn(`[Committee] Failed to delete B2 object ${oldImageStorageKey}:`, delErr.message);
       }
     }
+
+    serverCache.delPrefix('committee');
 
     res.json({
       success: true,
@@ -234,6 +268,8 @@ export const uploadMemberImage = async (req, res) => {
       }
     }
 
+    serverCache.delPrefix('committee');
+
     res.json({
       success: true,
       message: 'Photograph uploaded successfully.',
@@ -287,6 +323,8 @@ export const deleteMemberImage = async (req, res) => {
         console.warn(`[Committee] Failed to delete B2 object ${oldImageStorageKey}:`, delErr.message);
       }
     }
+
+    serverCache.delPrefix('committee');
 
     res.json({
       success: true,
@@ -347,6 +385,8 @@ export const updateCommittee = async (req, res) => {
     if (bulkOps.length > 0) {
       await Committee.bulkWrite(bulkOps);
     }
+
+    serverCache.delPrefix('committee');
 
     const allMembers = await Committee.find().sort({ displayOrder: 1, name: 1 }).lean();
     res.json({ success: true, message: 'Committee list updated successfully.', data: allMembers });

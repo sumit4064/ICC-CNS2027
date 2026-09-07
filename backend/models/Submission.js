@@ -39,6 +39,8 @@ const submissionSchema = new mongoose.Schema({
   versionKey: false
 });
 
+submissionSchema.index({ submittedAt: -1 });
+
 export const Submission = mongoose.models.Submission || mongoose.model('Submission', submissionSchema);
 export default Submission;
 

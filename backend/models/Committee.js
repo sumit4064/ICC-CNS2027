@@ -24,5 +24,8 @@ const committeeSchema = new mongoose.Schema({
   _id: false
 });
 
+committeeSchema.index({ isActive: 1, displayOrder: 1, name: 1 });
+committeeSchema.index({ category: 1, displayOrder: 1 });
+
 export const Committee = mongoose.models.Committee || mongoose.model('Committee', committeeSchema);
 export default Committee;

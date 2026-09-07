@@ -330,7 +330,7 @@ export const Navbar = () => {
                   onClick={() => setMobileOpen(false)}
                 >
                   <span>{item.name}</span>
-                  <ChevronRight size={18} color="rgba(255,255,255,0.4)" />
+                  <ChevronRight size={18} color="var(--primary-cyan)" />
                 </Link>
               </li>
             );
@@ -341,10 +341,10 @@ export const Navbar = () => {
                 to="/admin"
                 className={`mobile-drawer-item-link ${location.pathname === '/admin' ? 'active' : ''}`}
                 onClick={() => setMobileOpen(false)}
-                style={{ color: '#FF6B35' }}
+                style={{ color: 'var(--primary-cyan)' }}
               >
                 <span>Admin Dashboard</span>
-                <ShieldCheck size={18} color="#FF6B35" />
+                <ShieldCheck size={18} color="var(--primary-cyan)" />
               </Link>
             </li>
           )}

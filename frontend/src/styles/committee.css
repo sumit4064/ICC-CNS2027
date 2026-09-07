@@ -1,5 +1,5 @@
 /* ========================================================
-   ICC-CNS 2027 COMMITTEE STYLES
+   ICC-CNS 2027 COMMITTEE STYLES (LIGHT CYAN THEME)
    ======================================================== */
 
 .committee-page {
@@ -9,24 +9,23 @@
 
 /* Introduction Card */
 .committee-intro-card {
-  background: rgba(0, 36, 41, 0.65);
-  backdrop-filter: blur(14px);
-  border: 1px solid var(--glass-border);
+  background: var(--surface-white);
+  border: 1px solid var(--border-cyan);
   border-radius: var(--radius-lg);
   padding: 1.5rem 2rem;
   margin-bottom: 2.5rem;
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-sm);
 }
 
 .committee-intro-icon {
   width: 48px;
   height: 48px;
   border-radius: var(--radius-md);
-  background: rgba(0, 180, 216, 0.12);
-  color: var(--accent-cyan);
+  background: rgba(0, 163, 199, 0.12);
+  color: var(--primary-cyan);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -41,16 +40,15 @@
 
 /* Filter & Search Bar Container */
 .committee-controls-panel {
-  background: rgba(0, 28, 32, 0.85);
-  backdrop-filter: blur(16px);
-  border: 1px solid var(--glass-border);
+  background: var(--surface-white);
+  border: 1px solid var(--border-cyan);
   border-radius: 20px;
   padding: 1.25rem 1.6rem;
   margin-bottom: 3.5rem;
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  box-shadow: var(--shadow-sm);
 }
 
 .committee-filter-tabs {
@@ -64,9 +62,9 @@
   border-radius: 30px;
   font-size: 0.88rem;
   font-weight: 600;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(255, 255, 255, 0.04);
-  color: var(--text-secondary);
+  border: 1px solid var(--border-cyan);
+  background: var(--surface-light);
+  color: var(--primary-navy);
   cursor: pointer;
   transition: all 0.25s ease;
   display: inline-flex;
@@ -75,16 +73,16 @@
 }
 
 .committee-filter-btn:hover {
-  background: rgba(255, 255, 255, 0.08);
-  color: #FFF;
-  border-color: rgba(255, 255, 255, 0.25);
+  background: #FFFFFF;
+  color: var(--primary-cyan);
+  border-color: var(--primary-cyan);
 }
 
 .committee-filter-btn.active {
-  background: rgba(255, 107, 53, 0.18);
-  border-color: var(--accent-orange);
-  color: var(--accent-orange);
-  box-shadow: 0 0 16px rgba(255, 107, 53, 0.2);
+  background: var(--primary-cyan);
+  border-color: var(--primary-cyan);
+  color: #FFFFFF;
+  box-shadow: 0 0 16px rgba(0, 163, 199, 0.35);
 }
 
 .committee-search-row {
@@ -98,8 +96,8 @@
 .committee-search-box {
   display: flex;
   align-items: center;
-  background: rgba(0, 16, 20, 0.85);
-  border: 1px solid var(--glass-border);
+  background: var(--surface-light);
+  border: 1px solid var(--border-cyan);
   border-radius: 30px;
   padding: 0.55rem 1.2rem;
   width: 100%;
@@ -108,15 +106,15 @@
 }
 
 .committee-search-box:focus-within {
-  border-color: var(--accent-orange);
-  box-shadow: 0 0 15px rgba(255, 107, 53, 0.25);
+  border-color: var(--primary-cyan);
+  box-shadow: 0 0 15px rgba(0, 163, 199, 0.25);
 }
 
 .committee-search-input {
   background: transparent;
   border: none;
   outline: none;
-  color: #FFF;
+  color: var(--primary-navy);
   font-size: 0.92rem;
   width: 100%;
   margin-left: 0.5rem;
@@ -138,16 +136,17 @@
 }
 
 .committee-search-clear:hover {
-  color: #FFF;
+  color: var(--primary-navy);
 }
 
 .committee-results-badge {
   font-size: 0.85rem;
-  color: var(--text-muted);
-  background: rgba(255, 255, 255, 0.05);
+  color: var(--primary-navy);
+  background: var(--surface-light);
   padding: 0.35rem 0.85rem;
   border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-cyan);
+  font-weight: 600;
 }
 
 /* Category Section */
@@ -161,7 +160,7 @@
   justify-content: space-between;
   margin-bottom: 2.2rem;
   padding-bottom: 0.9rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid var(--border-cyan);
   position: relative;
 }
 
@@ -172,7 +171,7 @@
   left: 0;
   width: 80px;
   height: 2px;
-  background: linear-gradient(90deg, var(--accent-orange), transparent);
+  background: linear-gradient(90deg, var(--primary-cyan), transparent);
 }
 
 .committee-category-title-wrap {
@@ -185,8 +184,8 @@
   width: 38px;
   height: 38px;
   border-radius: var(--radius-sm);
-  background: rgba(255, 107, 53, 0.12);
-  color: var(--accent-orange);
+  background: rgba(0, 163, 199, 0.12);
+  color: var(--primary-cyan);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -196,156 +195,178 @@
 .committee-category-title {
   font-size: 1.45rem;
   font-weight: 700;
-  color: #FFF;
+  color: var(--primary-navy);
   letter-spacing: -0.02em;
 }
 
 .committee-category-count {
   font-size: 0.82rem;
   font-weight: 600;
-  color: var(--text-muted);
-  background: rgba(255, 255, 255, 0.06);
+  color: var(--primary-navy);
+  background: var(--surface-light);
   padding: 0.3rem 0.8rem;
   border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-cyan);
 }
 
 /* Member Cards Grid */
 .committee-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 2rem 1.6rem;
-  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
+  gap: 1.75rem;
   align-items: stretch;
 }
 
-/* Premium Member Card with Fixed Stage */
+/* Premium Member Card with Light Cyan-Tinted Surface */
 .committee-card {
   position: relative;
   overflow: hidden;
-  background: rgba(0, 36, 41, 0.78);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(168deg, rgba(255, 255, 255, 0.96) 0%, rgba(242, 252, 254, 0.94) 45%, rgba(228, 248, 252, 0.90) 100%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 168, 214, 0.20);
   border-radius: 24px;
-  padding: 1.5rem 1.4rem 1.6rem;
+  padding: 1.65rem 1.4rem 1.6rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  text-align: center;
   height: 100%;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
-              border-color 0.35s ease,
-              box-shadow 0.35s ease;
-  cursor: pointer;
-  max-width: 360px;
-  margin: 0 auto;
   width: 100%;
+  box-shadow: 0 8px 30px rgba(0, 70, 100, 0.07), 0 2px 8px rgba(0, 168, 214, 0.05);
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
+              border-color 0.3s ease,
+              box-shadow 0.3s ease,
+              background 0.3s ease;
+  cursor: pointer;
+}
+
+/* Top Subtle Gradient Accent Bar */
+.committee-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3.5px;
+  background: linear-gradient(90deg, rgba(8, 42, 99, 0.75) 0%, rgba(0, 168, 214, 0.95) 50%, rgba(0, 199, 232, 0.85) 100%);
+  opacity: 0.85;
+  transition: height 0.25s ease, opacity 0.25s ease;
 }
 
 .committee-card:hover {
   transform: translateY(-6px);
-  border-color: rgba(255, 107, 53, 0.45);
-  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.45), 0 0 28px rgba(255, 107, 53, 0.16);
+  border-color: rgba(0, 168, 214, 0.45);
+  box-shadow: 0 16px 36px rgba(0, 70, 100, 0.12), 0 0 24px rgba(0, 168, 214, 0.18);
+  background: linear-gradient(168deg, rgba(255, 255, 255, 0.98) 0%, rgba(236, 251, 254, 0.96) 45%, rgba(220, 246, 252, 0.94) 100%);
 }
 
-/* Fixed Image Stage - Reserves Identical Space on EVERY Card */
-.member-photo-wrapper {
-  position: relative;
-  width: 100%;
-  height: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 1.25rem;
-  flex-shrink: 0;
-  overflow: visible;
-}
-
-.member-photo-wrapper::before {
-  content: '';
-  position: absolute;
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(0, 180, 216, 0.14) 0%, rgba(255, 107, 53, 0.05) 55%, transparent 75%);
-  z-index: 0;
-  pointer-events: none;
-  transition: transform 0.35s ease, opacity 0.35s ease;
-}
-
-.committee-card:hover .member-photo-wrapper::before {
-  transform: scale(1.12);
+.committee-card:hover::before {
+  height: 4.5px;
   opacity: 1;
 }
 
-/* Fixed Member Photograph */
-.member-photo {
+/* Member Photo Frame (Balanced 1:1 Aspect Ratio) */
+.member-photo-wrapper {
   position: relative;
-  z-index: 1;
-  width: auto;
-  height: auto;
-  max-width: 175px;
-  max-height: 180px;
-  object-fit: contain;
-  object-position: center center;
-  border-radius: 16px;
-  filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.35));
-  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.35s ease;
+  width: 170px;
+  height: 170px;
+  aspect-ratio: 1 / 1;
+  border-radius: 20px;
+  overflow: hidden;
+  background: linear-gradient(180deg, #F0FAFC 0%, #DDF8FC 100%);
+  border: 1.5px solid rgba(0, 168, 214, 0.24);
+  box-shadow: 0 6px 18px rgba(8, 42, 99, 0.06), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  transition: border-color 0.28s ease, box-shadow 0.28s ease, transform 0.28s ease;
+}
+
+.committee-card:hover .member-photo-wrapper {
+  border-color: var(--primary-cyan, #00A8D6);
+  box-shadow: 0 8px 24px rgba(0, 168, 214, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.9) inset;
+  transform: translateY(-2px);
+}
+
+/* Member Photograph */
+.member-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  aspect-ratio: 1 / 1;
   display: block;
-  margin: 0 auto;
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .committee-card:hover .member-photo {
-  transform: translateY(-4px) scale(1.02);
-  filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.45));
+  transform: scale(1.05);
 }
 
-/* Placeholder Silhouette for Members without Photo - Identical Stage Framing */
+/* Placeholder Silhouette for Members without Photo */
 .member-placeholder {
-  position: relative;
-  z-index: 1;
-  width: 145px;
-  height: 170px;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(180deg, rgba(0, 58, 65, 0.85) 0%, rgba(0, 24, 28, 0.95) 100%);
-  border: 1px dashed rgba(0, 180, 216, 0.35);
-  border-radius: 20px;
-  color: var(--accent-teal);
-  box-shadow: inset 0 0 20px rgba(0, 180, 216, 0.1);
-  transition: transform 0.35s ease, border-color 0.35s ease;
-  margin: 0 auto;
-}
-
-.committee-card:hover .member-placeholder {
-  transform: translateY(-4px);
-  border-color: var(--accent-orange);
-  color: var(--accent-orange);
+  gap: 0.55rem;
+  background: radial-gradient(circle at 50% 40%, rgba(0, 168, 214, 0.16) 0%, rgba(221, 248, 252, 0.85) 85%);
+  user-select: none;
 }
 
 .member-placeholder-avatar {
-  width: 56px;
-  height: 56px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
-  background: rgba(0, 180, 216, 0.15);
+  background: #FFFFFF;
+  border: 2.5px solid var(--primary-cyan, #00A8D6);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 0.6rem;
-  font-size: 1.35rem;
-  font-weight: 700;
+  font-size: 1.65rem;
+  font-weight: 800;
   font-family: var(--font-heading);
+  color: var(--primary-navy, #082A63);
+  letter-spacing: -0.02em;
+  box-shadow: 0 4px 14px rgba(0, 168, 214, 0.25);
+  transition: transform 0.3s ease, border-color 0.25s ease;
+}
+
+.committee-card:hover .member-placeholder-avatar {
+  transform: scale(1.06);
+  border-color: var(--primary-navy, #082A63);
 }
 
 .member-placeholder-tag {
   font-size: 0.72rem;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--text-muted);
-  font-weight: 600;
+  letter-spacing: 0.07em;
+  color: var(--primary-cyan, #00A8D6);
+  font-weight: 700;
+  background: rgba(0, 168, 214, 0.12);
+  padding: 0.2rem 0.7rem;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 168, 214, 0.3);
+}
+
+/* Subtle Visual Divider */
+.member-card-divider {
+  width: 44px;
+  height: 2px;
+  margin: 0.85rem auto 0.95rem;
+  border-radius: 2px;
+  background: linear-gradient(90deg, transparent, rgba(0, 168, 214, 0.45), transparent);
+  transition: width 0.3s ease, background 0.3s ease;
+}
+
+.committee-card:hover .member-card-divider {
+  width: 68px;
+  background: linear-gradient(90deg, transparent, rgba(0, 168, 214, 0.85), transparent);
 }
 
 /* Card Content Area */
@@ -354,56 +375,69 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.35rem;
+  gap: 0.25rem;
   width: 100%;
   flex: 1 1 auto;
 }
 
 .member-name {
+  font-family: var(--font-heading, 'Poppins', sans-serif);
   font-size: 1.15rem;
-  font-weight: 700;
-  color: #FFF;
-  line-height: 1.35;
-  margin-bottom: 0.1rem;
+  font-weight: 800;
+  color: var(--primary-navy, #082A63);
+  line-height: 1.32;
+  letter-spacing: -0.015em;
+  margin: 0;
+  word-break: break-word;
+  transition: color 0.2s ease;
+}
+
+.committee-card:hover .member-name {
+  color: var(--secondary-blue, #0B4F9C);
 }
 
 .member-role {
-  color: var(--accent-orange);
-  font-size: 0.92rem;
+  font-family: var(--font-body, 'Inter', sans-serif);
+  color: var(--primary-cyan, #00A8D6);
+  font-size: 0.88rem;
   font-weight: 600;
-  line-height: 1.35;
+  line-height: 1.38;
+  margin-top: 0.15rem;
 }
 
 .member-institution {
-  color: var(--text-secondary);
-  font-size: 0.84rem;
+  font-family: var(--font-body, 'Inter', sans-serif);
+  color: var(--text-secondary, #173A6B);
+  font-size: 0.85rem;
+  font-weight: 500;
   line-height: 1.45;
-  margin-top: 0.15rem;
+  margin-top: 0.2rem;
+  opacity: 0.95;
 }
 
 .member-badge-row {
   display: flex;
   justify-content: center;
   gap: 0.4rem;
-  margin-top: 0.6rem;
+  margin-top: 0.65rem;
   flex-wrap: wrap;
 }
 
 .member-country-tag {
   font-size: 0.72rem;
   font-weight: 600;
-  color: var(--accent-cyan);
-  background: rgba(0, 180, 216, 0.1);
-  padding: 0.2rem 0.55rem;
-  border-radius: 12px;
-  border: 1px solid rgba(0, 180, 216, 0.25);
+  color: var(--primary-cyan, #00A8D6);
+  background: rgba(0, 168, 214, 0.08);
+  padding: 0.22rem 0.7rem;
+  border-radius: var(--radius-full, 9999px);
+  border: 1px solid rgba(0, 168, 214, 0.22);
 }
 
 /* Modal for Full Member Details */
 .committee-modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 15, 18, 0.85);
+  background: rgba(11, 45, 107, 0.45);
   backdrop-filter: blur(12px);
   display: flex;
   align-items: center;
@@ -419,15 +453,15 @@
 }
 
 .committee-modal-card {
-  background: linear-gradient(180deg, #002B30 0%, #001F24 100%);
-  border: 1px solid var(--glass-border);
+  background: #FFFFFF;
+  border: 1px solid var(--border-cyan);
   border-radius: 24px;
   width: 100%;
   max-width: 680px;
   max-height: 90vh;
   overflow-y: auto;
   position: relative;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(0, 180, 216, 0.2);
+  box-shadow: var(--shadow-lg), 0 0 40px rgba(0, 163, 199, 0.2);
   display: grid;
   grid-template-columns: 240px 1fr;
   animation: scaleUpModal 0.3s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
@@ -445,9 +479,9 @@
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: #FFF;
+  background: var(--surface-light);
+  border: 1px solid var(--border-cyan);
+  color: var(--primary-navy);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -457,25 +491,26 @@
 }
 
 .committee-modal-close:hover {
-  background: var(--accent-orange);
-  border-color: var(--accent-orange);
+  background: var(--primary-cyan);
+  border-color: var(--primary-cyan);
+  color: #FFFFFF;
   transform: rotate(90deg);
 }
 
 .committee-modal-left {
-  background: rgba(0, 20, 24, 0.7);
+  background: var(--surface-light);
   padding: 2rem 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-right: 1px solid var(--glass-border);
+  border-right: 1px solid var(--border-cyan);
 }
 
 .committee-modal-photo {
   max-width: 100%;
   max-height: 260px;
   object-fit: contain;
-  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(0 8px 16px rgba(11, 45, 107, 0.15));
 }
 
 .committee-modal-right {
@@ -490,20 +525,20 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--accent-cyan);
+  color: var(--primary-cyan);
   margin-bottom: 0.4rem;
 }
 
 .committee-modal-name {
   font-size: 1.5rem;
   font-weight: 800;
-  color: #FFF;
+  color: var(--primary-navy);
   line-height: 1.25;
   margin-bottom: 0.4rem;
 }
 
 .committee-modal-role {
-  color: var(--accent-orange);
+  color: var(--primary-cyan);
   font-size: 1.05rem;
   font-weight: 600;
   margin-bottom: 0.8rem;
@@ -515,7 +550,7 @@
   gap: 0.6rem;
   margin-top: 0.8rem;
   padding-top: 0.8rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid var(--border);
 }
 
 .committee-modal-detail-item {
@@ -541,8 +576,8 @@
 }
 
 .committee-skeleton-card {
-  background: rgba(0, 36, 41, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--surface-white);
+  border: 1px solid var(--border-cyan);
   border-radius: 24px;
   padding: 2rem 1.5rem;
   display: flex;
@@ -556,13 +591,13 @@
   width: 130px;
   height: 130px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.06);
+  background: var(--surface-light);
   animation: pulseSkeleton 1.5s infinite;
 }
 
 .skeleton-line {
   height: 14px;
-  background: rgba(255, 255, 255, 0.06);
+  background: var(--surface-light);
   border-radius: 6px;
   animation: pulseSkeleton 1.5s infinite;
 }
@@ -589,8 +624,13 @@
 /* Responsive Queries for Committee */
 @media (max-width: 992px) {
   .committee-grid {
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 1.8rem 1.4rem;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.4rem;
+  }
+
+  .member-photo-wrapper {
+    width: 155px;
+    height: 155px;
   }
 }
 
@@ -605,18 +645,23 @@
     max-width: 100%;
   }
 
+  .committee-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .committee-card {
+    padding: 1.4rem 1.15rem 1.4rem;
+    border-radius: 20px;
+  }
+
   .member-photo-wrapper {
-    height: 185px;
+    width: 150px;
+    height: 150px;
   }
 
-  .member-photo {
-    max-width: 160px;
-    max-height: 165px;
-  }
-
-  .member-placeholder {
-    width: 135px;
-    height: 155px;
+  .member-name {
+    font-size: 1.1rem;
   }
 
   .committee-modal-card {
@@ -626,7 +671,7 @@
 
   .committee-modal-left {
     border-right: none;
-    border-bottom: 1px solid var(--glass-border);
+    border-bottom: 1px solid var(--border-cyan);
     padding: 1.5rem;
   }
 
@@ -642,25 +687,24 @@
 @media (max-width: 480px) {
   .committee-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    max-width: 320px;
+    margin: 0 auto;
+    gap: 1.25rem;
   }
 
   .committee-card {
     max-width: 100%;
+    padding: 1.4rem 1.1rem;
+    border-radius: 20px;
   }
 
   .member-photo-wrapper {
-    height: 175px;
-  }
-
-  .member-photo {
-    max-width: 150px;
-    max-height: 155px;
-  }
-
-  .member-placeholder {
-    width: 125px;
+    width: 145px;
     height: 145px;
+  }
+
+  .member-name {
+    font-size: 1.08rem;
   }
 
   .committee-filter-btn {

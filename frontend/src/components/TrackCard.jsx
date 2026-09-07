@@ -20,7 +20,7 @@ export const TrackCard = ({ track }) => {
         </span>
       </div>
 
-      <h3 style={{ fontSize: '1.4rem', color: '#FFF', marginBottom: '0.8rem' }}>
+      <h3 style={{ fontSize: '1.4rem', color: 'var(--primary-navy)', marginBottom: '0.8rem' }}>
         {track.name}
       </h3>
 
@@ -35,7 +35,7 @@ export const TrackCard = ({ track }) => {
         <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.45rem', marginBottom: '1.5rem' }}>
           {(track.topics || []).slice(0, 5).map((topic, i) => (
             <li key={i} style={{ fontSize: '0.85rem', color: 'var(--text-primary)', display: 'flex', alignItems: 'flex-start', gap: '0.5rem' }}>
-              <span style={{ color: track.color || 'var(--accent-orange)', marginTop: '2px' }}>•</span>
+              <span style={{ color: 'var(--primary-cyan)', marginTop: '2px' }}>•</span>
               <span>{topic}</span>
             </li>
           ))}

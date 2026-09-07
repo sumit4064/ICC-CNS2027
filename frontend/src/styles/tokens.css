@@ -1,50 +1,83 @@
 :root {
-  /* Color Palette - Dark Teal & Vibrant Orange */
-  --bg-darkest: #001F24;
-  --bg-primary: #002B30;
-  --bg-secondary: #003A41;
-  --bg-tertiary: #004D56;
-  --bg-card: rgba(0, 43, 48, 0.65);
-  --bg-card-hover: rgba(0, 60, 67, 0.85);
-  --bg-glass: rgba(0, 50, 56, 0.55);
-  --bg-glass-strong: rgba(0, 35, 39, 0.82);
+  /* Color Palette - ICC-CNS 2027 Refined System */
+  --primary-navy: #082A63;
+  --primary-navy-dark: #061D45;
+  --deep-navy: #061D45;
+  --primary-navy-light: #0B4F9C;
+  --secondary-blue: #0B4F9C;
+  
+  --primary-cyan: #00A8D6;
+  --primary-cyan-hover: #0092BA;
+  --bright-cyan: #00C7E8;
+  --accent-cyan: #00C7E8;
+  --accent-cyan-light: #38BDF8;
+  --accent-cyan-glow: rgba(0, 168, 214, 0.28);
+  --accent-cyan-subtle: rgba(0, 168, 214, 0.12);
+  --soft-cyan-glow: rgba(0, 168, 214, 0.18);
 
-  /* Primary Accent: Radiant Orange */
-  --accent-orange: #FF6B35;
-  --accent-orange-hover: #FF7D4D;
-  --accent-orange-dark: #E65100;
-  --accent-orange-glow: rgba(255, 107, 53, 0.35);
-  --accent-orange-subtle: rgba(255, 107, 53, 0.12);
+  /* Backgrounds */
+  --light-cyan: #DDF8FC;
+  --very-light-bg: #EFFBFD;
+  --bg-light: #EFFBFD;
+  --background-light: #EFFBFD;
+  --bg-secondary: #DDF8FC;
+  --background-secondary: #DDF8FC;
+  --background-alt: #F4FBFC;
+  --bg-darkest: #061D45;
+  --bg-primary: #EFFBFD;
+  --bg-tertiary: #DDF8FC;
+  --bg-card: #FFFFFF;
+  --bg-card-alt: #F5FDFF;
+  --bg-card-hover: #FFFFFF;
+  --bg-glass: rgba(255, 255, 255, 0.9);
+  --bg-glass-strong: rgba(255, 255, 255, 0.98);
+  --surface: #F5FDFF;
+  --surface-white: #FFFFFF;
+  --surface-light: #F5FDFF;
 
   /* Secondary Accents */
-  --accent-teal: #00B4D8;
-  --accent-cyan: #48CAE4;
-  --accent-emerald: #10B981;
-  --accent-emerald-glow: rgba(16, 185, 129, 0.25);
-  --accent-blue: #0EA5E9;
-  --accent-blue-glow: rgba(14, 165, 233, 0.25);
-  --accent-purple: #A855F7;
+  --accent-blue: #0B4F9C;
+  --accent-blue-glow: rgba(11, 79, 156, 0.25);
+  --accent-emerald: #059669;
+  --accent-emerald-glow: rgba(5, 150, 105, 0.2);
+  --accent-emerald-subtle: rgba(5, 150, 105, 0.12);
+  --accent-purple: #7C3AED;
+  --accent-orange: #00A8D6;
+  --accent-orange-hover: #0092BA;
+  --accent-orange-dark: #082A63;
+  --accent-orange-glow: rgba(0, 168, 214, 0.28);
+  --accent-orange-subtle: rgba(0, 168, 214, 0.12);
+  --accent-teal: #00A8D6;
 
-  /* Typography */
+  /* Typography Colors */
+  --text-primary: #082A63;
+  --body-text: #173A6B;
+  --text-secondary: #173A6B;
+  --text-muted: #5E7898;
+  --text-dim: #7E97B0;
   --text-pure-white: #FFFFFF;
-  --text-primary: #F0F6F7;
-  --text-secondary: #C2D7DA;
-  --text-muted: #8AA8AC;
-  --text-dim: #5C7B80;
-  --text-orange: #FF7D4D;
+  --text-navy: #082A63;
+  --text-cyan: #00A8D6;
+  --text-orange: #00A8D6;
 
-  /* Glass Borders */
-  --glass-border: rgba(255, 255, 255, 0.12);
-  --glass-border-hover: rgba(255, 255, 255, 0.25);
-  --glass-border-orange: rgba(255, 107, 53, 0.4);
-  --glass-border-teal: rgba(0, 180, 216, 0.35);
+  /* Borders */
+  --border-light: #B9E5EF;
+  --border: #B9E5EF;
+  --border-cyan: #B9E5EF;
+  --border-subtle: rgba(0, 168, 214, 0.2);
+  --glass-border: rgba(0, 168, 214, 0.22);
+  --glass-border-hover: rgba(0, 168, 214, 0.45);
+  --glass-border-light: rgba(0, 168, 214, 0.18);
+  --glass-border-orange: rgba(0, 168, 214, 0.35);
+  --glass-border-teal: rgba(0, 168, 214, 0.3);
 
   /* Shadows & Glows */
-  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.25);
-  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.35);
-  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.45);
-  --shadow-orange-glow: 0 0 25px rgba(255, 107, 53, 0.45);
-  --shadow-teal-glow: 0 0 30px rgba(0, 180, 216, 0.25);
+  --shadow-sm: 0 4px 14px rgba(11, 45, 107, 0.05);
+  --shadow-md: 0 8px 24px rgba(11, 45, 107, 0.08);
+  --shadow-lg: 0 16px 40px rgba(11, 45, 107, 0.10);
+  --shadow-cyan-glow: 0 0 25px rgba(0, 163, 199, 0.35);
+  --shadow-orange-glow: 0 0 25px rgba(0, 163, 199, 0.35);
+  --shadow-teal-glow: 0 0 30px rgba(0, 163, 199, 0.25);
 
   /* Radius */
   --radius-xs: 6px;
@@ -55,7 +88,7 @@
   --radius-full: 9999px;
 
   /* Fonts */
-  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Poppins', 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 

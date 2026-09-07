@@ -43,16 +43,16 @@ export const Dates = () => {
           <div className="glass-panel" style={{
             padding: '2.5rem',
             textAlign: 'center',
-            background: 'radial-gradient(circle at 50% 50%, rgba(0, 180, 216, 0.12) 0%, rgba(0, 36, 41, 0.8) 70%)'
+            background: 'radial-gradient(circle at 50% 50%, rgba(0, 163, 199, 0.15) 0%, rgba(200, 241, 250, 0.5) 70%)'
           }}>
-            <Bell size={32} color="var(--accent-orange)" style={{ margin: '0 auto 1rem' }} />
-            <h3 style={{ fontSize: '1.5rem', color: '#FFF', marginBottom: '0.8rem' }}>
+            <Bell size={32} color="var(--primary-cyan)" style={{ margin: '0 auto 1rem' }} />
+            <h3 style={{ fontSize: '1.5rem', color: 'var(--primary-navy)', marginBottom: '0.8rem' }}>
               Don't Miss the Paper Submission Deadline!
             </h3>
             <p style={{ color: 'var(--text-secondary)', marginBottom: '1.8rem', maxWidth: '600px', margin: '0 auto 1.8rem' }}>
               Final manuscript submission portals are actively accepting full papers, short papers, and doctoral symposia submissions.
             </p>
-            <div style={{ display: 'flex', justifyContent: 'center', gap: '1.2rem' }}>
+            <div style={{ display: 'flex', justifyContent: 'center', gap: '1.2rem', flexWrap: 'wrap' }}>
               <Link to="/submission" className="btn-primary-glow">
                 <span>Submit Paper Online</span>
                 <ArrowRight size={16} />

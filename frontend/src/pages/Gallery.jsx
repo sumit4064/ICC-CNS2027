@@ -48,7 +48,9 @@ export const Gallery = () => {
                 onClick={() => setActiveCategory(cat)}
                 className={`btn-card-action ${activeCategory === cat ? 'btn-primary-glow' : ''}`}
                 style={{
-                  background: activeCategory === cat ? 'var(--accent-orange)' : 'rgba(0, 36, 41, 0.7)',
+                  background: activeCategory === cat ? 'var(--primary-cyan)' : 'var(--surface-white)',
+                  color: activeCategory === cat ? '#FFF' : 'var(--primary-navy)',
+                  borderColor: activeCategory === cat ? 'var(--primary-cyan)' : 'var(--border-subtle)',
                   padding: '0.55rem 1.4rem'
                 }}
               >
@@ -95,18 +97,18 @@ export const Gallery = () => {
                     left: '0.8rem',
                     padding: '0.25rem 0.7rem',
                     borderRadius: 'var(--radius-full)',
-                    background: 'rgba(0, 24, 28, 0.8)',
+                    background: 'rgba(11, 45, 107, 0.85)',
                     backdropFilter: 'blur(8px)',
                     fontSize: '0.75rem',
                     fontWeight: 700,
-                    color: 'var(--accent-orange)'
+                    color: '#FFF'
                   }}>
                     {item.category}
                   </div>
                   <div style={{
                     position: 'absolute',
                     inset: 0,
-                    background: 'rgba(0, 0, 0, 0.4)',
+                    background: 'rgba(11, 45, 107, 0.4)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -121,8 +123,8 @@ export const Gallery = () => {
                 </div>
 
                 <div style={{ padding: '1.2rem' }}>
-                  <h4 style={{ color: '#FFF', fontSize: '1.05rem', marginBottom: '0.3rem' }}>{item.title}</h4>
-                  <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>{item.description}</p>
+                  <h4 style={{ color: 'var(--primary-navy)', fontSize: '1.05rem', marginBottom: '0.3rem' }}>{item.title}</h4>
+                  <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem' }}>{item.description}</p>
                 </div>
               </div>
             ))}
@@ -137,7 +139,7 @@ export const Gallery = () => {
             <button
               onClick={() => setLightboxImg(null)}
               className="modal-close-btn"
-              style={{ top: '-15px', right: '-15px', background: 'var(--accent-orange)', color: '#FFF' }}
+              style={{ top: '-15px', right: '-15px', background: 'var(--primary-cyan)', color: '#FFF' }}
             >
               <X size={20} />
             </button>
@@ -147,13 +149,14 @@ export const Gallery = () => {
               style={{ width: '100%', maxHeight: '75vh', objectFit: 'contain', borderRadius: 'var(--radius-lg)' }}
             />
             <div style={{
-              background: 'rgba(0, 24, 28, 0.95)',
+              background: 'var(--surface-white)',
               padding: '1rem 1.5rem',
               borderRadius: 'var(--radius-md)',
               marginTop: '0.8rem',
-              border: '1px solid var(--glass-border)'
+              border: '1px solid var(--border-subtle)',
+              boxShadow: 'var(--card-shadow)'
             }}>
-              <h3 style={{ color: '#FFF', fontSize: '1.2rem', marginBottom: '0.2rem' }}>{lightboxImg.title}</h3>
+              <h3 style={{ color: 'var(--primary-navy)', fontSize: '1.2rem', marginBottom: '0.2rem' }}>{lightboxImg.title}</h3>
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>{lightboxImg.description}</p>
             </div>
           </div>

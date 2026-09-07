@@ -58,8 +58,8 @@ export const Contact = () => {
           <div style={{ display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: '3rem' }}>
             {/* Contact Form */}
             <div className="form-wrapper">
-              <h3 style={{ fontSize: '1.5rem', color: '#FFF', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <MessageSquare size={20} color="var(--accent-orange)" /> Send a Direct Message
+              <h3 style={{ fontSize: '1.5rem', color: 'var(--primary-navy)', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <MessageSquare size={20} color="var(--primary-cyan)" /> Send a Direct Message
               </h3>
 
               {sentSuccess ? (
@@ -71,7 +71,7 @@ export const Contact = () => {
                   border: '1px solid var(--accent-emerald)'
                 }}>
                   <CheckCircle2 size={42} color="var(--accent-emerald)" style={{ margin: '0 auto 1rem' }} />
-                  <h4 style={{ color: '#FFF', fontSize: '1.3rem', marginBottom: '0.5rem' }}>Message Dispatched</h4>
+                  <h4 style={{ color: 'var(--primary-navy)', fontSize: '1.3rem', marginBottom: '0.5rem' }}>Message Dispatched</h4>
                   <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem', fontSize: '0.95rem' }}>
                     Thank you! The ICC-CNS 2027 Organizing Secretariat at Vignan University will respond to your registered email shortly.
                   </p>
@@ -156,33 +156,33 @@ export const Contact = () => {
             {/* Secretariat Information Cards */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
               <div className="glass-panel" style={{ padding: '2rem' }}>
-                <h4 style={{ fontSize: '1.2rem', color: '#FFF', marginBottom: '1.2rem' }}>Official University Contacts</h4>
+                <h4 style={{ fontSize: '1.2rem', color: 'var(--primary-navy)', marginBottom: '1.2rem' }}>Official University Contacts</h4>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
                   <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
-                    <div style={{ width: '42px', height: '42px', borderRadius: 'var(--radius-sm)', background: 'rgba(0, 180, 216, 0.15)', color: '#00B4D8', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                    <div style={{ width: '42px', height: '42px', borderRadius: 'var(--radius-sm)', background: 'rgba(0, 163, 199, 0.12)', color: 'var(--primary-cyan)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                       <Mail size={20} />
                     </div>
                     <div>
                       <div style={{ color: 'var(--text-muted)', fontSize: '0.8rem', textTransform: 'uppercase' }}>Official Email</div>
-                      <div style={{ color: '#FFF', fontWeight: 600, fontSize: '0.95rem' }}>info@vignan.ac.in</div>
+                      <div style={{ color: 'var(--primary-navy)', fontWeight: 600, fontSize: '0.95rem' }}>info@vignan.ac.in</div>
                       <div style={{ color: 'var(--text-secondary)', fontSize: '0.85rem' }}>icccns2027@vignan.ac.in</div>
                     </div>
                   </div>
 
                   <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
-                    <div style={{ width: '42px', height: '42px', borderRadius: 'var(--radius-sm)', background: 'rgba(255, 107, 53, 0.15)', color: 'var(--accent-orange)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                    <div style={{ width: '42px', height: '42px', borderRadius: 'var(--radius-sm)', background: 'rgba(0, 163, 199, 0.12)', color: 'var(--primary-cyan)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                       <Phone size={20} />
                     </div>
                     <div>
                       <div style={{ color: 'var(--text-muted)', fontSize: '0.8rem', textTransform: 'uppercase' }}>University Phone</div>
-                      <div style={{ color: '#FFF', fontWeight: 600, fontSize: '0.95rem' }}>+91-863-2344 700 / 701</div>
+                      <div style={{ color: 'var(--primary-navy)', fontWeight: 600, fontSize: '0.95rem' }}>+91-863-2344 700 / 701</div>
                       <div style={{ color: 'var(--text-secondary)', fontSize: '0.85rem' }}>CSE Dept Ext: 201</div>
                     </div>
                   </div>
 
                   <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
-                    <div style={{ width: '42px', height: '42px', borderRadius: 'var(--radius-sm)', background: 'rgba(16, 185, 129, 0.15)', color: '#10B981', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                    <div style={{ width: '42px', height: '42px', borderRadius: 'var(--radius-sm)', background: 'rgba(0, 163, 199, 0.12)', color: 'var(--primary-cyan)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                       <MapPin size={20} />
                     </div>
                     <div>
@@ -195,12 +195,12 @@ export const Contact = () => {
                 </div>
               </div>
 
-              <div className="glass-panel" style={{ padding: '1.5rem', background: 'rgba(0, 24, 28, 0.7)' }}>
+              <div className="glass-panel" style={{ padding: '1.5rem', background: 'var(--surface-white)' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.4rem' }}>
-                  <Clock size={16} color="var(--accent-orange)" />
-                  <span style={{ color: '#FFF', fontWeight: 600, fontSize: '0.95rem' }}>Operating Hours</span>
+                  <Clock size={16} color="var(--primary-cyan)" />
+                  <span style={{ color: 'var(--primary-navy)', fontWeight: 600, fontSize: '0.95rem' }}>Operating Hours</span>
                 </div>
-                <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem' }}>
                   Monday to Saturday: 09:00 AM – 05:00 PM IST<br />
                   Online submission and registration portals are available 24/7.
                 </p>

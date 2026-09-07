@@ -1,11 +1,9 @@
 .form-wrapper {
-  background: rgba(0, 36, 41, 0.72);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid var(--glass-border);
+  background: var(--surface-white);
+  border: 1px solid var(--border-cyan);
   border-radius: var(--radius-xl);
   padding: 2.5rem;
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-md);
 }
 
 .form-grid-2 {
@@ -35,14 +33,14 @@
   font-size: 0.88rem;
   font-weight: 600;
   line-height: 1.4;
-  color: var(--text-primary);
+  color: var(--primary-navy);
   display: flex;
   align-items: center;
   gap: 0.35rem;
 }
 
 .form-label .required-star {
-  color: var(--accent-orange);
+  color: var(--primary-cyan);
 }
 
 .form-input,
@@ -51,9 +49,9 @@
   width: 100%;
   padding: 0.85rem 1.1rem;
   border-radius: var(--radius-md);
-  background: rgba(0, 24, 28, 0.6);
-  border: 1px solid var(--glass-border);
-  color: var(--text-pure-white);
+  background: #FFFFFF;
+  border: 1px solid var(--border-cyan);
+  color: var(--primary-navy);
   font-family: var(--font-body);
   font-size: 0.92rem;
   line-height: 1.5;
@@ -65,9 +63,9 @@
 .form-input:focus,
 .form-select:focus,
 .form-textarea:focus {
-  border-color: var(--accent-orange);
-  background: rgba(0, 30, 35, 0.8);
-  box-shadow: 0 0 15px var(--accent-orange-glow);
+  border-color: var(--primary-cyan);
+  background: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(0, 163, 199, 0.2);
 }
 
 .form-input::placeholder,
@@ -76,8 +74,8 @@
 }
 
 .form-select option {
-  background: #002227;
-  color: var(--text-pure-white);
+  background: #FFFFFF;
+  color: var(--primary-navy);
 }
 
 .form-textarea {
@@ -96,28 +94,29 @@
 .tier-card {
   padding: 1.2rem;
   border-radius: var(--radius-md);
-  background: rgba(0, 24, 28, 0.5);
-  border: 1px solid var(--glass-border);
+  background: var(--surface-light);
+  border: 1px solid var(--border-cyan);
   cursor: pointer;
   transition: all var(--transition-normal);
   position: relative;
 }
 
 .tier-card:hover {
-  border-color: rgba(0, 180, 216, 0.4);
-  background: rgba(0, 36, 41, 0.7);
+  border-color: var(--primary-cyan);
+  background: #FFFFFF;
+  box-shadow: var(--shadow-sm);
 }
 
 .tier-card.selected {
-  border-color: var(--accent-orange);
-  background: rgba(255, 107, 53, 0.08);
-  box-shadow: 0 0 20px var(--accent-orange-glow);
+  border-color: var(--primary-cyan);
+  background: rgba(0, 163, 199, 0.08);
+  box-shadow: 0 0 16px rgba(0, 163, 199, 0.2);
 }
 
 .tier-name {
   font-size: 1rem;
   font-weight: 700;
-  color: var(--text-pure-white);
+  color: var(--primary-navy);
   margin-bottom: 0.3rem;
 }
 
@@ -125,22 +124,22 @@
   font-family: var(--font-heading);
   font-size: 1.35rem;
   font-weight: 800;
-  color: var(--accent-orange);
+  color: var(--primary-navy);
 }
 
 .tier-desc {
   font-size: 0.8rem;
-  color: var(--text-muted);
+  color: var(--text-secondary);
   margin-top: 0.2rem;
 }
 
 /* File Upload Dropzone */
 .file-dropzone {
-  border: 2px dashed rgba(255, 255, 255, 0.2);
+  border: 2px dashed var(--primary-cyan);
   border-radius: var(--radius-lg);
   padding: 2.5rem 1.5rem;
   text-align: center;
-  background: rgba(0, 24, 28, 0.4);
+  background: var(--surface-light);
   cursor: pointer;
   transition: all var(--transition-normal);
   position: relative;
@@ -148,16 +147,16 @@
 
 .file-dropzone:hover,
 .file-dropzone.drag-active {
-  border-color: var(--accent-orange);
-  background: rgba(255, 107, 53, 0.05);
+  border-color: var(--primary-navy);
+  background: rgba(0, 163, 199, 0.08);
 }
 
 .dropzone-icon {
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  background: rgba(255, 107, 53, 0.12);
-  color: var(--accent-orange);
+  background: rgba(0, 163, 199, 0.12);
+  color: var(--primary-cyan);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -167,13 +166,13 @@
 .dropzone-title {
   font-size: 1.05rem;
   font-weight: 700;
-  color: var(--text-pure-white);
+  color: var(--primary-navy);
   margin-bottom: 0.3rem;
 }
 
 .dropzone-subtitle {
   font-size: 0.85rem;
-  color: var(--text-muted);
+  color: var(--text-secondary);
 }
 
 .selected-file-badge {
@@ -183,7 +182,7 @@
   gap: 0.5rem;
   padding: 0.5rem 1rem;
   border-radius: var(--radius-full);
-  background: rgba(16, 185, 129, 0.15);
+  background: rgba(5, 150, 105, 0.12);
   border: 1px solid var(--accent-emerald);
   color: var(--accent-emerald);
   font-size: 0.88rem;
@@ -201,8 +200,9 @@
   margin-top: 2rem;
   padding: 1.8rem;
   border-radius: var(--radius-lg);
-  background: rgba(0, 24, 28, 0.8);
-  border: 1px solid var(--glass-border);
+  background: var(--surface-white);
+  border: 1px solid var(--border-cyan);
+  box-shadow: var(--shadow-sm);
 }
 
 .status-tag {
@@ -215,19 +215,19 @@
 }
 
 .status-tag.accepted {
-  background: rgba(16, 185, 129, 0.2);
-  color: #10B981;
-  border: 1px solid #10B981;
+  background: rgba(5, 150, 105, 0.12);
+  color: #059669;
+  border: 1px solid #059669;
 }
 
 .status-tag.review {
-  background: rgba(255, 167, 38, 0.2);
-  color: #FFA726;
-  border: 1px solid #FFA726;
+  background: rgba(0, 163, 199, 0.12);
+  color: var(--primary-cyan);
+  border: 1px solid var(--primary-cyan);
 }
 
 .status-tag.rejected {
-  background: rgba(239, 68, 68, 0.2);
-  color: #EF4444;
-  border: 1px solid #EF4444;
+  background: rgba(220, 38, 38, 0.12);
+  color: #DC2626;
+  border: 1px solid #DC2626;
 }

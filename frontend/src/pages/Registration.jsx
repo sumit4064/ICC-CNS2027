@@ -153,7 +153,7 @@ export const Registration = () => {
               <span className="badge badge-emerald" style={{ marginBottom: '0.8rem' }}>
                 Registration Confirmed
               </span>
-              <h2 style={{ fontSize: '2.2rem', color: '#FFF', marginBottom: '0.4rem' }}>
+              <h2 style={{ fontSize: '2.2rem', color: 'var(--primary-navy)', marginBottom: '0.4rem' }}>
                 Welcome to ICC-CNS 2027!
               </h2>
               <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem' }}>
@@ -162,62 +162,62 @@ export const Registration = () => {
 
               {/* Conference Pass Card */}
               <div style={{
-                background: 'linear-gradient(135deg, rgba(0, 43, 48, 0.95) 0%, rgba(0, 24, 28, 0.95) 100%)',
+                background: 'linear-gradient(135deg, var(--primary-navy) 0%, #154699 100%)',
                 borderRadius: 'var(--radius-xl)',
                 padding: '2rem',
-                border: '1px solid var(--glass-border-light)',
+                border: '1px solid rgba(0, 163, 199, 0.4)',
                 maxWidth: '650px',
                 margin: '0 auto 2.5rem',
                 textAlign: 'left',
-                boxShadow: 'var(--shadow-lg), 0 0 25px rgba(255, 107, 53, 0.2)'
+                boxShadow: 'var(--shadow-lg), 0 0 25px rgba(11, 45, 107, 0.2)'
               }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid var(--glass-border)', paddingBottom: '1rem', marginBottom: '1.2rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(255, 255, 255, 0.15)', paddingBottom: '1rem', marginBottom: '1.2rem' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                     <div style={{ background: '#FFF', padding: '3px 6px', borderRadius: '4px' }}>
                       <img src="/logos/vignan_official_logo.svg" alt="Vignan Logo" style={{ height: '24px', maxWidth: '100px' }} />
                     </div>
                     <span style={{ fontFamily: 'var(--font-heading)', fontWeight: 800, color: '#FFF', fontSize: '1.2rem' }}>
-                      ICC-<span style={{ color: 'var(--accent-orange)' }}>CNS</span> 2027 PASS
+                      ICC-<span style={{ color: 'var(--primary-cyan)' }}>CNS</span> 2027 PASS
                     </span>
                   </div>
-                  <span style={{ fontFamily: 'var(--font-heading)', color: 'var(--accent-orange)', fontWeight: 800, fontSize: '1.2rem' }}>
+                  <span style={{ fontFamily: 'var(--font-heading)', color: 'var(--primary-cyan)', fontWeight: 800, fontSize: '1.2rem' }}>
                     {confirmedReg.id}
                   </span>
                 </div>
 
                 <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '1.2rem', marginBottom: '1.2rem' }}>
                   <div>
-                    <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Participant Name</span>
+                    <span style={{ fontSize: '0.78rem', color: 'rgba(255, 255, 255, 0.7)', textTransform: 'uppercase' }}>Participant Name</span>
                     <div style={{ fontSize: '1.2rem', color: '#FFF', fontWeight: 700 }}>{confirmedReg.fullName}</div>
                   </div>
                   <div>
-                    <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Category</span>
-                    <div style={{ fontSize: '1rem', color: '#00B4D8', fontWeight: 600 }}>{confirmedReg.participantType}</div>
+                    <span style={{ fontSize: '0.78rem', color: 'rgba(255, 255, 255, 0.7)', textTransform: 'uppercase' }}>Category</span>
+                    <div style={{ fontSize: '1rem', color: 'var(--primary-cyan)', fontWeight: 600 }}>{confirmedReg.participantType}</div>
                   </div>
                 </div>
 
                 <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '1.2rem', marginBottom: '1.2rem', fontSize: '0.9rem' }}>
                   <div>
-                    <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Institution</span>
-                    <div style={{ color: 'var(--text-primary)' }}>{confirmedReg.institution} ({confirmedReg.country})</div>
+                    <span style={{ fontSize: '0.78rem', color: 'rgba(255, 255, 255, 0.7)', textTransform: 'uppercase' }}>Institution</span>
+                    <div style={{ color: '#FFF' }}>{confirmedReg.institution} ({confirmedReg.country})</div>
                   </div>
                   <div>
-                    <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Mode</span>
-                    <div style={{ color: '#10B981', fontWeight: 600 }}>{confirmedReg.mode}</div>
+                    <span style={{ fontSize: '0.78rem', color: 'rgba(255, 255, 255, 0.7)', textTransform: 'uppercase' }}>Mode</span>
+                    <div style={{ color: 'var(--accent-emerald)', fontWeight: 600 }}>{confirmedReg.mode}</div>
                   </div>
                 </div>
 
                 {confirmedReg.paperId && confirmedReg.paperId !== 'N/A (Attendee Only)' && (
-                  <div style={{ padding: '0.8rem', borderRadius: 'var(--radius-sm)', background: 'rgba(255, 107, 53, 0.08)', border: '1px solid rgba(255, 107, 53, 0.3)', marginBottom: '1rem' }}>
-                    <div style={{ fontSize: '0.78rem', color: 'var(--accent-orange)', fontWeight: 700 }}>LINKED RESEARCH PAPER</div>
+                  <div style={{ padding: '0.8rem', borderRadius: 'var(--radius-sm)', background: 'rgba(0, 163, 199, 0.15)', border: '1px solid rgba(0, 163, 199, 0.3)', marginBottom: '1rem' }}>
+                    <div style={{ fontSize: '0.78rem', color: 'var(--primary-cyan)', fontWeight: 700 }}>LINKED RESEARCH PAPER</div>
                     <div style={{ fontSize: '0.92rem', color: '#FFF', fontWeight: 600 }}>[{confirmedReg.paperId}] {confirmedReg.paperTitle}</div>
                   </div>
                 )}
 
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '1rem', borderTop: '1px solid var(--glass-border)' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '1rem', borderTop: '1px solid rgba(255, 255, 255, 0.15)' }}>
                   <div>
-                    <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Amount:</span>
-                    <span style={{ marginLeft: '0.5rem', color: 'var(--accent-orange)', fontWeight: 800, fontSize: '1.1rem' }}>{confirmedReg.amountPaid}</span>
+                    <span style={{ fontSize: '0.75rem', color: 'rgba(255, 255, 255, 0.7)' }}>Amount:</span>
+                    <span style={{ marginLeft: '0.5rem', color: 'var(--primary-cyan)', fontWeight: 800, fontSize: '1.1rem' }}>{confirmedReg.amountPaid}</span>
                   </div>
                   <span className="badge badge-emerald">Status: Confirmed</span>
                 </div>
@@ -243,7 +243,7 @@ export const Registration = () => {
             <div className="form-wrapper">
               <form onSubmit={handleSubmit}>
                 {/* 1. Category Selection */}
-                <h3 style={{ fontSize: '1.3rem', color: '#FFF', marginBottom: '1rem' }}>
+                <h3 style={{ fontSize: '1.3rem', color: 'var(--primary-navy)', marginBottom: '1rem' }}>
                   1. Select Participant Category
                 </h3>
 
@@ -264,7 +264,7 @@ export const Registration = () => {
                 </div>
 
                 {/* 2. Personal Information */}
-                <h3 style={{ fontSize: '1.3rem', color: '#FFF', margin: '2rem 0 1rem' }}>
+                <h3 style={{ fontSize: '1.3rem', color: 'var(--primary-navy)', margin: '2rem 0 1rem' }}>
                   2. Personal & Institutional Information
                 </h3>
 
@@ -363,7 +363,7 @@ export const Registration = () => {
                 </div>
 
                 {/* 3. Paper Details (If presenting) */}
-                <h3 style={{ fontSize: '1.3rem', color: '#FFF', margin: '2rem 0 1rem' }}>
+                <h3 style={{ fontSize: '1.3rem', color: 'var(--primary-navy)', margin: '2rem 0 1rem' }}>
                   3. Research Paper Information (Optional for non-authors)
                 </h3>
 
@@ -398,8 +398,8 @@ export const Registration = () => {
                   margin: '2rem 0',
                   padding: '1.5rem',
                   borderRadius: 'var(--radius-lg)',
-                  background: 'rgba(0, 24, 28, 0.7)',
-                  border: '1px solid var(--glass-border)',
+                  background: 'var(--background-light)',
+                  border: '1px solid var(--border-subtle)',
                   display: 'flex',
                   justifyContent: 'space-between',
                   alignItems: 'center',
@@ -408,7 +408,7 @@ export const Registration = () => {
                 }}>
                   <div>
                     <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Estimated Registration Fee:</div>
-                    <div style={{ fontFamily: 'var(--font-heading)', fontSize: '1.8rem', fontWeight: 800, color: 'var(--accent-orange)' }}>
+                    <div style={{ fontFamily: 'var(--font-heading)', fontSize: '1.8rem', fontWeight: 800, color: 'var(--primary-navy)' }}>
                       {getEstimatedFee()}
                     </div>
                   </div>

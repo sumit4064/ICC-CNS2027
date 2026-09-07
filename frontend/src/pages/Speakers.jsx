@@ -67,7 +67,9 @@ export const Speakers = () => {
                   className={`btn-card-action ${filterType === type ? 'btn-primary-glow' : ''}`}
                   style={{
                     padding: '0.6rem 1.4rem',
-                    background: filterType === type ? 'var(--accent-orange)' : 'rgba(0, 36, 41, 0.7)'
+                    background: filterType === type ? 'var(--primary-cyan)' : 'var(--surface-white)',
+                    color: filterType === type ? '#FFFFFF' : 'var(--primary-navy)',
+                    border: '1px solid var(--border-cyan)'
                   }}
                 >
                   {type === 'All' ? 'All Speakers' : `${type} Speakers`}
@@ -87,7 +89,7 @@ export const Speakers = () => {
               />
               <Search
                 size={18}
-                color="var(--text-muted)"
+                color="var(--primary-cyan)"
                 style={{ position: 'absolute', left: '1rem', top: '50%', transform: 'translateY(-50%)' }}
               />
             </div>
@@ -106,7 +108,7 @@ export const Speakers = () => {
             </div>
           ) : (
             <div className="glass-panel" style={{ padding: '3rem', textAlign: 'center' }}>
-              <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem' }}>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem' }}>
                 No speakers found matching your search criteria.
               </p>
             </div>

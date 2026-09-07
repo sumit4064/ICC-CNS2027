@@ -1,9 +1,22 @@
 import { Track } from '../models/index.js';
+import { serverCache } from '../utils/cache.js';
+
+const CACHE_KEY = 'tracks:all';
 
 export const getTracks = async (req, res) => {
   try {
+    const cached = serverCache.get(CACHE_KEY);
+    if (cached) {
+      res.setHeader('Cache-Control', 'public, max-age=60, stale-while-revalidate=30');
+      return res.json({ success: true, data: cached });
+    }
+
     const tracks = await Track.find().lean();
-    res.json({ success: true, data: tracks || [] });
+    const data = tracks || [];
+    serverCache.set(CACHE_KEY, data, 60);
+
+    res.setHeader('Cache-Control', 'public, max-age=60, stale-while-revalidate=30');
+    res.json({ success: true, data });
   } catch (error) {
     console.error('Error in getTracks:', error.message);
     res.status(500).json({ success: false, message: 'Failed to fetch tracks.' });
@@ -31,6 +44,9 @@ export const createTrack = async (req, res) => {
     };
 
     const created = await Track.create(newTrack);
+
+    serverCache.del(CACHE_KEY);
+
     res.status(201).json({ success: true, message: 'Track added successfully.', data: created });
   } catch (error) {
     console.error('Error in createTrack:', error.message);
@@ -63,6 +79,8 @@ export const updateTrack = async (req, res) => {
       { new: true }
     ).lean();
 
+    serverCache.del(CACHE_KEY);
+
     res.json({ success: true, message: 'Track updated successfully.', data: updated });
   } catch (error) {
     console.error('Error in updateTrack:', error.message);
@@ -78,6 +96,8 @@ export const deleteTrack = async (req, res) => {
     if (!deleted) {
       return res.status(404).json({ success: false, message: 'Track not found.' });
     }
+
+    serverCache.del(CACHE_KEY);
 
     res.json({ success: true, message: 'Track deleted successfully.' });
   } catch (error) {

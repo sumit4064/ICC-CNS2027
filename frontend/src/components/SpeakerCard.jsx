@@ -21,6 +21,7 @@ export const SpeakerCard = ({ speaker, onClick }) => {
             alt={speaker.name}
             className="speaker-img"
             loading="lazy"
+            decoding="async"
             onError={(e) => {
               e.target.style.display = 'none';
               const fallback = e.target.nextElementSibling;

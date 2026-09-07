@@ -22,5 +22,8 @@ const registrationSchema = new mongoose.Schema({
   versionKey: false
 });
 
+registrationSchema.index({ email: 1 });
+registrationSchema.index({ registeredAt: -1 });
+
 export const Registration = mongoose.models.Registration || mongoose.model('Registration', registrationSchema);
 export default Registration;

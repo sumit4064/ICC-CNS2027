@@ -41,8 +41,8 @@ export const Tracks = () => {
           </div>
 
           {/* Submission Guidelines Note */}
-          <div className="glass-panel" style={{ padding: '2.5rem', background: 'rgba(0, 31, 36, 0.85)', textAlign: 'center' }}>
-            <h3 style={{ fontSize: '1.6rem', color: '#FFF', marginBottom: '1rem' }}>
+          <div className="glass-panel" style={{ padding: '2.5rem', background: 'var(--surface-white)', textAlign: 'center' }}>
+            <h3 style={{ fontSize: '1.6rem', color: 'var(--primary-navy)', marginBottom: '1rem' }}>
               Interdisciplinary & Cross-Track Research
             </h3>
             <p style={{ maxWidth: '750px', margin: '0 auto 1.8rem', color: 'var(--text-secondary)', lineHeight: '1.7' }}>
