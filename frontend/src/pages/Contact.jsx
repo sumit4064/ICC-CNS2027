@@ -165,8 +165,8 @@ export const Contact = () => {
                     </div>
                     <div>
                       <div style={{ color: 'var(--text-muted)', fontSize: '0.8rem', textTransform: 'uppercase' }}>Official Email</div>
-                      <div style={{ color: 'var(--primary-navy)', fontWeight: 600, fontSize: '0.95rem' }}>info@vignan.ac.in</div>
-                      <div style={{ color: 'var(--text-secondary)', fontSize: '0.85rem' }}>icccns2027@vignan.ac.in</div>
+                      <div style={{ color: 'var(--primary-navy)', fontWeight: 600, fontSize: '0.95rem' }}>info@icccns.in</div>
+                      
                     </div>
                   </div>
 
@@ -175,9 +175,8 @@ export const Contact = () => {
                       <Phone size={20} />
                     </div>
                     <div>
-                      <div style={{ color: 'var(--text-muted)', fontSize: '0.8rem', textTransform: 'uppercase' }}>University Phone</div>
-                      <div style={{ color: 'var(--primary-navy)', fontWeight: 600, fontSize: '0.95rem' }}>+91-863-2344 700 / 701</div>
-                      <div style={{ color: 'var(--text-secondary)', fontSize: '0.85rem' }}>CSE Dept Ext: 201</div>
+                      <div style={{ color: 'var(--text-muted)', fontSize: '0.8rem', textTransform: 'uppercase' }}>CSE Department Phone</div>
+                      <div style={{ color: 'var(--primary-navy)', fontWeight: 600, fontSize: '0.95rem' }}>+91-863-237 11 26</div>
                     </div>
                   </div>
 
