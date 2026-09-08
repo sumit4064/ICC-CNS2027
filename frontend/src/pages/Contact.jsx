@@ -73,7 +73,7 @@ export const Contact = () => {
                   <CheckCircle2 size={42} color="var(--accent-emerald)" style={{ margin: '0 auto 1rem' }} />
                   <h4 style={{ color: 'var(--primary-navy)', fontSize: '1.3rem', marginBottom: '0.5rem' }}>Message Dispatched</h4>
                   <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem', fontSize: '0.95rem' }}>
-                    Thank you! The ICC-CNS 2027 Organizing Secretariat at Vignan University will respond to your registered email shortly.
+                    Thank you! The ICCCNS-2027 Organizing Secretariat at Vignan University will respond to your registered email shortly.
                   </p>
                   <button onClick={() => setSentSuccess(false)} className="btn-secondary-glass">
                     Send Another Message
@@ -118,7 +118,7 @@ export const Contact = () => {
                     <input
                       type="text"
                       name="subject"
-                      placeholder="e.g. Query regarding ICC-CNS 2027 Paper Submission"
+                      placeholder="e.g. Query regarding ICCCNS-2027 Paper Submission"
                       value={formData.subject}
                       onChange={handleInputChange}
                       className="form-input"

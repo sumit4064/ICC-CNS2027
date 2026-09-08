@@ -49,16 +49,16 @@ export const AdminDashboard = () => {
 
   const [activeTab, setActiveTab] = useState(tab || 'overview');
   const [conference, setConference] = useState({
-    title: "2027 International Conference on Cognitive Computing and Networking Systems",
-    shortName: "ICC-CNS 2027",
+    title: "Second International Conference on Cognitive Computing and Networking Systems (ICCCNS 2027)",
+    shortName: "ICCCNS 2027",
     subTitle: "Department of Computer Science and Engineering",
     institution: "Vignan's Foundation for Science, Technology and Research (Deemed to be University)",
     location: "Vadlamudi, Guntur, Andhra Pradesh, India",
     venueLocation: "Vadlamudi, Guntur, Andhra Pradesh - 522213",
     year: 2027,
-    edition: "3rd",
-    dates: "June 11-12, 2027",
-    targetDate: "2027-06-11T09:00:00.000Z",
+    edition: "2nd",
+    dates: "10–12 June 2027",
+    targetDate: "2027-06-10T09:00:00.000Z",
     publicationInfo: {
       notice: "Technical Co-Sponsorship by IEEE / IEEE ComSoc. All registered and presented papers will be submitted for inclusion into IEEE Xplore.",
       status: "Technical Co-Sponsorship Approved",
@@ -414,7 +414,7 @@ export const AdminDashboard = () => {
         acceptConfirmPaper.id,
         {
           status: 'Accepted',
-          reviewNotes: acceptRemarks || 'Paper accepted for publication and presentation at ICC-CNS 2027.'
+          reviewNotes: acceptRemarks || 'Paper accepted for publication and presentation at ICCCNS-2027.'
         },
         token
       );
@@ -426,7 +426,7 @@ export const AdminDashboard = () => {
           isLocked: true,
           decisionDate: new Date().toISOString(),
           decidedBy: user?.name || user?.email || 'Conference Administrator',
-          reviewNotes: acceptRemarks || 'Paper accepted for publication and presentation at ICC-CNS 2027.'
+          reviewNotes: acceptRemarks || 'Paper accepted for publication and presentation at ICCCNS-2027.'
         }));
       }
       setAcceptConfirmPaper(null);
@@ -447,8 +447,8 @@ export const AdminDashboard = () => {
         rejectConfirmPaper.id,
         {
           status: 'Rejected',
-          rejectionReason: rejectionReason || 'Does not meet peer-review criteria for ICC-CNS 2027.',
-          reviewNotes: rejectionReason || 'Does not meet peer-review criteria for ICC-CNS 2027.'
+          rejectionReason: rejectionReason || 'Does not meet peer-review criteria for ICCCNS-2027.',
+          reviewNotes: rejectionReason || 'Does not meet peer-review criteria for ICCCNS-2027.'
         },
         token
       );
@@ -460,8 +460,8 @@ export const AdminDashboard = () => {
           isLocked: true,
           decisionDate: new Date().toISOString(),
           decidedBy: user?.name || user?.email || 'Conference Administrator',
-          rejectionReason: rejectionReason || 'Does not meet peer-review criteria for ICC-CNS 2027.',
-          reviewNotes: rejectionReason || 'Does not meet peer-review criteria for ICC-CNS 2027.'
+          rejectionReason: rejectionReason || 'Does not meet peer-review criteria for ICCCNS-2027.',
+          reviewNotes: rejectionReason || 'Does not meet peer-review criteria for ICCCNS-2027.'
         }));
       }
       setRejectConfirmPaper(null);
@@ -1518,7 +1518,7 @@ export const AdminDashboard = () => {
                           <label className="form-label">Countdown Target Date (ISO)</label>
                           <input
                             type="text"
-                            value={conference?.targetDate || '2027-06-11T09:00:00.000Z'}
+                            value={conference?.targetDate || '2027-06-10T09:00:00.000Z'}
                             onChange={(e) => setConference({ ...conference, targetDate: e.target.value })}
                             className="form-input"
                           />

@@ -42,7 +42,7 @@ export const Login = () => {
       <section className="page-header-section" style={{ paddingBottom: '1rem' }}>
         <div className="content-container">
           <span className="page-header-badge">Portal Authentication</span>
-          <h1 className="page-header-title">Sign In to ICC-CNS</h1>
+          <h1 className="page-header-title">Sign In to ICCCNS-2027</h1>
           <p className="page-header-subtitle">
             Access administrator dashboard, manage conference dates, speakers, registrations, and review paper submissions.
           </p>

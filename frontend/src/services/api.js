@@ -4,7 +4,7 @@ const BASE_URL = (import.meta.env.VITE_API_BASE_URL || '/api').replace(/\/+$/, '
 const clientCache = new Map();
 const inFlightRequests = new Map();
 
-const CACHE_TTL_MS = 60 * 1000; // 60 seconds
+const CACHE_TTL_MS = 5 * 60 * 1000; // 5 minutes
 
 // Safe endpoints eligible for client-side caching
 const CACHEABLE_ENDPOINTS = [
@@ -35,6 +35,21 @@ export const clearClientCache = (prefix) => {
       clientCache.delete(key);
     }
   }
+};
+
+export const getClientCachedData = (endpoint) => {
+  const cached = clientCache.get(endpoint);
+  if (cached && Date.now() < cached.expiry) {
+    return cached.data;
+  }
+  return null;
+};
+
+export const prefetch = (endpoint) => {
+  if (!endpoint) return;
+  const cached = clientCache.get(endpoint);
+  if (cached && Date.now() < cached.expiry) return;
+  request(endpoint).catch(() => {});
 };
 
 async function request(endpoint, options = {}) {
@@ -323,6 +338,8 @@ export const api = {
       headers: { Authorization: `Bearer ${token}` }
     }),
 
-  // Cache Control
-  clearCache: clearClientCache
+  // Cache & Prefetch Control
+  clearCache: clearClientCache,
+  getCached: getClientCachedData,
+  prefetch: prefetch
 };

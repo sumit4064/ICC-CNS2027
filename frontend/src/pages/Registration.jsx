@@ -123,7 +123,7 @@ export const Registration = () => {
     <div className="registration-page">
       <section className="page-header-section">
         <div className="content-container">
-          <span className="page-header-badge">Join ICC-CNS 2027</span>
+          <span className="page-header-badge">Join ICCCNS-2027</span>
           <h1 className="page-header-title">Conference Registration</h1>
           <p className="page-header-subtitle">
             Hosted by Department of Computer Science & Engineering, Vignan's Foundation for Science, Technology and Research (VFSTR).
@@ -154,7 +154,7 @@ export const Registration = () => {
                 Registration Confirmed
               </span>
               <h2 style={{ fontSize: '2.2rem', color: 'var(--primary-navy)', marginBottom: '0.4rem' }}>
-                Welcome to ICC-CNS 2027!
+                Welcome to ICCCNS-2027!
               </h2>
               <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem' }}>
                 Your registration pass has been generated. Confirmation has been sent to <strong>{confirmedReg.email}</strong>.
@@ -174,10 +174,10 @@ export const Registration = () => {
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(255, 255, 255, 0.15)', paddingBottom: '1rem', marginBottom: '1.2rem' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                     <div style={{ background: '#FFF', padding: '3px 6px', borderRadius: '4px' }}>
-                      <img src="/logos/vignan_official_logo.svg" alt="Vignan Logo" style={{ height: '24px', maxWidth: '100px' }} />
+                      <img src="/logos/vignan_institutional_logo.png" alt="Vignan's Foundation for Science, Technology & Research Logo" style={{ height: '24px', maxWidth: '120px', objectFit: 'contain' }} />
                     </div>
                     <span style={{ fontFamily: 'var(--font-heading)', fontWeight: 800, color: '#FFF', fontSize: '1.2rem' }}>
-                      ICC-<span style={{ color: 'var(--primary-cyan)' }}>CNS</span> 2027 PASS
+                      ICCCNS-<span style={{ color: 'var(--primary-cyan)' }}>2027</span> PASS
                     </span>
                   </div>
                   <span style={{ fontFamily: 'var(--font-heading)', color: 'var(--primary-cyan)', fontWeight: 800, fontSize: '1.2rem' }}>
@@ -373,7 +373,7 @@ export const Registration = () => {
                     <input
                       type="text"
                       name="paperId"
-                      placeholder="e.g. ICC-CNS-2027-001 (Leave blank if attendee)"
+                      placeholder="e.g. ICCCNS-2027-001 (Leave blank if attendee)"
                       value={formData.paperId}
                       onChange={handleInputChange}
                       className="form-input"

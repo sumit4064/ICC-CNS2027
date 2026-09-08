@@ -80,7 +80,7 @@ export const ConferenceIntro = ({ onComplete }) => {
   return (
     <div
       className={`conference-intro-overlay ${isFadingOut ? 'intro-fade-out' : ''}`}
-      aria-label="ICC-CNS 2027 Conference Introduction Video"
+      aria-label="ICCCNS-2027 Conference Introduction Video"
       role="region"
     >
       {/* 16:9 Responsive Video Wrapper */}

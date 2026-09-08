@@ -10,7 +10,7 @@ export const getCommittee = async (req, res) => {
 
     const cached = serverCache.get(cacheKey);
     if (cached) {
-      res.setHeader('Cache-Control', 'public, max-age=60, stale-while-revalidate=30');
+      res.setHeader('Cache-Control', 'public, max-age=120, stale-while-revalidate=600');
       return res.json({
         success: true,
         count: cached.length,
@@ -21,13 +21,14 @@ export const getCommittee = async (req, res) => {
     const filter = includeInactive ? {} : { isActive: { $ne: false } };
 
     const members = await Committee.find(filter)
+      .select('id _id name role designation department institution org category country bio email imageUrl imagePublicId imageStorageKey displayOrder isActive')
       .sort({ displayOrder: 1, name: 1 })
       .lean();
 
     const data = members || [];
-    serverCache.set(cacheKey, data, 60);
+    serverCache.set(cacheKey, data, 600);
 
-    res.setHeader('Cache-Control', 'public, max-age=60, stale-while-revalidate=30');
+    res.setHeader('Cache-Control', 'public, max-age=120, stale-while-revalidate=600');
     res.json({
       success: true,
       count: data.length,

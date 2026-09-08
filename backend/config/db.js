@@ -5,6 +5,7 @@ import bcrypt from 'bcryptjs';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import dns from 'dns';
+import { officialCommitteeMembers } from './committeeData.js';
 
 dotenv.config();
 
@@ -51,8 +52,8 @@ export const getInitialData = () => {
       subTitle: "Organized by Department of Computer Science & Engineering",
       school: "School of Computing and Informatics",
       institution: "Vignan's Foundation for Science, Technology and Research (Deemed to be University)",
-      dates: "11 – 13 June 2027",
-      targetDate: "2027-06-11T09:00:00.000Z",
+      dates: "10–12 June 2027",
+      targetDate: "2027-06-10T09:00:00.000Z",
       mode: "Hybrid Mode",
       modeDetail: "In-person & Online Virtual",
       venueName: "Vignan's Foundation for Science, Technology and Research (VFSTR)",
@@ -85,54 +86,45 @@ export const getInitialData = () => {
     dates: [
       {
         id: "d1",
-        title: "Call for Papers & Submission Opens",
-        date: "2027-01-15",
-        displayDate: "15 JAN 2027",
+        title: "Opening Date for Paper Submission",
+        date: "2026-11-01",
+        displayDate: "01/11/2026",
         description: "Official submission portal opens for full research manuscripts across all tracks.",
         highlight: false,
         status: "Open"
       },
       {
         id: "d2",
-        title: "Paper Submission Deadline",
-        date: "2027-04-10",
-        displayDate: "10 APR 2027",
+        title: "Closing Date for Paper Submission",
+        date: "2027-03-31",
+        displayDate: "31/03/2027",
         description: "Strict deadline for full manuscript upload and initial peer-review dispatch.",
         highlight: true,
         status: "Upcoming"
       },
       {
         id: "d3",
-        title: "Notification of Acceptance",
-        date: "2027-04-30",
-        displayDate: "30 APR 2027",
+        title: "Notification of Decision (Acceptance / Rejection)",
+        date: "2027-04-10",
+        displayDate: "10/04/2027 Onwards",
         description: "Double-blind peer-review evaluations and acceptance decisions dispatched to authors.",
         highlight: false,
         status: "Upcoming"
       },
       {
         id: "d4",
-        title: "Camera Ready Submission & Copyright",
+        title: "Registration Close",
         date: "2027-05-15",
-        displayDate: "15 MAY 2027",
-        description: "Final publication-ready paper submission and signed copyright form.",
-        highlight: false,
-        status: "Upcoming"
-      },
-      {
-        id: "d5",
-        title: "Author & Attendee Registration Closes",
-        date: "2027-05-25",
-        displayDate: "25 MAY 2027",
-        description: "Early-bird and author registration deadline for conference scheduling.",
+        displayDate: "15/05/2027",
+        description: "Final registration deadline for authors and attendees.",
         highlight: true,
         status: "Upcoming"
       },
       {
-        id: "d6",
-        title: "Conference Dates (ICC-CNS 2027)",
-        date: "2027-06-11",
-        displayDate: "11–13 JUN 2027",
+        id: "d5",
+        title: "Conference",
+        date: "2027-06-10",
+        displayDate: "10–12 June 2027",
         description: "Inaugural ceremony, Keynote Speeches, Technical Paper Presentations & Valedictory.",
         highlight: true,
         status: "Major Event"
@@ -308,258 +300,7 @@ export const getInitialData = () => {
         type: "Invited"
       }
     ],
-    committee: [
-      {
-        category: "Chief Patrons",
-        members: [
-          { name: "Dr. L. Rathaiah", role: "Chairman", org: "Vignan's Group" },
-          { name: "Sri L. Sri Krishna Devarayalu", role: "Vice Chairman", org: "Vignan's Group" }
-        ]
-      },
-      {
-        category: "Patrons",
-        members: [
-          { name: "Dr. Pavuluri Subba Rao", role: "Chancellor", org: "VFSTR" },
-          { name: "Prof. K. V. Krishna Kishore", role: "Vice-Chancellor", org: "VFSTR" },
-          { name: "Dr. K. Meghana", role: "CEO", org: "VFSTR, Vadlamudi" },
-          { name: "Prof. P. M. V. Rao", role: "Registrar", org: "VFSTR" }
-        ]
-      },
-      {
-        category: "General Chair",
-        members: [
-          { name: "Prof. K.V.Krishna Kishore", role: "Dean", org: "School of Computing & Informatics, VFSTR" }
-        ]
-      },
-      {
-        category: "Organizing Chair",
-        members: [
-          { name: "Dr. S. V. Phani Kumar", role: "Professor and HOD", org: "Department of CSE, VFSTR" }
-        ]
-      },
-      {
-        category: "Honorary Chairs",
-        members: [
-          { name: "Prof. Jinsong Wu", role: "Professor", org: "University of Chile, Chile" },
-          { name: "Dr. Alvaro Rocha", role: "Vice-Chair of IEEE SMC Portugal Chapter", org: "Professor ISEG, University of Lisbon, Lisboa, Portugal" }
-        ]
-      },
-      {
-        category: "Conference Chair",
-        members: [
-          { name: "Dr. H. James Deva Koresh", role: "Assistant Professor", org: "Department of CSE, VFSTR" }
-        ]
-      },
-      {
-        category: "Publication Chair",
-        members: [
-          { name: "Dr. J. Vijitha Ananthi", role: "Assistant Professor", org: "Department of CSE, VFSTR" }
-        ]
-      },
-      {
-        category: "International Advisory Chairs",
-        members: [
-          { name: "Prof. Dr. Nan Yang", role: "ANU College of Systems and Society", org: "Australian National University, Australia" },
-          { name: "Dr. Rui Dinis", role: "FCT-UNL and Researcher", org: "Instituto de Telecomunicações, Portugal" },
-          { name: "Dr. Jinwei Liu", role: "Advisory Chair", org: "Florida A&M University, United States" },
-          { name: "Dr. Sinem Coleri", role: "Advisory Chair", org: "Koc University, Turkey" }
-        ]
-      },
-      {
-        category: "International Advisory Committee",
-        members: [
-          { name: "Dr. Tomonobu Senjyu", role: "Professor", org: "University of the Ryukyus, Okinawa, Japan" },
-          { name: "Dr. Francesco Zirilli", role: "Professor (retired)", org: "Sapienza Universita, Roma, Italy" },
-          { name: "Dr. Dariusz Jacek Jakobczak", role: "Faculty of Electronics & CS", org: "Koszalin University of Technology, Poland" },
-          { name: "Dr. Addisson Salazar", role: "Advisory Member", org: "Universitat Politècnica de València, Spain" },
-          { name: "Dr. Debdatta Sinha Roy", role: "Sr. Research Scientist", org: "Oracle Retail Data Science R&D, Burlington, USA" },
-          { name: "Dr. Grigorios N. Beligiannis", role: "Advisory Member", org: "University of Patras - Agrinio Campus, Greece" },
-          { name: "Dr. Tzung-Pei Hong", role: "Professor", org: "National University of Kaohsiung, Taiwan" },
-          { name: "Dr. Ayodeji Olalekan Salau", role: "Advisory Member", org: "Afe Babalola University, Nigeria" },
-          { name: "Dr. Leila Bayoudhi", role: "Advisory Member", org: "University of Monastir, Tunisia" },
-          { name: "Dr. Selim Hossain", role: "Advisory Member", org: "Hajee Mohammad Danesh Science & Technology University, Dinajpur, Bangladesh" },
-          { name: "Dr. Yik-Chung Wu", role: "Advisory Member", org: "The University of Hong Kong, Hong Kong" }
-        ]
-      },
-      {
-        category: "National Advisory Committee",
-        members: [
-          { name: "Dr. Gopal Rawat", role: "Advisory Member", org: "Indian Institute of Technology Mandi, India" },
-          { name: "Dr. B. K. Roy", role: "Advisory Member", org: "National Institute of Technology Silchar, India" },
-          { name: "Dr. Umesh C. Pati", role: "Advisory Member", org: "National Institute of Technology Rourkela, India" },
-          { name: "Dr. Shailendra K. Dwivedi", role: "Advisory Member", org: "Maulana Azad National Institute of Technology Bhopal, India" },
-          { name: "Dr. Brijesh Kumar", role: "Advisory Member", org: "Indira Gandhi Delhi Technical University, India" },
-          { name: "Dr. M. Thenmozhi", role: "Advisory Member", org: "Puducherry Technological University, India" },
-          { name: "Dr. K. L. V. Sai Prakash Sakuru", role: "Advisory Member", org: "National Institute of Technology Warangal, India" },
-          { name: "Dr. Tajinder Singh Arora", role: "Advisory Member", org: "National Institute of Technology Uttarakhand, India" },
-          { name: "Dr. Subhojit Ghosh", role: "Advisory Member", org: "National Institute of Technology Raipur, India" },
-          { name: "Dr. Anuradha Banerjee", role: "Advisory Member", org: "Kalyani Government Engineering College, India" },
-          { name: "Dr. Tejavathu Ramesh", role: "Advisory Member", org: "National Institute of Technology Andhra Pradesh, India" },
-          { name: "Dr. Amit Rathi", role: "Advisory Member", org: "Manipal University Jaipur, India" },
-          { name: "Dr. Virender Ranga", role: "Advisory Member", org: "Delhi Technological University, India" },
-          { name: "Dr. Ngangbam Herojit Singh", role: "Advisory Member", org: "National Institute of Technology Agartala, India" },
-          { name: "Dr. Jayendra Kumar", role: "Advisory Member", org: "National Institute of Technology Jamshedpur, India" },
-          { name: "Dr. Anirban Banik", role: "Advisory Member", org: "National Institute of Technology Sikkim, India" },
-          { name: "Dr. S. Chitra", role: "Advisory Member", org: "Government College of Technology Coimbatore, India" },
-          { name: "Dr. J. Satheesh Kumar", role: "Advisory Member", org: "Dayananda Sagar College of Engineering, India" },
-          { name: "Dr. John Clement Singh C", role: "Advisory Member", org: "Kings Engineering College, India" },
-          { name: "Dr. Nandhini Gayathri", role: "Advisory Member", org: "SASTRA University, India" },
-          { name: "Dr. Dilip Singh Sisodia", role: "Advisory Member", org: "National Institute of Technology Raipur, India" },
-          { name: "Dr. Angeline Vijula D", role: "Advisory Member", org: "PSG College of Technology, India" },
-          { name: "Dr. Bhargava Rama", role: "Advisory Member", org: "Indian Institute of Technology Roorkee, India" }
-        ]
-      },
-      {
-        category: "Technical Program Committee",
-        members: [
-          { name: "Dr. Soumen Mondal", role: "TPC Member", org: "National Sun Yat-sen University, Taiwan" },
-          { name: "Dr. Jiancheng An", role: "TPC Member", org: "Nanyang Technological University, Singapore" },
-          { name: "Prof. Patrick Finnerty", role: "TPC Member", org: "Kobe University, Japan" },
-          { name: "Dr. Vinayakumar Ravi", role: "TPC Member", org: "Prince Mohammad Bin Fahd University, Saudi Arabia" },
-          { name: "Prof. Weiwei Jiang", role: "TPC Member", org: "Beijing University of Posts and Telecommunications, China" },
-          { name: "Dr. Ke-Lin Du", role: "TPC Member", org: "Guangdong University of Science and Technology, China" },
-          { name: "Prof. Pascal Lorenz", role: "TPC Member", org: "University of Haute Alsace, Greece" },
-          { name: "Dr. Satish Jondhale", role: "TPC Member", org: "Savitribai Phule Pune University, Pune, India" },
-          { name: "Dr. Sweety Kunjachan", role: "TPC Member", org: "Indian Institute of Technology, Kottayam, India" },
-          { name: "Prof. Sivakumar P", role: "TPC Member", org: "Dr. NGP Institute of Technology, Coimbatore, India" },
-          { name: "Dr. Sujatha Radhakrishnan", role: "TPC Member", org: "Vellore Institute of Technology, India" },
-          { name: "Dr. Sadhana Tiwari", role: "TPC Member", org: "Prestige Institute of Engineering Management and Research, Indore, India" },
-          { name: "Dr. C. Ezhilazhagan", role: "TPC Member", org: "Vel Tech Rangarajan Dr.Sagunthala R&D Institute of Science and Technology, India" },
-          { name: "Dr. G. Murugadass", role: "TPC Member", org: "Anna University, India" },
-          { name: "Dr. P. Subha Hency Jose", role: "TPC Member", org: "Karunya Institute of Technology and Sciences, India" },
-          { name: "Dr. Md. Golam Rashed", role: "TPC Member", org: "University of Rajshahi, Rajshahi, Bangladesh" },
-          { name: "Dr. Selwyn Piramuthu", role: "TPC Member", org: "University of Florida, USA" },
-          { name: "Dr. Sunday Ayoola OKE", role: "TPC Member", org: "University of Lagos, Lagos, Nigeria" },
-          { name: "Dr. Archana Prabahar", role: "TPC Member", org: "Cleveland State University, USA" },
-          { name: "Dr. Anand Nayyar", role: "TPC Member", org: "Duy Tan University, Vietnam" },
-          { name: "Dr. Pavel Loskot", role: "TPC Member", org: "ZJU-UIUC Institute, Zhejiang, China" },
-          { name: "Dr. G. Castellanos Dominguez", role: "TPC Member", org: "National University of Colombia, Colombia" },
-          { name: "Mr. Kiran Babu Macha", role: "Sr Manager - Software Engineering", org: "Maximus Inc, USA" }
-        ]
-      },
-      {
-        category: "Conference Co-Convenors",
-        members: [
-          { name: "Dr. Satish Kumar Satti", role: "Assistant Professor", org: "Department of CSE, VFSTR" },
-          { name: "Dr. Vinoj J", role: "Assistant Professor", org: "Department of CSE, VFSTR" }
-        ]
-      },
-      {
-        category: "Technical Chairs",
-        members: [
-          { name: "Dr. M. Umadevi", role: "Associate Professor", org: "Department of CSE, VFSTR" },
-          { name: "Dr. D. Yakobu", role: "Associate Professor", org: "Department of CSE, VFSTR" },
-          { name: "Dr. S. Deva Kumar", role: "Associate Professor", org: "Department of CSE, VFSTR" }
-        ]
-      },
-      {
-        category: "Publication Co-Chairs",
-        members: [
-          { name: "Dr. B. Suvarna", role: "Assistant Professor", org: "Department of CSE, VFSTR" },
-          { name: "Dr. Jhansi Lakshmi P.", role: "Assistant Professor", org: "Department of CSE, VFSTR" },
-          { name: "Dr. R. Prathap Kumar", role: "Assistant Professor", org: "Department of CSE, VFSTR" }
-        ]
-      },
-      {
-        category: "Conference Core Committee",
-        members: [
-          { name: "Dr. M. Sunil Babu", role: "Assistant Professor", org: "Department of CSE, VFSTR" },
-          { name: "Dr. E. Deepak Chowdary", role: "Assistant Professor", org: "Department of CSE, VFSTR" },
-          { name: "Dr. M. Vijai Meyyapan", role: "Sr. Assistant Professor", org: "Department of CSE, VFSTR" },
-          { name: "Dr. R. Renugadevi", role: "Sr. Assistant Professor", org: "Department of CSE, VFSTR" },
-          { name: "Dr. P. Siva Prasad", role: "Associate Professor", org: "Department of CSE, VFSTR" },
-          { name: "Dr. Prashant Upadhyay", role: "Associate Professor", org: "Department of CSE, VFSTR" }
-        ]
-      },
-      {
-        category: "Technical Program Associates",
-        members: [
-          { name: "Dr. V. S. R. Pavan Kumar Neeli", role: "Sr. Assistant Professor", org: "Department of CSE, VFSTR" },
-          { name: "Dr. N. Sameera", role: "Sr. Assistant Professor", org: "Department of CSE, VFSTR" },
-          { name: "Dr. M. Raja Rao", role: "Sr. Assistant Professor", org: "Department of CSE, VFSTR" }
-        ]
-      },
-      {
-        category: "Coordinators - Registration & Session Management Committee",
-        members: [
-          { name: "Dr. Md. Oqail Ahmad", role: "Assistant Professor", org: "Department of CSE, VFSTR" },
-          { name: "Dr. Gabbi Reddy Keerthi", role: "Assistant Professor", org: "Department of CSE, VFSTR" },
-          { name: "Mr. Jani Shaik", role: "Assistant Professor", org: "Department of CSE, VFSTR" },
-          { name: "Mr. D. Senthil", role: "Assistant Professor", org: "Department of CSE, VFSTR" },
-          { name: "Mrs. M. Bhargavi", role: "Assistant Professor", org: "Department of CSE, VFSTR" },
-          { name: "Mrs. SD. Shareefunnisa", role: "Assistant Professor", org: "Department of CSE, VFSTR" },
-          { name: "Mr. K. Pavan Kumar", role: "Assistant Professor", org: "Department of CSE, VFSTR" },
-          { name: "Mrs. V. Anusha", role: "Assistant Professor", org: "Department of CSE, VFSTR" },
-          { name: "Mrs. Ch. Pushya", role: "Assistant Professor", org: "Department of CSE, VFSTR" },
-          { name: "Ms. P. Anusha", role: "Assistant Professor", org: "Department of CSE, VFSTR" },
-          { name: "MS. Sk.Sajida Sultana", role: "Assistant Professor", org: "Department of CSE, VFSTR" }
-        ]
-      },
-      {
-        category: "Coordinators - Finance Committee",
-        members: [
-          { name: "Dr. Simhadiri Chinna Gopi", role: "Assistant Professor", org: "Department of CSE, VFSTR" },
-          { name: "Dr. Krishna Reddy", role: "Assistant Professor", org: "Department of CSE, VFSTR" },
-          { name: "Dr. O. Bhaskar", role: "Assistant Professor", org: "Department of CSE, VFSTR" },
-          { name: "Mr. E. Akhil Babu", role: "Assistant Professor", org: "Department of CSE, VFSTR" }
-        ]
-      },
-      {
-        category: "Coordinators - Websites, Brochure & Event Promotion Committee",
-        members: [
-          { name: "Dr. Phanindra Thota", role: "Assistant Professor", org: "Department of CSE, VFSTR" },
-          { name: "Dr. Saubhagya Ranjan Biswal", role: "Assistant Professor", org: "Department of CSE, VFSTR" },
-          { name: "Dr. Manoj Kumar Merugumal", role: "Assistant Professor", org: "Department of CSE, VFSTR" },
-          { name: "Mrs. G. Parimala", role: "Assistant Professor", org: "Department of CSE, VFSTR" },
-          { name: "Mr. P. Kiran Kumar Raja", role: "Assistant Professor", org: "Department of CSE, VFSTR" },
-          { name: "Mr. T. Narasimha Rao", role: "Assistant Professor", org: "Department of CSE, VFSTR" },
-          { name: "Mrs. Magham Sumalatha", role: "Assistant Professor", org: "Department of CSE, VFSTR" },
-          { name: "Mr. P. Venkata Rajulu", role: "Assistant Professor", org: "Department of CSE, VFSTR" },
-          { name: "Mrs. Sai Spandana Verella", role: "Assistant Professor", org: "Department of CSE, VFSTR" },
-          { name: "Mrs. R. Lalitha", role: "Assistant Professor", org: "Department of CSE, VFSTR" },
-          { name: "Mr. N. Brahma Naidu", role: "Assistant Professor", org: "Department of CSE, VFSTR" },
-          { name: "Mr. Kumar Devapogu", role: "Assistant Professor", org: "Department of CSE, VFSTR" }
-        ]
-      },
-      {
-        category: "Coordinators - Media & Publicity Committee",
-        members: [
-          { name: "Dr. Rambabu Kusuma", role: "Assistant Professor", org: "Department of CSE, VFSTR" },
-          { name: "Dr. G. Balu Narasimha Rao", role: "Assistant Professor", org: "Department of CSE, VFSTR" },
-          { name: "Dr. J. Veeranjaneyulu", role: "Assistant Professor", org: "Department of CSE, VFSTR" },
-          { name: "Mr. P. Vijaya Babu", role: "Assistant Professor", org: "Department of CSE, VFSTR" },
-          { name: "Mr. U. Venkateswara Rao", role: "Assistant Professor", org: "Department of CSE, VFSTR" },
-          { name: "Mr. Gujjula Murali", role: "Assistant Professor", org: "Department of CSE, VFSTR" },
-          { name: "Mr. Ch. Amaresh", role: "Assistant Professor", org: "Department of CSE, VFSTR" },
-          { name: "Ms. Shaik Reehana", role: "Assistant Professor", org: "Department of CSE, VFSTR" },
-          { name: "Ms. Jarugumalla Dayanika", role: "Assistant Professor", org: "Department of CSE, VFSTR" },
-          { name: "Mrs. Tanigundala Leelavathy", role: "Assistant Professor", org: "Department of CSE, VFSTR" },
-          { name: "Mrs. Ch. Swarna Lalitha", role: "Assistant Professor", org: "Department of CSE, VFSTR" }
-        ]
-      },
-      {
-        category: "Coordinators - Organizing & Hospitality Committee",
-        members: [
-          { name: "Dr. T. R. Rajesh", role: "Assistant Professor", org: "Department of CSE, VFSTR" },
-          { name: "Dr. G. Veera Bhadra Chary", role: "Assistant Professor", org: "Department of CSE, VFSTR" },
-          { name: "Mr. O. Gandhi", role: "Assistant Professor", org: "Department of CSE, VFSTR" },
-          { name: "Mr. Kiran Kumar Kaveti", role: "Assistant Professor", org: "Department of CSE, VFSTR" },
-          { name: "Mr. N. Uttej Kumar", role: "Assistant Professor", org: "Department of CSE, VFSTR" },
-          { name: "Ms. N. Bhargavi", role: "Assistant Professor", org: "Department of CSE, VFSTR" },
-          { name: "Mr. Badheli Krishnakanth", role: "Assistant Professor", org: "Department of CSE, VFSTR" },
-          { name: "Mrs. V. Nandini", role: "Assistant Professor", org: "Department of CSE, VFSTR" },
-          { name: "Mrs. Archana Nalluri", role: "Assistant Professor", org: "Department of CSE, VFSTR" },
-          { name: "Mrs. K. Jyostna", role: "Assistant Professor", org: "Department of CSE, VFSTR" },
-          { name: "Mrs. Koganti Swathi", role: "Assistant Professor", org: "Department of CSE, VFSTR" },
-          { name: "Mr. M. Mohana Venkateswara Rao", role: "Assistant Professor", org: "Department of CSE, VFSTR" },
-          { name: "Mr. B. Anil Babu", role: "Assistant Professor", org: "Department of CSE, VFSTR" },
-          { name: "Mrs. D. Tipura", role: "Assistant Professor", org: "Department of CSE, VFSTR" },
-          { name: "Mrs. N. Mounika", role: "Assistant Professor", org: "Department of CSE, VFSTR" },
-          { name: "Ms. Y. Sai Eswari", role: "Assistant Professor", org: "Department of CSE, VFSTR" },
-          { name: "Mr. Kanna Hareesh", role: "Assistant Professor", org: "Department of CSE, VFSTR" }
-        ]
-      }
-    ],
+    committee: officialCommitteeMembers,
     gallery: [
       {
         id: "g1",

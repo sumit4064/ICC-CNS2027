@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import { api } from '../services/api';
 import {
   ArrowRight,
   Menu,
@@ -8,6 +9,7 @@ import {
   User,
   ShieldCheck,
   LogOut,
+  LogIn,
   ChevronRight,
   ChevronDown
 } from 'lucide-react';
@@ -29,6 +31,20 @@ export const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Prefetch committee data during browser idle time so committee loads instantly (0ms)
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (typeof window !== 'undefined' && 'requestIdleCallback' in window) {
+        window.requestIdleCallback(() => {
+          api.prefetch?.('/committee');
+        });
+      } else {
+        api.prefetch?.('/committee');
+      }
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
+
   const hoverTimeoutRef = useRef(null);
 
   const handleMouseEnter = () => {
@@ -37,6 +53,7 @@ export const Navbar = () => {
       hoverTimeoutRef.current = null;
     }
     setMoreDropdownOpen(true);
+    api.prefetch?.('/committee');
   };
 
   const handleMouseLeave = () => {
@@ -124,16 +141,12 @@ export const Navbar = () => {
           {/* ========================================================
               ZONE 1 — BRAND
              ======================================================== */}
-          <Link to="/" className="brand" aria-label="ICC-CNS 2027 Home">
+          <Link to="/" className="brand" aria-label="ICCCNS-2027 Home">
             <div className="brand-logo-wrap">
               <img
-                src="/logos/vignan_official_logo.svg"
-                alt="Vignan University Logo"
+                src="/logos/vignan_institutional_logo.png"
+                alt="Vignan's Foundation for Science, Technology & Research Logo"
                 className="logo"
-                onError={(e) => {
-                  e.target.onerror = null;
-                  e.target.src = '/logos/vignan_logo_new.png';
-                }}
               />
             </div>
 
@@ -141,7 +154,7 @@ export const Navbar = () => {
 
             <div className="brand-info">
               <div className="conference-name">
-                ICC-<span className="conference-name-accent">CNS</span> 2027
+                ICCCNS-<span className="conference-name-accent">2027</span>
               </div>
               <div className="university-name">
                 VIGNAN UNIVERSITY, AP
@@ -203,6 +216,9 @@ export const Navbar = () => {
                         key={item.name}
                         to={item.path}
                         className={isActive ? 'active' : ''}
+                        onMouseEnter={() => {
+                          if (item.path === '/committee') api.prefetch?.('/committee');
+                        }}
                         onClick={() => {
                           if (hoverTimeoutRef.current) clearTimeout(hoverTimeoutRef.current);
                           setMoreDropdownOpen(false);
@@ -221,36 +237,34 @@ export const Navbar = () => {
               ZONE 3 — ACTIONS
              ======================================================== */}
           <div className="nav-actions">
-            {/* User Login / Admin Badge */}
+            {/* Admin Badge / Link Button */}
+            <Link
+              to="/admin"
+              className="admin-badge-button"
+              title="Admin Dashboard"
+            >
+              <ShieldCheck size={15} />
+              <span>Admin</span>
+            </Link>
+
+            {/* Auth Icon Button (Logout if logged in, Login if guest) */}
             {user ? (
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                {isAdmin ? (
-                  <Link
-                    to="/admin"
-                    className="admin-badge-button"
-                    title="Admin Dashboard"
-                  >
-                    <ShieldCheck size={15} />
-                    <span>Admin</span>
-                  </Link>
-                ) : (
-                  <span className="badge badge-teal" style={{ padding: '5px 10px', fontSize: '13px' }}>
-                    <User size={14} />
-                    <span>{user.name.split(' ')[0]}</span>
-                  </span>
-                )}
-                <button
-                  onClick={logout}
-                  className="logout-icon-button"
-                  title="Logout"
-                >
-                  <LogOut size={15} />
-                </button>
-              </div>
+              <button
+                onClick={logout}
+                className="logout-icon-button"
+                title={`Logout (${user.name})`}
+                aria-label="Logout"
+              >
+                <LogOut size={16} />
+              </button>
             ) : (
-              <Link to="/login" className="login-button">
-                <User size={16} />
-                <span>Login</span>
+              <Link
+                to="/login"
+                className="logout-icon-button"
+                title="Login / Portal Access"
+                aria-label="Login"
+              >
+                <LogIn size={16} />
               </Link>
             )}
 
@@ -283,16 +297,16 @@ export const Navbar = () => {
       <aside className={`mobile-drawer-view ${mobileOpen ? 'open' : ''}`} aria-label="Mobile Navigation">
         <div className="mobile-drawer-top">
           <Link to="/" className="brand" onClick={() => setMobileOpen(false)}>
-            <div className="brand-logo-wrap" style={{ height: '40px', padding: '2px 6px' }}>
+            <div className="brand-logo-wrap" style={{ height: '36px' }}>
               <img
-                src="/logos/vignan_official_logo.svg"
-                alt="Vignan University Logo"
-                style={{ height: '32px', maxWidth: '100px', objectFit: 'contain' }}
+                src="/logos/vignan_institutional_logo.png"
+                alt="Vignan's Foundation for Science, Technology & Research Logo"
+                style={{ height: '30px', maxWidth: '130px', objectFit: 'contain' }}
               />
             </div>
             <div className="brand-info">
-              <div className="conference-name" style={{ fontSize: '20px' }}>
-                ICC-<span className="conference-name-accent">CNS</span> 2027
+              <div className="conference-name" style={{ fontSize: '18px' }}>
+                ICCCNS-<span className="conference-name-accent">2027</span>
               </div>
               <div className="university-name" style={{ fontSize: '9px' }}>
                 Vignan University, AP

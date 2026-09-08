@@ -106,7 +106,7 @@ export const Home = () => {
 
   const faqs = [
     {
-      q: "Who can attend and present at ICC-CNS 2027?",
+      q: "Who can attend and present at ICCCNS-2027?",
       a: "The conference is open to academic researchers, faculty members, Ph.D. scholars, undergraduate and postgraduate students, industry professionals, and scientists interested in Cognitive Computing, AI, and Next-Gen Networking Systems."
     },
     {
@@ -115,7 +115,7 @@ export const Home = () => {
     },
     {
       q: "Is online / virtual presentation available?",
-      a: "Yes! ICC-CNS 2027 operates in full Hybrid Mode, allowing remote authors and delegates to present their accepted papers and join interactive keynote sessions virtually."
+      a: "Yes! ICCCNS-2027 operates in full Hybrid Mode, allowing remote authors and delegates to present their accepted papers and join interactive keynote sessions virtually."
     },
     {
       q: "Where is the conference held?",
@@ -144,7 +144,7 @@ export const Home = () => {
       )}
 
       {/* ========================================================
-          1. HERO SECTION (Vignan University 2027 International Conference)
+          1. HERO SECTION (Second International Conference on Cognitive Computing and Networking Systems)
          ======================================================== */}
       <section className="hero-section">
         {/* Dedicated Cognitive Network Field Decorative Background */}
@@ -158,17 +158,18 @@ export const Home = () => {
               <div className="hero-badges">
                 <span className="hero-badge-date">
                   <Calendar size={15} color="#00A3C7" style={{ marginRight: '2px' }} />
-                  {conference?.dates || '11 - 13 JUNE 2027'}
+                  {conference?.dates || '10–12 June 2027'}
                 </span>
                 <span className="hero-badge-mode">
                   {conference?.mode || 'HYBRID MODE'}
                 </span>
               </div>
 
-              {/* Main Headline with Exact Navy & Cyan Contrast */}
+              {/* Main Headline with Exact 3-Line Structure */}
               <h1 className="hero-title">
-                {conference?.year || '2027'} International Conference on
-                <span className="title-accent">Cognitive Computing and Networking Systems</span>
+                <span className="hero-title-line-1">2nd International Conference on</span>
+                <span className="hero-title-line-2">Cognitive Computing and</span>
+                <span className="hero-title-line-3">Networking Systems (ICCCNS 2027)</span>
               </h1>
 
               {/* Subtitles: Vignan Department & University */}
@@ -214,7 +215,7 @@ export const Home = () => {
                   href="/assets/brochure/ICC-CNS-2027-Brochure.pdf"
                   download="ICC-CNS-2027-Brochure.pdf"
                   className="btn-secondary-glass"
-                  title="Download Official ICC-CNS 2027 Conference Brochure (PDF)"
+                  title="Download Official ICCCNS-2027 Conference Brochure (PDF)"
                 >
                   <Download size={18} />
                   <span>Download Brochure</span>
@@ -226,44 +227,7 @@ export const Home = () => {
               </div>
 
               {/* Configurable Countdown Timer */}
-              <Countdown targetDate={conference?.targetDate || '2027-06-11T09:00:00.000Z'} />
-            </div>
-
-            {/* HERO RIGHT COLUMN: Technical Co-Sponsorship Asset Card */}
-            <div className="hero-right">
-              <div className="hero-emblem-container">
-                <div style={{
-                  position: 'relative',
-                  width: '100%',
-                  maxWidth: '460px',
-                  borderRadius: '28px',
-                  overflow: 'hidden',
-                  border: '1px solid #BFE8F1',
-                  boxShadow: '0 16px 40px rgba(11, 45, 107, 0.08), 0 0 25px rgba(0, 163, 199, 0.12)',
-                  background: '#FFFFFF',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  padding: '4px'
-                }}>
-                  <img
-                    src="/images/technical_cosponsorship.png"
-                    alt="Technical Co-Sponsorship by IEEE, IEEE ComSoc, ICC-CNS, Vignan's"
-                    loading="eager"
-                    fetchpriority="high"
-                    decoding="async"
-                    width="460"
-                    height="460"
-                    style={{
-                      width: '100%',
-                      height: 'auto',
-                      objectFit: 'contain',
-                      display: 'block',
-                      borderRadius: '24px'
-                    }}
-                  />
-                </div>
-              </div>
+              <Countdown targetDate={conference?.targetDate || '2027-06-10T09:00:00.000Z'} />
             </div>
           </div>
 
@@ -274,7 +238,7 @@ export const Home = () => {
                 <Calendar size={24} />
               </div>
               <div className="info-card-content">
-                <h4>{conference?.dates || '11 – 13 June 2027'}</h4>
+                <h4>{conference?.dates || '10–12 June 2027'}</h4>
                 <p>Conference Dates</p>
               </div>
             </div>
@@ -327,7 +291,7 @@ export const Home = () => {
                     />
                   </div>
                   <p className="about-bento-text">
-                    Hosted by the Department of CSE at Vignan University (Est. 1997), ICC-CNS 2027 provides a premier platform for researchers, academicians, and industry engineers to present cutting-edge findings in Cognitive Computing and Intelligent Networking.
+                    Hosted by the Department of CSE at Vignan University (Est. 1997), ICCCNS-2027 provides a premier platform for researchers, academicians, and industry engineers to present cutting-edge findings in Cognitive Computing and Intelligent Networking.
                   </p>
                 </div>
               </div>
@@ -370,9 +334,8 @@ export const Home = () => {
                     <div key={t.id} className="track-bento-item">
                       <div className="track-bento-left">
                         <div
-                          className={`track-num-badge ${
-                            t.number === '01' ? 'orange' : t.number === '02' ? 'emerald' : 'blue'
-                          }`}
+                          className={`track-num-badge ${t.number === '01' ? 'orange' : t.number === '02' ? 'emerald' : 'blue'
+                            }`}
                         >
                           {t.number}
                         </div>
@@ -580,7 +543,7 @@ export const Home = () => {
               Registrations Are Open for 2027
             </span>
             <h2 style={{ fontSize: '2.2rem', color: 'var(--primary-navy)', marginBottom: '0.8rem' }}>
-              Join Global Researchers at Vignan University for ICC-CNS 2027
+              Join Global Researchers at Vignan University for ICCCNS-2027
             </h2>
             <p
               style={{

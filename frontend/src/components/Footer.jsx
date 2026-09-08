@@ -24,21 +24,21 @@ export const Footer = () => {
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', marginBottom: '1.2rem' }}>
               <div style={{ background: '#FFF', padding: '4px 8px', borderRadius: '6px' }}>
                 <img
-                  src="/logos/vignan_official_logo.svg"
-                  alt="Vignan University Logo"
-                  style={{ height: '32px', maxWidth: '140px', objectFit: 'contain' }}
+                  src="/logos/vignan_institutional_logo.png"
+                  alt="Vignan's Foundation for Science, Technology & Research Logo"
+                  style={{ height: '32px', maxWidth: '140px', objectFit: 'contain', display: 'block' }}
                 />
               </div>
               <span style={{ fontFamily: 'var(--font-heading)', fontSize: '1.4rem', fontWeight: 900, color: '#FFF' }}>
-                ICC-<span style={{ color: 'var(--primary-cyan, #00A3C7)' }}>CNS</span> 2027
+                ICCCNS-<span style={{ color: 'var(--primary-cyan, #00A3C7)' }}>2027</span>
               </span>
             </div>
             <p style={{ fontSize: '0.88rem', color: '#B0D6E2', lineHeight: '1.6', marginBottom: '1.5rem' }}>
-              2027 International Conference on Cognitive Computing and Networking Systems. Organized by Department of Computer Science & Engineering (Est. 1997), School of Computing & Informatics, VFSTR (Deemed to be University).
+              Second International Conference on Cognitive Computing and Networking Systems (ICCCNS 2027). Organized by Department of Computer Science & Engineering (Est. 1997), School of Computing & Informatics, VFSTR (Deemed to be University).
             </p>
             <div style={{ display: 'flex', gap: '0.8rem', flexWrap: 'wrap' }}>
               <span className="badge badge-teal" style={{ background: 'rgba(0, 163, 199, 0.25)', color: '#FFFFFF', border: '1px solid #00A3C7' }}>Hybrid Mode</span>
-              <span className="badge badge-cyan" style={{ background: 'rgba(0, 163, 199, 0.25)', color: '#FFFFFF', border: '1px solid #00A3C7' }}>11–13 June 2027</span>
+              <span className="badge badge-cyan" style={{ background: 'rgba(0, 163, 199, 0.25)', color: '#FFFFFF', border: '1px solid #00A3C7' }}>10–12 June 2027</span>
             </div>
           </div>
 
@@ -114,7 +114,7 @@ export const Footer = () => {
           color: '#A5D7E8'
         }}>
           <div>
-            © 2027 ICC-CNS Conference Secretariat. Hosted by Department of CSE, Vignan's Foundation for Science, Technology and Research (VFSTR).
+            © 2027 ICCCNS-2027 Conference Secretariat. Hosted by Department of CSE, Vignan's Foundation for Science, Technology and Research (VFSTR).
           </div>
           <div style={{ display: 'flex', gap: '1.5rem' }}>
             <Link to="/about" style={{ color: '#A5D7E8' }}>About</Link>

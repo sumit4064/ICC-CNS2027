@@ -34,7 +34,7 @@ const conferenceSchema = new mongoose.Schema({
   school: { type: String, default: '' },
   institution: { type: String, required: true },
   dates: { type: String, required: true },
-  targetDate: { type: String, default: '2027-06-11T09:00:00.000Z' },
+  targetDate: { type: String, default: '2027-06-10T09:00:00.000Z' },
   mode: { type: String, default: 'Hybrid Mode' },
   modeDetail: { type: String, default: 'In-person & Online Virtual' },
   venueName: { type: String, default: '' },

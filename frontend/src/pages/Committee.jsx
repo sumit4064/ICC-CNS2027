@@ -20,34 +20,48 @@ import {
 } from 'lucide-react';
 
 export const Committee = () => {
-  const [committee, setCommittee] = useState([]);
-  const [loading, setLoading] = useState(true);
+  // 1. Instant hydration from client cache if available (0ms initial render)
+  const initialCached = useMemo(() => {
+    try {
+      return api.getCached ? api.getCached('/committee') : null;
+    } catch (e) {
+      return null;
+    }
+  }, []);
+
+  const [committee, setCommittee] = useState(() => (initialCached?.success && Array.isArray(initialCached.data) ? initialCached.data : []));
+  const [loading, setLoading] = useState(() => !(initialCached?.success && initialCached.data?.length > 0));
   const [error, setError] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedFilter, setSelectedFilter] = useState('All');
   const [selectedMember, setSelectedMember] = useState(null);
 
-  const fetchCommitteeData = useCallback(async () => {
-    setLoading(true);
+  const fetchCommitteeData = useCallback(async (isBackground = false) => {
+    if (!isBackground) {
+      setLoading(true);
+    }
     setError(null);
     try {
       const res = await api.getCommittee();
       if (res.success && res.data) {
         setCommittee(res.data);
-      } else {
+      } else if (!committee.length) {
         setError('Unable to load committee members.');
       }
     } catch (err) {
       console.error('Failed to load committee:', err);
-      setError(err.message || 'Unable to load committee members.');
+      if (!committee.length) {
+        setError(err.message || 'Unable to load committee members.');
+      }
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [committee.length]);
 
   useEffect(() => {
-    fetchCommitteeData();
-  }, [fetchCommitteeData]);
+    const hasCached = Boolean(initialCached?.success && initialCached.data?.length > 0);
+    fetchCommitteeData(hasCached);
+  }, [fetchCommitteeData, initialCached]);
 
   // Handle ESC key to close modal
   useEffect(() => {
@@ -95,26 +109,22 @@ export const Committee = () => {
   const categoryOrderMap = {
     'chief patrons': 1,
     'patrons': 2,
-    'general chair': 3,
-    'organizing chair': 4,
-    'honorary chairs': 5,
-    'conference chair': 6,
-    'publication chair': 7,
-    'conference leadership': 8,
-    'international advisory chairs': 9,
-    'international advisory committee': 10,
-    'national advisory committee': 11,
-    'technical program committee': 12,
-    'conference co-convenors': 13,
-    'technical chairs': 14,
-    'publication co-chairs': 15,
-    'conference core committee': 16,
-    'technical program associates': 17,
-    'coordinators - registration & session management committee': 18,
-    'coordinators - finance committee': 19,
-    'coordinators - websites, brochure & event promotion committee': 20,
-    'coordinators - media & publicity committee': 21,
-    'coordinators - organizing & hospitality committee': 22
+    'honorary chair': 3,
+    'general chair': 4,
+    'general co-chair': 5,
+    'advisory committee': 6,
+    'conference chair': 7,
+    'conference co-chair': 8,
+    'organizing chair': 9,
+    'technical chairs': 10,
+    'technical co-chairs': 11,
+    'publication chairs': 12,
+    'finance chair': 13,
+    'publicity chair': 14,
+    'organizing committee': 15,
+    'technical program committee': 16,
+    'publicity committee': 17,
+    'protocol and hospitality committee': 18
   };
 
   // Group and filter members dynamically
@@ -207,11 +217,11 @@ export const Committee = () => {
         <div className="content-container">
           <span className="page-header-badge">
             <Sparkles size={14} style={{ marginRight: 6, display: 'inline' }} />
-            ICC-CNS 2027
+            ICCCNS-2027
           </span>
           <h1 className="page-header-title">Conference Committee</h1>
           <p className="page-header-subtitle">
-            Meet the distinguished leaders, researchers, academicians and professionals contributing to ICC-CNS 2027.
+            Meet the distinguished leaders, researchers, academicians and professionals contributing to ICCCNS-2027.
           </p>
         </div>
       </section>
@@ -226,7 +236,7 @@ export const Committee = () => {
               <GraduationCap size={24} />
             </div>
             <p className="committee-intro-text">
-              The ICC-CNS 2027 organizing and technical committees bring together distinguished academic leaders, researchers and professionals who contribute their expertise to the successful organization of the conference.
+              The ICCCNS-2027 organizing and technical committees bring together distinguished academic leaders, researchers and professionals who contribute their expertise to the successful organization of the conference.
             </p>
           </div>
 
@@ -481,7 +491,7 @@ export const Committee = () => {
                   <div className="member-placeholder-avatar" style={{ width: '70px', height: '70px', fontSize: '1.7rem' }}>
                     {getInitials(selectedMember.name)}
                   </div>
-                  <span className="member-placeholder-tag">ICC-CNS 2027</span>
+                  <span className="member-placeholder-tag">ICCCNS-2027</span>
                 </div>
               )}
             </div>

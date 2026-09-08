@@ -2,14 +2,10 @@
 
 @media (max-width: 1200px) {
   .hero-grid {
-    grid-template-columns: 1.1fr 0.9fr;
     gap: 2rem;
   }
   .hero-title {
-    font-size: clamp(1.9rem, 3.2vw, 2.8rem);
-  }
-  .hero-title .title-accent {
-    font-size: clamp(2.1rem, 3.5vw, 3.1rem);
+    font-size: clamp(2rem, 3.2vw, 2.8rem);
   }
   .bento-grid-3 {
     grid-template-columns: 1fr 1fr;
@@ -70,10 +66,6 @@
     font-size: clamp(1.75rem, 4.4vw, 2.35rem);
   }
 
-  .hero-title .title-accent {
-    font-size: clamp(1.95rem, 4.8vw, 2.6rem);
-  }
-
   .emblem-main-name {
     font-size: 2.8rem;
   }
@@ -109,11 +101,6 @@
   .hero-title {
     font-size: 1.5rem;
     line-height: 1.2;
-  }
-
-  .hero-title .title-accent {
-    font-size: clamp(1.65rem, 5.8vw, 2.1rem);
-    line-height: 1.18;
   }
 
   .page-header-title {

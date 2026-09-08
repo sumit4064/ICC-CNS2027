@@ -122,7 +122,7 @@ export const Submission = () => {
           <span className="page-header-badge">Call for Papers 2027</span>
           <h1 className="page-header-title">Paper Submission Portal</h1>
           <p className="page-header-subtitle">
-            Submit original, unpublished research papers for peer-review at ICC-CNS 2027 hosted by Vignan University (VFSTR).
+            Submit original, unpublished research papers for peer-review at ICCCNS-2027 hosted by Vignan University (VFSTR).
           </p>
         </div>
       </section>
@@ -186,7 +186,7 @@ export const Submission = () => {
                     Submission Received
                   </span>
                   <h2 style={{ fontSize: '2.2rem', color: 'var(--primary-navy)', marginBottom: '0.5rem' }}>
-                    Thank You for Submitting to ICC-CNS 2027!
+                    Thank You for Submitting to ICCCNS-2027!
                   </h2>
                   <p style={{ color: 'var(--text-secondary)', maxWidth: '540px', margin: '0 auto 1.8rem' }}>
                     Your paper has entered the double-blind peer review process. Please note your unique Paper ID.
@@ -474,13 +474,13 @@ export const Submission = () => {
                 Track Manuscript Review Status
               </h3>
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.92rem', textAlign: 'center', marginBottom: '2rem' }}>
-                Enter your Paper ID (e.g. ICC-CNS-2027-001) or Primary Author Email Address.
+                Enter your Paper ID (e.g. ICCCNS-2027-001) or Primary Author Email Address.
               </p>
 
               <form onSubmit={handleTrackPaper} className="status-search-box">
                 <input
                   type="text"
-                  placeholder="Enter Paper ID (e.g. ICC-CNS-2027-001) or author email..."
+                  placeholder="Enter Paper ID (e.g. ICCCNS-2027-001) or author email..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="form-input"
@@ -577,7 +577,7 @@ export const Submission = () => {
                         <span>Congratulations! Manuscript Accepted for Presentation & Publication.</span>
                       </div>
                       <p style={{ margin: 0, color: 'var(--text-primary)', fontSize: '0.86rem', lineHeight: '1.5' }}>
-                        {trackedPaper.reviewNotes || 'Your manuscript has met the peer-review standards for ICC-CNS 2027. Please prepare the final camera-ready manuscript according to the IEEE format.'}
+                        {trackedPaper.reviewNotes || 'Your manuscript has met the peer-review standards for ICCCNS-2027. Please prepare the final camera-ready manuscript according to the IEEE format.'}
                       </p>
                     </div>
                   )}
@@ -596,7 +596,7 @@ export const Submission = () => {
                         <span>Manuscript Review Decision: Rejected</span>
                       </div>
                       <p style={{ margin: 0, color: 'var(--text-primary)', fontSize: '0.86rem', lineHeight: '1.5' }}>
-                        {trackedPaper.rejectionReason || trackedPaper.reviewNotes || 'Thank you for your submission. After careful evaluation, your paper was not recommended for presentation at ICC-CNS 2027.'}
+                        {trackedPaper.rejectionReason || trackedPaper.reviewNotes || 'Thank you for your submission. After careful evaluation, your paper was not recommended for presentation at ICCCNS-2027.'}
                       </p>
                     </div>
                   )}
