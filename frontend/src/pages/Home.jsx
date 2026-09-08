@@ -167,9 +167,9 @@ export const Home = () => {
 
               {/* Main Headline with Exact 3-Line Structure */}
               <h1 className="hero-title">
-                <span className="hero-title-line-1">2nd International Conference on</span>
+                <span className="hero-title-line-1">2<sup>nd</sup> International Conference on</span>
                 <span className="hero-title-line-2">Cognitive Computing and</span>
-                <span className="hero-title-line-3">Networking Systems (ICCCNS 2027)</span>
+                <span className="hero-title-line-3">Networking Systems (ICCCNS - 2027)</span>
               </h1>
 
               {/* Subtitles: Vignan Department & University */}
