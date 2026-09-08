@@ -92,11 +92,11 @@ export const Footer = () => {
               </div>
               <div style={{ display: 'flex', gap: '0.6rem', alignItems: 'center' }}>
                 <Mail size={18} color="#38BDF8" style={{ flexShrink: 0 }} />
-                <span>info@vignan.ac.in | icccns2027@vignan.ac.in</span>
+                <span>info@icccns.in </span>
               </div>
               <div style={{ display: 'flex', gap: '0.6rem', alignItems: 'center' }}>
                 <Phone size={18} color="#34D399" style={{ flexShrink: 0 }} />
-                <span>+91-863-2344 700 / 701</span>
+                <span>+91-863 237 11 26</span>
               </div>
             </div>
           </div>
