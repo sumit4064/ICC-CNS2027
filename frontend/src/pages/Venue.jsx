@@ -7,9 +7,9 @@ export const Venue = () => {
       <section className="page-header-section">
         <div className="content-container">
           <span className="page-header-badge">Host Campus & Location</span>
-          <h1 className="page-header-title">Venue & Travel Guide</h1>
+          <h1 className="page-header-title">Venue</h1>
           <p className="page-header-subtitle">
-            Vignan's Foundation for Science, Technology and Research (Deemed to be University), Vadlamudi, Guntur-522213, Andhra Pradesh, India.
+            Saregama Seminar Hall, 1<sup>st</sup> Floor, Nagarjuna Block, VFSTR, Vadlamudi, Guntur-522213, Andhra Pradesh, India.
           </p>
         </div>
       </section>
