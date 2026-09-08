@@ -9,7 +9,7 @@ export const Venue = () => {
           <span className="page-header-badge">Host Campus & Location</span>
           <h1 className="page-header-title">Venue</h1>
           <p className="page-header-subtitle">
-            Saregama Seminar Hall, 1<sup>st</sup> Floor, Nagarjuna Block, <br></br>VFSTR, Vadlamudi, Guntur-522213, Andhra Pradesh, India.
+            Saregama Seminar Hall, 1<sup>st</sup> Floor, Nagarjuna Block, <br>VFSTR, Vadlamudi, Guntur-522213, Andhra Pradesh, India.</br>
           </p>
         </div>
       </section>
