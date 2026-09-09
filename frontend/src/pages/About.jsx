@@ -25,7 +25,7 @@ export const About = () => {
                 Conference Objectives & Vision
               </h2>
               <p style={{ fontSize: '1.02rem', color: 'var(--text-secondary)', lineHeight: '1.7', marginBottom: '1rem' }}>
-                The <strong>Second International Conference on Cognitive Computing and Networking Systems (ICCCNS 2027)</strong> provides a premier interdisciplinary forum for researchers, academicians, scientists, and industrial engineers to present and discuss the most recent innovations, trends, and practical challenges encountered in the fields of Cognitive Computing, Artificial Intelligence, and Next-Generation Networking Systems.
+                The <strong>ICCCNS - 2027</strong> provides a premier interdisciplinary forum for researchers, academicians, scientists, and industrial engineers to present and discuss the most recent innovations, trends, and practical challenges encountered in the fields of Cognitive Computing, Artificial Intelligence, and Next-Generation Networking Systems.
               </p>
               <p style={{ fontSize: '0.96rem', color: 'var(--text-secondary)', lineHeight: '1.7', marginBottom: '1.5rem' }}>
                 Organized by the Department of Computer Science & Engineering at VFSTR, the conference brings together distinguished global computer scientists, peer-reviewed technical paper presentations, doctoral symposiums, and industrial panel sessions bridging theoretical breakthroughs with scalable engineering implementations.
