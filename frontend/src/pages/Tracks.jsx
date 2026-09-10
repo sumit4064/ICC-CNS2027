@@ -34,7 +34,7 @@ export const Tracks = () => {
       <section className="page-body-section">
         <div className="content-container">
           {/* Tracks 3-Card Grid */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '2rem', marginBottom: '4rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '2rem', marginBottom: '4rem' }}>
             {tracks.map((track) => (
               <TrackCard key={track.id} track={track} />
             ))}

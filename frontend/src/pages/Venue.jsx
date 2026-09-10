@@ -9,7 +9,7 @@ export const Venue = () => {
           <span className="page-header-badge">Host Campus & Location</span>
           <h1 className="page-header-title">Venue</h1>
           <p className="page-header-subtitle">
-            Saregama Seminar Hall, 1<sup>st</sup> Floor, Nagarjuna Block, <br />VFSTR, Vadlamudi, Guntur-522213, Andhra Pradesh, India.
+            Saregama Seminar Hall, 1<sup>st</sup> Floor, Nagarjuna Block, <br /> VFSTR, Vadlamudi, Guntur-522213, Andhra Pradesh, India.
           </p>
         </div>
       </section>
@@ -17,15 +17,21 @@ export const Venue = () => {
       <section className="page-body-section">
         <div className="content-container">
           {/* Main Venue Showcase with Real Vignan Campus Photo */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2.5rem', alignItems: 'center', marginBottom: '4rem' }}>
+          <div className="venue-showcase-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '2.5rem', alignItems: 'center', marginBottom: '4rem' }}>
             <div className="glass-panel" style={{ overflow: 'hidden', padding: '1rem', borderRadius: 'var(--radius-xl)' }}>
               <img
-                src="/images/vignan_ablock_campus.webp"
-                alt="Vignan University A-Block Campus"
-                style={{ width: '100%', height: '340px', objectFit: 'cover', borderRadius: 'var(--radius-lg)' }}
+                src="/images/vignan_ablock_campus.png"
+                alt="N-Block Academic Complex – CSE Department"
+                className="venue-showcase-img"
+                onError={(e) => {
+                  if (e.target.src.indexOf('vignan_ablock_campus.png') !== -1) {
+                    e.target.src = '/images/vignan_ablock_campus.webp';
+                  }
+                }}
+                style={{ width: '100%', maxWidth: '100%', height: '340px', objectFit: 'cover', borderRadius: 'var(--radius-lg)', display: 'block' }}
               />
               <div style={{ padding: '1.2rem 0.5rem 0.2rem' }}>
-                <h3 style={{ color: 'var(--primary-navy)', fontSize: '1.3rem' }}>A-Block Academic Complex & Convention Halls</h3>
+                <h3 style={{ color: 'var(--primary-navy)', fontSize: '1.3rem' }}>N-Block Academic Complex – CSE Department</h3>
                 <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
                   Central conference venue with modern air-conditioned auditoriums, seminar halls, and hybrid streaming infrastructure.
                 </p>
@@ -58,7 +64,7 @@ export const Venue = () => {
             How to Reach the Venue
           </h2>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.8rem', marginBottom: '4rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '1.8rem', marginBottom: '4rem' }}>
             <div className="glass-panel" style={{ padding: '2rem' }}>
               <div style={{ width: '48px', height: '48px', borderRadius: 'var(--radius-md)', background: 'rgba(0, 163, 199, 0.15)', color: 'var(--primary-cyan)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.2rem' }}>
                 <Plane size={24} />

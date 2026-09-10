@@ -62,7 +62,7 @@ export const Gallery = () => {
           {/* Gallery Grid */}
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 280px), 1fr))',
             gap: '1.5rem'
           }}>
             {filteredGallery.map((item) => (
@@ -88,7 +88,7 @@ export const Gallery = () => {
                     }}
                     onError={(e) => {
                       e.target.onerror = null;
-                      e.target.src = '/images/vignan_ablock_campus.webp';
+                      e.target.src = '/images/vignan_ablock_campus.png';
                     }}
                   />
                   <div style={{

@@ -304,10 +304,10 @@ export const getInitialData = () => {
     gallery: [
       {
         id: "g1",
-        title: "A-Block Main Campus Building",
+        title: "N-Block Academic Complex – CSE Department",
         category: "Campus",
-        image: "/images/vignan_ablock_campus.webp",
-        description: "Iconic A-Block administrative and academic complex at Vignan University Vadlamudi campus."
+        image: "/images/vignan_ablock_campus.png",
+        description: "Iconic N-Block administrative and academic complex at Vignan University Vadlamudi campus."
       },
       {
         id: "g2",

@@ -55,7 +55,7 @@ export const Contact = () => {
 
       <section className="page-body-section">
         <div className="content-container">
-          <div style={{ display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: '3rem' }}>
+          <div className="contact-layout-grid">
             {/* Contact Form */}
             <div className="form-wrapper">
               <h3 style={{ fontSize: '1.5rem', color: 'var(--primary-navy)', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>

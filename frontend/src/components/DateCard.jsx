@@ -3,7 +3,7 @@ import { Calendar, Clock, CheckCircle } from 'lucide-react';
 
 export const DateCard = ({ dateItem }) => {
   return (
-    <div className={`glass-panel ${dateItem.highlight ? 'glass-panel-glow' : ''}`} style={{
+    <div className={`glass-panel date-milestone-card ${dateItem.highlight ? 'glass-panel-glow' : ''}`} style={{
       padding: '1.75rem',
       display: 'flex',
       alignItems: 'center',

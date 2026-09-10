@@ -130,7 +130,7 @@ export const Submission = () => {
       <section className="page-body-section">
         <div className="content-container" style={{ maxWidth: '1080px' }}>
           {/* Navigation Tabs */}
-          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', marginBottom: '2.5rem' }}>
+          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', marginBottom: '2.5rem', flexWrap: 'wrap' }}>
             <button
               onClick={() => setActiveTab('submit')}
               className={`btn-card-action ${activeTab === 'submit' ? 'btn-primary-glow' : ''}`}
@@ -211,7 +211,7 @@ export const Submission = () => {
                       <span style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>Paper Title:</span>
                       <div style={{ color: 'var(--primary-navy)', fontWeight: 600, fontSize: '1.05rem' }}>{submissionReceipt.title}</div>
                     </div>
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', fontSize: '0.9rem' }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 160px), 1fr))', gap: '1rem', fontSize: '0.9rem' }}>
                       <div>
                         <span style={{ color: 'var(--text-muted)' }}>Track:</span>
                         <div style={{ color: 'var(--primary-cyan)' }}>{submissionReceipt.track}</div>
@@ -259,7 +259,7 @@ export const Submission = () => {
                 </div>
               ) : (
                 /* Submission Form */
-                <div style={{ display: 'grid', gridTemplateColumns: '1.4fr 0.8fr', gap: '2.5rem' }}>
+                <div className="submission-layout-grid">
                   {/* Left: Upload Form */}
                   <div className="form-wrapper">
                     <h3 style={{ fontSize: '1.5rem', color: 'var(--primary-navy)', marginBottom: '1.5rem' }}>
@@ -532,7 +532,7 @@ export const Submission = () => {
                     {trackedPaper.title}
                   </h4>
 
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem', fontSize: '0.88rem', margin: '1.2rem 0', color: 'var(--text-secondary)' }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))', gap: '1rem', fontSize: '0.88rem', margin: '1.2rem 0', color: 'var(--text-secondary)' }}>
                     <div>
                       <span style={{ color: 'var(--text-muted)' }}>Authors: </span>
                       {trackedPaper.authors}

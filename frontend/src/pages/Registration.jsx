@@ -196,7 +196,7 @@ export const Registration = () => {
                   </div>
                 </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '1.2rem', marginBottom: '1.2rem', fontSize: '0.9rem' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 180px), 1fr))', gap: '1.2rem', marginBottom: '1.2rem', fontSize: '0.9rem' }}>
                   <div>
                     <span style={{ fontSize: '0.78rem', color: 'rgba(255, 255, 255, 0.7)', textTransform: 'uppercase' }}>Institution</span>
                     <div style={{ color: '#FFF' }}>{confirmedReg.institution} ({confirmedReg.country})</div>

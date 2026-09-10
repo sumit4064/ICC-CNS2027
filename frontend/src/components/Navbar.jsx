@@ -157,7 +157,7 @@ export const Navbar = () => {
                 ICCCNS-<span className="conference-name-accent">2027</span>
               </div>
               <div className="university-name">
-                VIGNAN UNIVERSITY, AP
+                VFSTR, AP
               </div>
             </div>
           </Link>
@@ -297,19 +297,20 @@ export const Navbar = () => {
       <aside className={`mobile-drawer-view ${mobileOpen ? 'open' : ''}`} aria-label="Mobile Navigation">
         <div className="mobile-drawer-top">
           <Link to="/" className="brand" onClick={() => setMobileOpen(false)}>
-            <div className="brand-logo-wrap" style={{ height: '36px' }}>
+            <div className="brand-logo-wrap">
               <img
                 src="/logos/vignan_institutional_logo.png"
                 alt="Vignan's Foundation for Science, Technology & Research Logo"
-                style={{ height: '30px', maxWidth: '130px', objectFit: 'contain' }}
+                className="logo"
               />
             </div>
+            <div className="brand-divider" />
             <div className="brand-info">
-              <div className="conference-name" style={{ fontSize: '18px' }}>
+              <div className="conference-name">
                 ICCCNS-<span className="conference-name-accent">2027</span>
               </div>
-              <div className="university-name" style={{ fontSize: '9px' }}>
-                Vignan University, AP
+              <div className="university-name">
+                VFSTR, AP
               </div>
             </div>
           </Link>

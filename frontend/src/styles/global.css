@@ -13,6 +13,7 @@ body,
   max-width: 100%;
   margin: 0;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 html {
@@ -235,6 +236,10 @@ input, textarea, select {
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
   transition: all var(--transition-normal);
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
 }
 
 .glass-panel:hover {

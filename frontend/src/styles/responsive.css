@@ -12,6 +12,14 @@
   }
 }
 
+/* Global Responsive Grid Layouts */
+.contact-layout-grid,
+.submission-layout-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2.5rem;
+}
+
 @media (max-width: 992px) {
   .hero-grid {
     grid-template-columns: 1fr;
@@ -59,9 +67,38 @@
   .form-grid-3 {
     grid-template-columns: 1fr;
   }
+
+  .venue-showcase-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  .about-objectives-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  .contact-layout-grid,
+  .submission-layout-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
 }
 
 @media (max-width: 768px) {
+  .content-container {
+    padding: 0 1.25rem;
+  }
+
+  .bento-card {
+    padding: 1.25rem 1rem !important;
+  }
+
+  .about-campus-showcase-img,
+  .venue-showcase-img {
+    height: 220px !important;
+  }
+
   .hero-title {
     font-size: clamp(1.75rem, 4.4vw, 2.35rem);
   }
@@ -91,9 +128,120 @@
   .form-wrapper {
     padding: 1.5rem;
   }
+
+  /* Conference Tracks Bento Mobile Layout */
+  .track-bento-item {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.55rem !important;
+    padding: 0.75rem 0.85rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .track-bento-left {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 0.75rem !important;
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .track-num-badge {
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
+    font-size: 0.88rem !important;
+    flex-shrink: 0 !important;
+    margin-top: 2px !important;
+  }
+
+  .track-bento-info {
+    min-width: 0 !important;
+    flex: 1 !important;
+  }
+
+  .track-bento-info h5 {
+    font-size: 0.95rem !important;
+    font-weight: 700 !important;
+    line-height: 1.35 !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    overflow: visible !important;
+    text-overflow: unset !important;
+  }
+
+  .track-bento-info p {
+    font-size: 0.8rem !important;
+    line-height: 1.4 !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    overflow: visible !important;
+    text-overflow: unset !important;
+    max-width: 100% !important;
+    margin-top: 0.25rem !important;
+  }
+
+  .track-bento-link {
+    align-self: flex-end !important;
+    font-size: 0.82rem !important;
+    padding-top: 0.15rem !important;
+    margin-top: 0.1rem !important;
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+  }
 }
 
 @media (max-width: 480px) {
+  .content-container {
+    padding: 0 1rem;
+  }
+
+  .bento-card {
+    padding: 1rem 0.85rem !important;
+  }
+
+  .about-campus-showcase-img,
+  .venue-showcase-img {
+    height: 190px !important;
+  }
+
+  .hero-infobar {
+    gap: 0.9rem !important;
+  }
+
+  .info-bento-card {
+    padding: 1rem 0.9rem !important;
+    gap: 0.85rem !important;
+  }
+
+  .date-milestone-card {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 1rem !important;
+    padding: 1.25rem 1rem !important;
+  }
+
+  .date-milestone-card > div:first-child {
+    width: 100% !important;
+    min-width: unset !important;
+    box-sizing: border-box !important;
+  }
+
+  .date-timeline-item {
+    gap: 0.6rem;
+  }
+
+  .date-pill-badge {
+    min-width: 76px;
+    font-size: 0.72rem;
+    padding: 0.3rem 0.5rem;
+  }
+
+  .tier-selector-grid {
+    grid-template-columns: 1fr !important;
+  }
+
   .hero-bg-network-svg {
     opacity: 0.45;
   }
@@ -133,5 +281,47 @@
   .btn-secondary-glass {
     width: 100%;
     justify-content: center;
+  }
+
+  .form-wrapper {
+    padding: 1.25rem 1rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .content-container {
+    padding: 0 0.75rem;
+  }
+
+  .bento-card {
+    padding: 0.9rem 0.75rem !important;
+  }
+
+  .form-wrapper {
+    padding: 1rem 0.75rem;
+  }
+
+  .track-bento-item {
+    padding: 0.65rem 0.7rem !important;
+    gap: 0.45rem !important;
+  }
+
+  .track-num-badge {
+    width: 32px !important;
+    height: 32px !important;
+    min-width: 32px !important;
+    font-size: 0.82rem !important;
+  }
+
+  .track-bento-info h5 {
+    font-size: 0.9rem !important;
+  }
+
+  .track-bento-info p {
+    font-size: 0.76rem !important;
+  }
+
+  .track-bento-link {
+    font-size: 0.78rem !important;
   }
 }

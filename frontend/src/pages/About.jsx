@@ -19,7 +19,7 @@ export const About = () => {
       {/* Main Content */}
       <section className="page-body-section">
         <div className="content-container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2.5rem', alignItems: 'center', marginBottom: '3.5rem' }}>
+          <div className="about-objectives-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '2.5rem', alignItems: 'center', marginBottom: '3.5rem' }}>
             <div>
               <h2 style={{ fontSize: '1.9rem', color: 'var(--primary-navy)', marginBottom: '1rem' }}>
                 Conference Objectives & Vision
@@ -43,12 +43,18 @@ export const About = () => {
 
             <div className="glass-panel" style={{ padding: '0.9rem', overflow: 'hidden', borderRadius: 'var(--radius-xl)' }}>
               <img
-                src="/images/vignan_ablock_campus.webp"
-                alt="Vignan University A-Block Campus"
-                style={{ width: '100%', height: '300px', objectFit: 'cover', borderRadius: 'var(--radius-lg)' }}
+                src="/images/vignan_ablock_campus.png"
+                alt="N-Block Academic Complex – CSE Department"
+                className="about-campus-showcase-img"
+                onError={(e) => {
+                  if (e.target.src.indexOf('vignan_ablock_campus.png') !== -1) {
+                    e.target.src = '/images/vignan_ablock_campus.webp';
+                  }
+                }}
+                style={{ width: '100%', maxWidth: '100%', height: '300px', objectFit: 'cover', borderRadius: 'var(--radius-lg)', display: 'block' }}
               />
               <div style={{ padding: '0.9rem 0.5rem 0.2rem' }}>
-                <h4 style={{ color: 'var(--primary-navy)', fontSize: '1.05rem' }}>A-Block Main Academic Building</h4>
+                <h4 style={{ color: 'var(--primary-navy)', fontSize: '1.05rem' }}>N-Block Academic Complex – CSE Department</h4>
                 <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem' }}>
                   Vignan's Foundation for Science, Technology and Research (VFSTR), Vadlamudi
                 </p>
@@ -57,7 +63,7 @@ export const About = () => {
           </div>
 
           {/* Key Highlights Grid */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.8rem', marginBottom: '4rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '1.8rem', marginBottom: '4rem' }}>
             <div className="glass-panel" style={{ padding: '2rem' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '1.1rem', marginBottom: '1.2rem' }}>
                 <div style={{ width: '50px', height: '50px', minWidth: '50px', flexShrink: 0, borderRadius: 'var(--radius-md)', background: 'rgba(0, 163, 199, 0.12)', color: 'var(--primary-cyan)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>

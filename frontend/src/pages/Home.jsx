@@ -281,13 +281,17 @@ export const Home = () => {
                 <div className="about-bento-content">
                   <div className="about-bento-img-wrap">
                     <img
-                      src="/images/vignan_ablock_campus.webp"
+                      src="/images/vignan_ablock_campus.png"
                       alt="Vignan Campus"
                       className="about-bento-img"
                       loading="lazy"
                       decoding="async"
-                      width="400"
-                      height="160"
+                      style={{ width: '100%', maxWidth: '100%', height: '100%', objectFit: 'cover' }}
+                      onError={(e) => {
+                        if (e.target.src.indexOf('vignan_ablock_campus.png') !== -1) {
+                          e.target.src = '/images/vignan_ablock_campus.webp';
+                        }
+                      }}
                     />
                   </div>
                   <p className="about-bento-text">
@@ -376,7 +380,7 @@ export const Home = () => {
 
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
             gap: '1.8rem'
           }}>
             {whyAttendCards.map((card, idx) => (

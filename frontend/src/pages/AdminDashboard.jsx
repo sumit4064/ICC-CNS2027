@@ -2131,7 +2131,7 @@ export const AdminDashboard = () => {
                 </div>
               ) : (
                 <div style={{ background: 'var(--surface-light)', padding: '1.25rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--glass-border)' }}>
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1rem', fontSize: '0.88rem', color: 'var(--text-secondary)', marginBottom: '1.25rem' }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))', gap: '1rem', fontSize: '0.88rem', color: 'var(--text-secondary)', marginBottom: '1.25rem' }}>
                     <div><strong style={{ color: 'var(--primary-navy)' }}>Primary Author:</strong> {viewingPaper.authors}</div>
                     <div><strong style={{ color: 'var(--primary-navy)' }}>Author Email:</strong> {viewingPaper.primaryAuthorEmail}</div>
                     <div><strong style={{ color: 'var(--primary-navy)' }}>Institution:</strong> {viewingPaper.institution}</div>
