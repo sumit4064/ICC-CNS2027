@@ -19,6 +19,460 @@ import {
   ChevronRight
 } from 'lucide-react';
 
+const HONORARY_CHAIRS = [
+  {
+    id: 'honorary-chair-1',
+    _id: 'honorary-chair-1',
+    name: 'Prof. Jinsong Wu',
+    institution: 'University of Chile, Chile',
+    category: 'Honorary Chairs',
+    displayOrder: 1,
+    isActive: true
+  },
+  {
+    id: 'honorary-chair-2',
+    _id: 'honorary-chair-2',
+    name: 'Dr. Alvaro Rocha',
+    institution: 'Vice-Chair of IEEE SMC Portugal Chapter, Professor ISEG, University of Lisbon, Lisboa, Portugal',
+    category: 'Honorary Chairs',
+    displayOrder: 2,
+    isActive: true
+  }
+];
+
+const INTERNATIONAL_ADVISORY_CHAIRS = [
+  {
+    id: 'intl-adv-chair-1',
+    _id: 'intl-adv-chair-1',
+    name: 'Prof. Dr. Nan Yang',
+    institution: 'ANU College of Systems and Society, Australian National University, Australia',
+    category: 'International Advisory Chairs',
+    displayOrder: 1,
+    isActive: true
+  },
+  {
+    id: 'intl-adv-chair-2',
+    _id: 'intl-adv-chair-2',
+    name: 'Dr. Rui Dinis',
+    institution: 'FCT-UNL and Researcher, Instituto de Telecomunicações, Portugal',
+    category: 'International Advisory Chairs',
+    displayOrder: 2,
+    isActive: true
+  },
+  {
+    id: 'intl-adv-chair-3',
+    _id: 'intl-adv-chair-3',
+    name: 'Dr. Jinwei Liu',
+    institution: 'Florida A&M University, United States',
+    category: 'International Advisory Chairs',
+    displayOrder: 3,
+    isActive: true
+  },
+  {
+    id: 'intl-adv-chair-4',
+    _id: 'intl-adv-chair-4',
+    name: 'Dr. Sinem Coleri',
+    institution: 'Koc University, Turkey',
+    category: 'International Advisory Chairs',
+    displayOrder: 4,
+    isActive: true
+  }
+];
+
+const INTERNATIONAL_ADVISORY_COMMITTEE = [
+  {
+    id: 'intl-adv-comm-1',
+    _id: 'intl-adv-comm-1',
+    name: 'Dr. Tomonobu Senjyu',
+    institution: 'Professor, University of the Ryukyus, Okinawam, Japan',
+    category: 'International Advisory Committee',
+    displayOrder: 1,
+    isActive: true
+  },
+  {
+    id: 'intl-adv-comm-2',
+    _id: 'intl-adv-comm-2',
+    name: 'Dr. Francesco Zirlilli',
+    institution: 'Professor (retired), Sapienza Universita, Roma, Italy',
+    category: 'International Advisory Committee',
+    displayOrder: 2,
+    isActive: true
+  },
+  {
+    id: 'intl-adv-comm-3',
+    _id: 'intl-adv-comm-3',
+    name: 'Dr. Dariusz Jacek Jakóbczak',
+    institution: 'Koszalin University of Technology, Poland',
+    category: 'International Advisory Committee',
+    displayOrder: 3,
+    isActive: true
+  },
+  {
+    id: 'intl-adv-comm-4',
+    _id: 'intl-adv-comm-4',
+    name: 'Dr. Addison Salazar',
+    institution: 'Universitat Politècnica de València, Spain',
+    category: 'International Advisory Committee',
+    displayOrder: 4,
+    isActive: true
+  },
+  {
+    id: 'intl-adv-comm-5',
+    _id: 'intl-adv-comm-5',
+    name: 'Dr. Debdatta Sinha Roy',
+    institution: 'Sr. Research Scientist, Oracle Retail Data Science R&D, Burlington, USA',
+    category: 'International Advisory Committee',
+    displayOrder: 5,
+    isActive: true
+  },
+  {
+    id: 'intl-adv-comm-6',
+    _id: 'intl-adv-comm-6',
+    name: 'Dr. Grigorios N. Beligiannis',
+    institution: 'University of Patras - Agrinio Campus, Greece',
+    category: 'International Advisory Committee',
+    displayOrder: 6,
+    isActive: true
+  },
+  {
+    id: 'intl-adv-comm-7',
+    _id: 'intl-adv-comm-7',
+    name: 'Dr. Tzung-Pei Hong',
+    institution: 'Professor, National University of Kaohsiung, Taiwan',
+    category: 'International Advisory Committee',
+    displayOrder: 7,
+    isActive: true
+  },
+  {
+    id: 'intl-adv-comm-8',
+    _id: 'intl-adv-comm-8',
+    name: 'Dr. Ayodeji Olalekan Salau',
+    institution: 'Afe Babalola University, Nigeria',
+    category: 'International Advisory Committee',
+    displayOrder: 8,
+    isActive: true
+  },
+  {
+    id: 'intl-adv-comm-9',
+    _id: 'intl-adv-comm-9',
+    name: 'Dr. Leila Bayoudhi',
+    institution: 'University of Monastir, Tunisia',
+    category: 'International Advisory Committee',
+    displayOrder: 9,
+    isActive: true
+  },
+  {
+    id: 'intl-adv-comm-10',
+    _id: 'intl-adv-comm-10',
+    name: 'Dr. Selim Hossain',
+    institution: 'Hajee Mohammad Danesh Science & Technology University, Dinajpur, Bangladesh',
+    category: 'International Advisory Committee',
+    displayOrder: 10,
+    isActive: true
+  },
+  {
+    id: 'intl-adv-comm-11',
+    _id: 'intl-adv-comm-11',
+    name: 'Dr. Yik-Chung Wu',
+    institution: 'The University of Hong Kong, Hong Kong',
+    category: 'International Advisory Committee',
+    displayOrder: 11,
+    isActive: true
+  },
+  {
+    id: 'cm-09',
+    _id: 'cm-09',
+    name: 'Ching-Hsien Hsu',
+    role: 'Advisory Committee Member',
+    institution: 'Asia University',
+    category: 'International Advisory Committee',
+    country: 'Taiwan',
+    displayOrder: 12,
+    isActive: true
+  },
+  {
+    id: 'cm-10',
+    _id: 'cm-10',
+    name: 'Ren-Hung Hwang',
+    role: 'Advisory Committee Member',
+    institution: 'Asia University',
+    category: 'International Advisory Committee',
+    country: 'Taiwan',
+    displayOrder: 13,
+    isActive: true
+  }
+];
+
+const NATIONAL_ADVISORY_COMMITTEE = [
+  {
+    id: 'nat-adv-comm-1',
+    _id: 'nat-adv-comm-1',
+    name: 'Dr. Gopal Rawat',
+    institution: 'Indian Institute of Technology Mandi, India',
+    category: 'National Advisory Committee',
+    country: 'India',
+    displayOrder: 1,
+    isActive: true
+  },
+  {
+    id: 'nat-adv-comm-2',
+    _id: 'nat-adv-comm-2',
+    name: 'Dr. B. K. Roy',
+    institution: 'National Institute of Technology Silchar, India',
+    category: 'National Advisory Committee',
+    country: 'India',
+    displayOrder: 2,
+    isActive: true
+  },
+  {
+    id: 'nat-adv-comm-3',
+    _id: 'nat-adv-comm-3',
+    name: 'Dr. Umesh C. Pati',
+    institution: 'National Institute of Technology Rourkela, India',
+    category: 'National Advisory Committee',
+    country: 'India',
+    displayOrder: 3,
+    isActive: true
+  },
+  {
+    id: 'nat-adv-comm-4',
+    _id: 'nat-adv-comm-4',
+    name: 'Dr. Shailendra K. Dwivedi',
+    institution: 'Maulana Azad National Institute of Technology Bhopal, India',
+    category: 'National Advisory Committee',
+    country: 'India',
+    displayOrder: 4,
+    isActive: true
+  },
+  {
+    id: 'nat-adv-comm-5',
+    _id: 'nat-adv-comm-5',
+    name: 'Dr. Brijesh Kumar',
+    institution: 'Indira Gandhi Delhi Technical University, India',
+    category: 'National Advisory Committee',
+    country: 'India',
+    displayOrder: 5,
+    isActive: true
+  },
+  {
+    id: 'nat-adv-comm-6',
+    _id: 'nat-adv-comm-6',
+    name: 'Dr. M. Thenmozhi',
+    institution: 'Puducherry Technological University, India',
+    category: 'National Advisory Committee',
+    country: 'India',
+    displayOrder: 6,
+    isActive: true
+  },
+  {
+    id: 'nat-adv-comm-7',
+    _id: 'nat-adv-comm-7',
+    name: 'Dr. K. L. V. Sai Prakash Sakuru',
+    institution: 'National Institute of Technology Warangal, India',
+    category: 'National Advisory Committee',
+    country: 'India',
+    displayOrder: 7,
+    isActive: true
+  },
+  {
+    id: 'nat-adv-comm-8',
+    _id: 'nat-adv-comm-8',
+    name: 'Dr. Tajinder Singh Arora',
+    institution: 'National Institute of Technology Uttarakhand, India',
+    category: 'National Advisory Committee',
+    country: 'India',
+    displayOrder: 8,
+    isActive: true
+  },
+  {
+    id: 'nat-adv-comm-9',
+    _id: 'nat-adv-comm-9',
+    name: 'Dr. Subhojit Ghosh',
+    institution: 'National Institute of Technology Raipur, India',
+    category: 'National Advisory Committee',
+    country: 'India',
+    displayOrder: 9,
+    isActive: true
+  },
+  {
+    id: 'nat-adv-comm-10',
+    _id: 'nat-adv-comm-10',
+    name: 'Dr. Anuradha Banerjee',
+    institution: 'Kalyani Government Engineering College, India',
+    category: 'National Advisory Committee',
+    country: 'India',
+    displayOrder: 10,
+    isActive: true
+  },
+  {
+    id: 'nat-adv-comm-11',
+    _id: 'nat-adv-comm-11',
+    name: 'Dr. Tejavathu Ramesh',
+    institution: 'National Institute of Technology Andhra Pradesh, India',
+    category: 'National Advisory Committee',
+    country: 'India',
+    displayOrder: 11,
+    isActive: true
+  },
+  {
+    id: 'nat-adv-comm-12',
+    _id: 'nat-adv-comm-12',
+    name: 'Dr. Amit Rathi',
+    institution: 'Manipal University Jaipur, India',
+    category: 'National Advisory Committee',
+    country: 'India',
+    displayOrder: 12,
+    isActive: true
+  },
+  {
+    id: 'nat-adv-comm-13',
+    _id: 'nat-adv-comm-13',
+    name: 'Dr. Virender Ranga',
+    institution: 'Delhi Technological University, India',
+    category: 'National Advisory Committee',
+    country: 'India',
+    displayOrder: 13,
+    isActive: true
+  },
+  {
+    id: 'nat-adv-comm-14',
+    _id: 'nat-adv-comm-14',
+    name: 'Dr. Ngangbam Herojit Singh',
+    institution: 'National Institute of Technology Agartala, India',
+    category: 'National Advisory Committee',
+    country: 'India',
+    displayOrder: 14,
+    isActive: true
+  },
+  {
+    id: 'nat-adv-comm-15',
+    _id: 'nat-adv-comm-15',
+    name: 'Dr. Jayendra Kumar',
+    institution: 'National Institute of Technology Jamshedpur, India',
+    category: 'National Advisory Committee',
+    country: 'India',
+    displayOrder: 15,
+    isActive: true
+  },
+  {
+    id: 'nat-adv-comm-16',
+    _id: 'nat-adv-comm-16',
+    name: 'Dr. Anirban Banik',
+    institution: 'National Institute of Technology Sikkim, India',
+    category: 'National Advisory Committee',
+    country: 'India',
+    displayOrder: 16,
+    isActive: true
+  },
+  {
+    id: 'nat-adv-comm-17',
+    _id: 'nat-adv-comm-17',
+    name: 'Dr. S. Chitra',
+    institution: 'Government College of Technology Coimbatore, India',
+    category: 'National Advisory Committee',
+    country: 'India',
+    displayOrder: 17,
+    isActive: true
+  },
+  {
+    id: 'nat-adv-comm-18',
+    _id: 'nat-adv-comm-18',
+    name: 'Dr. J. Satheesh Kumar',
+    institution: 'Dayananda Sagar College of Engineering, India',
+    category: 'National Advisory Committee',
+    country: 'India',
+    displayOrder: 18,
+    isActive: true
+  },
+  {
+    id: 'nat-adv-comm-19',
+    _id: 'nat-adv-comm-19',
+    name: 'Dr. John Clement Singh C',
+    institution: 'Kings Engineering College, India',
+    category: 'National Advisory Committee',
+    country: 'India',
+    displayOrder: 19,
+    isActive: true
+  },
+  {
+    id: 'nat-adv-comm-20',
+    _id: 'nat-adv-comm-20',
+    name: 'Dr. Nandhini Gayathri',
+    institution: 'SASTRA University, India',
+    category: 'National Advisory Committee',
+    country: 'India',
+    displayOrder: 20,
+    isActive: true
+  },
+  {
+    id: 'nat-adv-comm-21',
+    _id: 'nat-adv-comm-21',
+    name: 'Dr. Dilip Singh Sisodia',
+    institution: 'National Institute of Technology Raipur, India',
+    category: 'National Advisory Committee',
+    country: 'India',
+    displayOrder: 21,
+    isActive: true
+  },
+  {
+    id: 'nat-adv-comm-22',
+    _id: 'nat-adv-comm-22',
+    name: 'Dr. Angeline Vijila D',
+    institution: 'PSG College of Technology, India',
+    category: 'National Advisory Committee',
+    country: 'India',
+    displayOrder: 22,
+    isActive: true
+  },
+  {
+    id: 'nat-adv-comm-23',
+    _id: 'nat-adv-comm-23',
+    name: 'Dr. Bhargava Rama',
+    institution: 'Indian Institute of Technology Roorkee, India',
+    category: 'National Advisory Committee',
+    country: 'India',
+    displayOrder: 23,
+    isActive: true
+  }
+];
+
+const syncCommitteeMembers = (membersList = []) => {
+  const base = Array.isArray(membersList) ? membersList : [];
+
+  // 1. Remove old "Advisory Committee" and any duplicate "International Advisory Committee"
+  const cleaned = base.filter((m) => {
+    const cat = (m.category || '').toLowerCase();
+    return cat !== 'advisory committee' && cat !== 'international advisory committee';
+  });
+
+  // 2. Ensure International Advisory Chairs (avoid duplicates)
+  const hasIntlChairs = cleaned.some(
+    (m) => (m.category || '').toLowerCase() === 'international advisory chairs'
+  );
+  const intlChairsToAdd = hasIntlChairs ? [] : INTERNATIONAL_ADVISORY_CHAIRS;
+
+  // 3. Ensure Honorary Chairs (avoid duplicates)
+  const hasWu = cleaned.some((m) => (m.name || '').toLowerCase().includes('jinsong wu'));
+  const hasRocha = cleaned.some((m) => (m.name || '').toLowerCase().includes('alvaro rocha'));
+  const honoraryToAdd = [];
+  if (!hasWu) honoraryToAdd.push(HONORARY_CHAIRS[0]);
+  if (!hasRocha) honoraryToAdd.push(HONORARY_CHAIRS[1]);
+
+  // 4. Ensure National Advisory Committee (avoid duplicates)
+  const hasNatAdv = cleaned.some(
+    (m) => (m.category || '').toLowerCase() === 'national advisory committee'
+  );
+  const natAdvToAdd = hasNatAdv ? [] : NATIONAL_ADVISORY_COMMITTEE;
+
+  return [
+    ...cleaned,
+    ...intlChairsToAdd,
+    ...INTERNATIONAL_ADVISORY_COMMITTEE,
+    ...honoraryToAdd,
+    ...natAdvToAdd
+  ];
+};
+
 export const Committee = () => {
   // 1. Instant hydration from client cache if available (0ms initial render)
   const initialCached = useMemo(() => {
@@ -29,7 +483,10 @@ export const Committee = () => {
     }
   }, []);
 
-  const [committee, setCommittee] = useState(() => (initialCached?.success && Array.isArray(initialCached.data) ? initialCached.data : []));
+  const [committee, setCommittee] = useState(() => {
+    const cachedData = initialCached?.success && Array.isArray(initialCached.data) ? initialCached.data : [];
+    return syncCommitteeMembers(cachedData);
+  });
   const [loading, setLoading] = useState(() => !(initialCached?.success && initialCached.data?.length > 0));
   const [error, setError] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
@@ -44,7 +501,7 @@ export const Committee = () => {
     try {
       const res = await api.getCommittee();
       if (res.success && res.data) {
-        setCommittee(res.data);
+        setCommittee(syncCommitteeMembers(res.data));
       } else if (!committee.length) {
         setError('Unable to load committee members.');
       }
@@ -109,22 +566,26 @@ export const Committee = () => {
   const categoryOrderMap = {
     'chief patrons': 1,
     'patrons': 2,
-    'honorary chair': 3,
     'general chair': 4,
     'general co-chair': 5,
-    'advisory committee': 6,
-    'conference chair': 7,
-    'conference co-chair': 8,
-    'organizing chair': 9,
-    'technical chairs': 10,
-    'technical co-chairs': 11,
-    'publication chairs': 12,
-    'finance chair': 13,
-    'publicity chair': 14,
-    'organizing committee': 15,
-    'technical program committee': 16,
-    'publicity committee': 17,
-    'protocol and hospitality committee': 18
+    'international advisory chairs': 6,
+    'international advisory committee': 7,
+    'advisory committee': 7,
+    'conference chair': 8,
+    'conference co-chair': 9,
+    'organizing chair': 10,
+    'honorary chairs': 11,
+    'honorary chair': 11,
+    'national advisory committee': 12,
+    'technical chairs': 13,
+    'technical co-chairs': 14,
+    'publication chairs': 15,
+    'finance chair': 16,
+    'publicity chair': 17,
+    'organizing committee': 18,
+    'technical program committee': 19,
+    'publicity committee': 20,
+    'protocol and hospitality committee': 21
   };
 
   // Group and filter members dynamically
