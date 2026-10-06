@@ -193,21 +193,21 @@ export const getInitialData = () => {
       {
         id: "cat1",
         type: "Student / Research Scholar",
-        inr: "INR 4,000",
+        inr: "INR 8,000",
         usd: "USD 150",
         desc: "Valid student/scholar institutional identity proof required at registration."
       },
       {
         id: "cat2",
         type: "Faculty / Academician",
-        inr: "INR 6,500",
+        inr: "INR 9,000",
         usd: "USD 220",
         desc: "Full access to all technical sessions, conference kit, lunch & banquet."
       },
       {
         id: "cat3",
         type: "Industry Professional",
-        inr: "INR 9,000",
+        inr: "INR 10,000",
         usd: "USD 300",
         desc: "Access to conference tracks, industry panels, exhibition & networking."
       },

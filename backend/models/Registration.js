@@ -14,7 +14,7 @@ const registrationSchema = new mongoose.Schema({
   accompanyingPersons: { type: Number, default: 0 },
   dietaryRequirement: { type: String, default: 'Standard' },
   notes: { type: String, default: '' },
-  amountPaid: { type: String, default: 'INR 6,500' },
+  amountPaid: { type: String, default: 'INR 9,000' },
   status: { type: String, default: 'Confirmed' },
   registeredAt: { type: String, default: () => new Date().toISOString() }
 }, {

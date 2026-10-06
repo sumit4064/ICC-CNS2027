@@ -44,9 +44,9 @@ export const createRegistration = async (req, res) => {
     if (country.toLowerCase() !== 'india') {
       estimatedAmount = participantType.includes('Student') ? 'USD 150' : 'USD 250';
     } else {
-      if (participantType.includes('Student')) estimatedAmount = 'INR 4,000';
-      else if (participantType.includes('Faculty') || participantType.includes('Scholar')) estimatedAmount = 'INR 6,500';
-      else if (participantType.includes('Industry')) estimatedAmount = 'INR 9,000';
+      if (participantType.includes('Student')) estimatedAmount = 'INR 8,000';
+      else if (participantType.includes('Faculty') || participantType.includes('Scholar')) estimatedAmount = 'INR 9,000';
+      else if (participantType.includes('Industry')) estimatedAmount = 'INR 10,000';
       else estimatedAmount = 'INR 3,000';
     }
 
