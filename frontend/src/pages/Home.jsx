@@ -67,8 +67,8 @@ export const Home = () => {
 
   const stats = conference?.dynamicStats || conference?.stats || {
     speakers: '6+',
-    countries: '6+',
-    registered: '1+'
+    countries: '0+',
+    registered: '0+'
   };
 
   const whyAttendCards = [
@@ -194,12 +194,12 @@ export const Home = () => {
                   icon={<Users size={34} color="#00A3C7" />}
                 />
                 <StatCounter
-                  value={stats.countries || '6+'}
+                  value={stats.countries || '0+'}
                   label="COUNTRIES"
                   icon={<Globe2 size={34} color="#00A3C7" />}
                 />
                 <StatCounter
-                  value={stats.registered || '1+'}
+                  value={stats.registered || '0+'}
                   label="REGISTERED"
                   icon={<Users size={34} color="#00A3C7" />}
                 />

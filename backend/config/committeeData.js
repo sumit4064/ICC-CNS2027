@@ -1,8 +1,9 @@
 // Canonical master dataset for all ICC-CNS 2027 committee members & leadership
+// Updated from MongoDB Atlas with unified displayOrder 1..129
 export const officialCommitteeMembers = [
   {
-    "id": "cm-01",
     "_id": "cm-01",
+    "id": "cm-01",
     "displayOrder": 1,
     "name": "Dr. L. Rathaiah",
     "role": "Chairman, Vignan's Group",
@@ -11,13 +12,14 @@ export const officialCommitteeMembers = [
     "org": "Vignan's Group",
     "category": "Chief Patrons",
     "country": "India",
-    "imageUrl": "/uploads/committee/member-1788641543738-chairman.jpg",
-    "imagePublicId": "member-1788641543738-chairman.jpg",
-    "isActive": true
+    "imageUrl": "committee/cm-01/chairman.jpg",
+    "imagePublicId": "chairman.jpg",
+    "isActive": true,
+    "imageStorageKey": "committee/cm-01/chairman.jpg"
   },
   {
-    "id": "cm-02",
     "_id": "cm-02",
+    "id": "cm-02",
     "displayOrder": 2,
     "name": "Sri L. Sri Krishna Devarayalu",
     "role": "Member of Parliament, Vice-Chairman, Vignan's Group",
@@ -26,13 +28,14 @@ export const officialCommitteeMembers = [
     "org": "Vignan's Group",
     "category": "Chief Patrons",
     "country": "India",
-    "imageUrl": "/uploads/committee/member-1788642144248-Krishna-Lavu.webp",
-    "imagePublicId": "member-1788642144248-Krishna-Lavu.webp",
-    "isActive": true
+    "imageUrl": "committee/cm-02/Krishna-Lavu.webp",
+    "imagePublicId": "Krishna-Lavu.webp",
+    "isActive": true,
+    "imageStorageKey": "committee/cm-02/Krishna-Lavu.webp"
   },
   {
-    "id": "cm-03",
     "_id": "cm-03",
+    "id": "cm-03",
     "displayOrder": 3,
     "name": "Dr. Pavuluri Subba Rao",
     "role": "Chancellor, VFSTR",
@@ -46,8 +49,8 @@ export const officialCommitteeMembers = [
     "isActive": true
   },
   {
-    "id": "cm-04",
     "_id": "cm-04",
+    "id": "cm-04",
     "displayOrder": 4,
     "name": "Dr. K. V. Krishna Kishore",
     "role": "Vice-Chancellor, VFSTR",
@@ -56,13 +59,14 @@ export const officialCommitteeMembers = [
     "org": "VFSTR (Deemed to be University)",
     "category": "Patrons",
     "country": "India",
-    "imageUrl": "/uploads/committee/member-1788641585210-vice_chancellor.jpg",
-    "imagePublicId": "member-1788641585210-vice_chancellor.jpg",
-    "isActive": true
+    "imageUrl": "committee/cm-04/vice_chancellor.jpg",
+    "imagePublicId": "vice_chancellor.jpg",
+    "isActive": true,
+    "imageStorageKey": "committee/cm-04/vice_chancellor.jpg"
   },
   {
-    "id": "cm-05",
     "_id": "cm-05",
+    "id": "cm-05",
     "displayOrder": 5,
     "name": "Dr. K. Meghana",
     "role": "CEO, VFSTR",
@@ -71,13 +75,14 @@ export const officialCommitteeMembers = [
     "org": "VFSTR (Deemed to be University)",
     "category": "Patrons",
     "country": "India",
-    "imageUrl": "/uploads/committee/member-1788642343112-ceo_mam.jpg",
-    "imagePublicId": "member-1788642343112-ceo_mam.jpg",
-    "isActive": true
+    "imageUrl": "committee/cm-05/ceo_mam.jpg",
+    "imagePublicId": "ceo_mam.jpg",
+    "isActive": true,
+    "imageStorageKey": "committee/cm-05/ceo_mam.jpg"
   },
   {
-    "id": "cm-06",
     "_id": "cm-06",
+    "id": "cm-06",
     "displayOrder": 6,
     "name": "Dr P. M. V. Rao",
     "role": "Registrar, VFSTR",
@@ -86,13 +91,14 @@ export const officialCommitteeMembers = [
     "org": "VFSTR (Deemed to be University)",
     "category": "Patrons",
     "country": "India",
-    "imageUrl": "/uploads/committee/member-1788642386505-pmvrao.jpg",
-    "imagePublicId": "member-1788642386505-pmvrao.jpg",
-    "isActive": true
+    "imageUrl": "committee/cm-06/pmvrao.jpg",
+    "imagePublicId": "pmvrao.jpg",
+    "isActive": true,
+    "imageStorageKey": "committee/cm-06/pmvrao.jpg"
   },
   {
-    "id": "cm-07",
     "_id": "cm-07",
+    "id": "cm-07",
     "displayOrder": 7,
     "name": "Prof. K.V.Krishna Kishore",
     "role": "Dean, School of Computing & Informatics",
@@ -101,28 +107,46 @@ export const officialCommitteeMembers = [
     "org": "VFSTR (Deemed to be University)",
     "category": "General Chair",
     "country": "India",
-    "imageUrl": "/uploads/committee/member-1788642430670-vice_chancellor.jpg",
-    "imagePublicId": "member-1788642430670-vice_chancellor.jpg",
-    "isActive": true
+    "imageUrl": "committee/cm-07/vice_chancellor.jpg",
+    "imagePublicId": "vice_chancellor.jpg",
+    "isActive": true,
+    "imageStorageKey": "committee/cm-07/vice_chancellor.jpg"
   },
   {
-    "id": "cm-08",
     "_id": "cm-08",
+    "id": "cm-08",
     "displayOrder": 8,
     "name": "Dr. S. V. Phani Kumar",
     "role": "Professor and HOD-CSE",
     "designation": "Professor and HOD-CSE",
     "institution": "VFSTR (Deemed to be University)",
     "org": "VFSTR (Deemed to be University)",
-    "category": "General Co-Chair",
+    "category": "General Chair",
     "country": "India",
-    "imageUrl": "/uploads/committee/member-1788642445329-HOD_sir.webp",
-    "imagePublicId": "member-1788642445329-HOD_sir.webp",
-    "isActive": true
+    "imageUrl": "committee/cm-08/HOD_sir.webp",
+    "imagePublicId": "HOD_sir.webp",
+    "isActive": true,
+    "imageStorageKey": "committee/cm-08/HOD_sir.webp"
   },
   {
-    "id": "intl-adv-chair-1",
+    "_id": "cm-11",
+    "id": "cm-11",
+    "displayOrder": 9,
+    "name": "Dr. S. Deva Kumar",
+    "role": "Program Chair",
+    "designation": "Program Chair",
+    "institution": "VFSTR (Deemed to be University)",
+    "org": "VFSTR (Deemed to be University)",
+    "category": "Program Chair",
+    "country": "India",
+    "isActive": true,
+    "imagePublicId": "deva_kumar.webp",
+    "imageStorageKey": "committee/cm-11/deva_kumar.webp",
+    "imageUrl": "committee/cm-11/deva_kumar.webp"
+  },
+  {
     "_id": "intl-adv-chair-1",
+    "id": "intl-adv-chair-1",
     "name": "Prof. Dr. Nan Yang",
     "role": "",
     "designation": "",
@@ -136,11 +160,11 @@ export const officialCommitteeMembers = [
     "imageUrl": null,
     "imagePublicId": null,
     "isActive": true,
-    "displayOrder": 9
+    "displayOrder": 10
   },
   {
-    "id": "intl-adv-chair-2",
     "_id": "intl-adv-chair-2",
+    "id": "intl-adv-chair-2",
     "name": "Dr. Rui Dinis",
     "role": "",
     "designation": "",
@@ -154,11 +178,11 @@ export const officialCommitteeMembers = [
     "imageUrl": null,
     "imagePublicId": null,
     "isActive": true,
-    "displayOrder": 10
+    "displayOrder": 11
   },
   {
-    "id": "intl-adv-chair-3",
     "_id": "intl-adv-chair-3",
+    "id": "intl-adv-chair-3",
     "name": "Dr. Jinwei Liu",
     "role": "",
     "designation": "",
@@ -172,11 +196,11 @@ export const officialCommitteeMembers = [
     "imageUrl": null,
     "imagePublicId": null,
     "isActive": true,
-    "displayOrder": 11
+    "displayOrder": 12
   },
   {
-    "id": "intl-adv-chair-4",
     "_id": "intl-adv-chair-4",
+    "id": "intl-adv-chair-4",
     "name": "Dr. Sinem Coleri",
     "role": "",
     "designation": "",
@@ -190,11 +214,11 @@ export const officialCommitteeMembers = [
     "imageUrl": null,
     "imagePublicId": null,
     "isActive": true,
-    "displayOrder": 12
+    "displayOrder": 13
   },
   {
-    "id": "intl-adv-comm-1",
     "_id": "intl-adv-comm-1",
+    "id": "intl-adv-comm-1",
     "name": "Dr. Tomonobu Senjyu",
     "role": "",
     "designation": "",
@@ -208,11 +232,11 @@ export const officialCommitteeMembers = [
     "imageUrl": null,
     "imagePublicId": null,
     "isActive": true,
-    "displayOrder": 13
+    "displayOrder": 14
   },
   {
-    "id": "intl-adv-comm-2",
     "_id": "intl-adv-comm-2",
+    "id": "intl-adv-comm-2",
     "name": "Dr. Francesco Zirlilli",
     "role": "",
     "designation": "",
@@ -226,11 +250,11 @@ export const officialCommitteeMembers = [
     "imageUrl": null,
     "imagePublicId": null,
     "isActive": true,
-    "displayOrder": 14
+    "displayOrder": 15
   },
   {
-    "id": "intl-adv-comm-3",
     "_id": "intl-adv-comm-3",
+    "id": "intl-adv-comm-3",
     "name": "Dr. Dariusz Jacek Jakóbczak",
     "role": "",
     "designation": "",
@@ -244,11 +268,11 @@ export const officialCommitteeMembers = [
     "imageUrl": null,
     "imagePublicId": null,
     "isActive": true,
-    "displayOrder": 15
+    "displayOrder": 16
   },
   {
-    "id": "intl-adv-comm-4",
     "_id": "intl-adv-comm-4",
+    "id": "intl-adv-comm-4",
     "name": "Dr. Addison Salazar",
     "role": "",
     "designation": "",
@@ -262,11 +286,11 @@ export const officialCommitteeMembers = [
     "imageUrl": null,
     "imagePublicId": null,
     "isActive": true,
-    "displayOrder": 16
+    "displayOrder": 17
   },
   {
-    "id": "intl-adv-comm-5",
     "_id": "intl-adv-comm-5",
+    "id": "intl-adv-comm-5",
     "name": "Dr. Debdatta Sinha Roy",
     "role": "",
     "designation": "",
@@ -280,11 +304,11 @@ export const officialCommitteeMembers = [
     "imageUrl": null,
     "imagePublicId": null,
     "isActive": true,
-    "displayOrder": 17
+    "displayOrder": 18
   },
   {
-    "id": "intl-adv-comm-6",
     "_id": "intl-adv-comm-6",
+    "id": "intl-adv-comm-6",
     "name": "Dr. Grigorios N. Beligiannis",
     "role": "",
     "designation": "",
@@ -298,11 +322,11 @@ export const officialCommitteeMembers = [
     "imageUrl": null,
     "imagePublicId": null,
     "isActive": true,
-    "displayOrder": 18
+    "displayOrder": 19
   },
   {
-    "id": "intl-adv-comm-7",
     "_id": "intl-adv-comm-7",
+    "id": "intl-adv-comm-7",
     "name": "Dr. Tzung-Pei Hong",
     "role": "",
     "designation": "",
@@ -316,11 +340,11 @@ export const officialCommitteeMembers = [
     "imageUrl": null,
     "imagePublicId": null,
     "isActive": true,
-    "displayOrder": 19
+    "displayOrder": 20
   },
   {
-    "id": "intl-adv-comm-8",
     "_id": "intl-adv-comm-8",
+    "id": "intl-adv-comm-8",
     "name": "Dr. Ayodeji Olalekan Salau",
     "role": "",
     "designation": "",
@@ -334,11 +358,11 @@ export const officialCommitteeMembers = [
     "imageUrl": null,
     "imagePublicId": null,
     "isActive": true,
-    "displayOrder": 20
+    "displayOrder": 21
   },
   {
-    "id": "intl-adv-comm-9",
     "_id": "intl-adv-comm-9",
+    "id": "intl-adv-comm-9",
     "name": "Dr. Leila Bayoudhi",
     "role": "",
     "designation": "",
@@ -352,11 +376,11 @@ export const officialCommitteeMembers = [
     "imageUrl": null,
     "imagePublicId": null,
     "isActive": true,
-    "displayOrder": 21
+    "displayOrder": 22
   },
   {
-    "id": "intl-adv-comm-10",
     "_id": "intl-adv-comm-10",
+    "id": "intl-adv-comm-10",
     "name": "Dr. Selim Hossain",
     "role": "",
     "designation": "",
@@ -370,11 +394,11 @@ export const officialCommitteeMembers = [
     "imageUrl": null,
     "imagePublicId": null,
     "isActive": true,
-    "displayOrder": 22
+    "displayOrder": 23
   },
   {
-    "id": "intl-adv-comm-11",
     "_id": "intl-adv-comm-11",
+    "id": "intl-adv-comm-11",
     "name": "Dr. Yik-Chung Wu",
     "role": "",
     "designation": "",
@@ -388,12 +412,12 @@ export const officialCommitteeMembers = [
     "imageUrl": null,
     "imagePublicId": null,
     "isActive": true,
-    "displayOrder": 23
+    "displayOrder": 24
   },
   {
-    "id": "cm-09",
     "_id": "cm-09",
-    "displayOrder": 24,
+    "id": "cm-09",
+    "displayOrder": 25,
     "name": "Ching-Hsien Hsu",
     "role": "Advisory Committee Member",
     "designation": "Asia University",
@@ -404,9 +428,9 @@ export const officialCommitteeMembers = [
     "isActive": true
   },
   {
-    "id": "cm-10",
     "_id": "cm-10",
-    "displayOrder": 25,
+    "id": "cm-10",
+    "displayOrder": 26,
     "name": "Ren-Hung Hwang",
     "role": "Advisory Committee Member",
     "designation": "Asia University",
@@ -417,60 +441,47 @@ export const officialCommitteeMembers = [
     "isActive": true
   },
   {
-    "id": "cm-11",
-    "_id": "cm-11",
-    "displayOrder": 26,
-    "name": "Dr. S. Deva Kumar",
-    "role": "Conference Chair",
-    "designation": "Conference Chair",
-    "institution": "VFSTR (Deemed to be University)",
-    "org": "VFSTR (Deemed to be University)",
-    "category": "Conference Chair",
-    "country": "India",
-    "isActive": true
-  },
-  {
-    "id": "cm-12",
     "_id": "cm-12",
+    "id": "cm-12",
     "displayOrder": 27,
     "name": "Dr. M. Uma Devi",
     "role": "Conference Co-Chair",
     "designation": "Conference Co-Chair",
     "institution": "VFSTR (Deemed to be University)",
     "org": "VFSTR (Deemed to be University)",
-    "category": "Conference Co-Chair",
+    "category": "Program Co-Chair",
     "country": "India",
     "isActive": true
   },
   {
-    "id": "cm-13",
     "_id": "cm-13",
+    "id": "cm-13",
     "displayOrder": 28,
     "name": "Dr. P Jhansi Lakshmi",
     "role": "Conference Co-Chair",
     "designation": "Conference Co-Chair",
     "institution": "VFSTR (Deemed to be University)",
     "org": "VFSTR (Deemed to be University)",
-    "category": "Conference Co-Chair",
+    "category": "Program Co-Chair",
     "country": "India",
     "isActive": true
   },
   {
-    "id": "cm-14",
     "_id": "cm-14",
+    "id": "cm-14",
     "displayOrder": 29,
     "name": "Dr. B. Suvarna",
     "role": "Conference Co-Chair",
     "designation": "Conference Co-Chair",
     "institution": "VFSTR (Deemed to be University)",
     "org": "VFSTR (Deemed to be University)",
-    "category": "Conference Co-Chair",
+    "category": "Program Co-Chair",
     "country": "India",
     "isActive": true
   },
   {
-    "id": "cm-15",
     "_id": "cm-15",
+    "id": "cm-15",
     "displayOrder": 30,
     "name": "Dr. Ch. Siva Koteshwara Rao",
     "role": "Organizing Chair",
@@ -482,8 +493,8 @@ export const officialCommitteeMembers = [
     "isActive": true
   },
   {
-    "id": "honorary-chair-1",
     "_id": "honorary-chair-1",
+    "id": "honorary-chair-1",
     "name": "Prof. Jinsong Wu",
     "role": "",
     "designation": "",
@@ -500,8 +511,8 @@ export const officialCommitteeMembers = [
     "displayOrder": 31
   },
   {
-    "id": "honorary-chair-2",
     "_id": "honorary-chair-2",
+    "id": "honorary-chair-2",
     "name": "Dr. Alvaro Rocha",
     "role": "",
     "designation": "",
@@ -518,22 +529,35 @@ export const officialCommitteeMembers = [
     "displayOrder": 32
   },
   {
-    "id": "cm-16",
     "_id": "cm-16",
+    "id": "cm-16",
     "displayOrder": 33,
     "name": "Dr. S. Satish Kumar",
-    "role": "Technical Chair",
-    "designation": "Technical Chair",
+    "role": "Finance Chair",
+    "designation": "Finance Chair",
     "institution": "VFSTR (Deemed to be University)",
     "org": "VFSTR (Deemed to be University)",
-    "category": "Technical Chairs",
+    "category": "Finance Chair",
     "country": "India",
     "isActive": true
   },
   {
-    "id": "cm-17",
-    "_id": "cm-17",
+    "_id": "cm-26",
+    "id": "cm-26",
     "displayOrder": 34,
+    "name": "Dr. G. Balu Narasimha Rao G",
+    "role": "Finance Chair",
+    "designation": "Finance Chair",
+    "institution": "VFSTR (Deemed to be University)",
+    "org": "VFSTR (Deemed to be University)",
+    "category": "Finance Chair",
+    "country": "India",
+    "isActive": true
+  },
+  {
+    "_id": "cm-17",
+    "id": "cm-17",
+    "displayOrder": 35,
     "name": "Dr. D. Yakobu",
     "role": "Technical Chair",
     "designation": "Technical Chair",
@@ -544,9 +568,9 @@ export const officialCommitteeMembers = [
     "isActive": true
   },
   {
-    "id": "cm-18",
     "_id": "cm-18",
-    "displayOrder": 35,
+    "id": "cm-18",
+    "displayOrder": 36,
     "name": "Dr. R. Prathap Kumar",
     "role": "Technical Co-Chair",
     "designation": "Technical Co-Chair",
@@ -557,9 +581,9 @@ export const officialCommitteeMembers = [
     "isActive": true
   },
   {
-    "id": "cm-19",
     "_id": "cm-19",
-    "displayOrder": 36,
+    "id": "cm-19",
+    "displayOrder": 37,
     "name": "Dr. E. Deepak",
     "role": "Technical Co-Chair",
     "designation": "Technical Co-Chair",
@@ -570,9 +594,9 @@ export const officialCommitteeMembers = [
     "isActive": true
   },
   {
-    "id": "cm-20",
     "_id": "cm-20",
-    "displayOrder": 37,
+    "id": "cm-20",
+    "displayOrder": 38,
     "name": "Dr. M. Raja Rao",
     "role": "Technical Co-Chair",
     "designation": "Technical Co-Chair",
@@ -583,9 +607,9 @@ export const officialCommitteeMembers = [
     "isActive": true
   },
   {
-    "id": "cm-22",
     "_id": "cm-22",
-    "displayOrder": 38,
+    "id": "cm-22",
+    "displayOrder": 39,
     "name": "Dr. G. Sravya",
     "role": "Technical Co-Chair",
     "designation": "Technical Co-Chair",
@@ -596,9 +620,9 @@ export const officialCommitteeMembers = [
     "isActive": true
   },
   {
-    "id": "cm-23",
     "_id": "cm-23",
-    "displayOrder": 39,
+    "id": "cm-23",
+    "displayOrder": 40,
     "name": "Dr. Sk. Reehana",
     "role": "Technical Co-Chair",
     "designation": "Technical Co-Chair",
@@ -609,9 +633,9 @@ export const officialCommitteeMembers = [
     "isActive": true
   },
   {
-    "id": "cm-24",
     "_id": "cm-24",
-    "displayOrder": 40,
+    "id": "cm-24",
+    "displayOrder": 41,
     "name": "Dr. James Deva Koresh",
     "role": "Publication Chair",
     "designation": "Publication Chair",
@@ -622,9 +646,9 @@ export const officialCommitteeMembers = [
     "isActive": true
   },
   {
-    "id": "cm-25",
     "_id": "cm-25",
-    "displayOrder": 41,
+    "id": "cm-25",
+    "displayOrder": 42,
     "name": "Dr. Vijitha",
     "role": "Publication Chair",
     "designation": "Publication Chair",
@@ -635,8 +659,8 @@ export const officialCommitteeMembers = [
     "isActive": true
   },
   {
-    "id": "nat-adv-comm-1",
     "_id": "nat-adv-comm-1",
+    "id": "nat-adv-comm-1",
     "name": "Dr. Gopal Rawat",
     "role": "",
     "designation": "",
@@ -650,11 +674,11 @@ export const officialCommitteeMembers = [
     "imageUrl": null,
     "imagePublicId": null,
     "isActive": true,
-    "displayOrder": 42
+    "displayOrder": 43
   },
   {
-    "id": "nat-adv-comm-2",
     "_id": "nat-adv-comm-2",
+    "id": "nat-adv-comm-2",
     "name": "Dr. B. K. Roy",
     "role": "",
     "designation": "",
@@ -668,11 +692,11 @@ export const officialCommitteeMembers = [
     "imageUrl": null,
     "imagePublicId": null,
     "isActive": true,
-    "displayOrder": 43
+    "displayOrder": 44
   },
   {
-    "id": "nat-adv-comm-3",
     "_id": "nat-adv-comm-3",
+    "id": "nat-adv-comm-3",
     "name": "Dr. Umesh C. Pati",
     "role": "",
     "designation": "",
@@ -686,11 +710,11 @@ export const officialCommitteeMembers = [
     "imageUrl": null,
     "imagePublicId": null,
     "isActive": true,
-    "displayOrder": 44
+    "displayOrder": 45
   },
   {
-    "id": "nat-adv-comm-4",
     "_id": "nat-adv-comm-4",
+    "id": "nat-adv-comm-4",
     "name": "Dr. Shailendra K. Dwivedi",
     "role": "",
     "designation": "",
@@ -704,11 +728,11 @@ export const officialCommitteeMembers = [
     "imageUrl": null,
     "imagePublicId": null,
     "isActive": true,
-    "displayOrder": 45
+    "displayOrder": 46
   },
   {
-    "id": "nat-adv-comm-5",
     "_id": "nat-adv-comm-5",
+    "id": "nat-adv-comm-5",
     "name": "Dr. Brijesh Kumar",
     "role": "",
     "designation": "",
@@ -722,11 +746,11 @@ export const officialCommitteeMembers = [
     "imageUrl": null,
     "imagePublicId": null,
     "isActive": true,
-    "displayOrder": 46
+    "displayOrder": 47
   },
   {
-    "id": "nat-adv-comm-6",
     "_id": "nat-adv-comm-6",
+    "id": "nat-adv-comm-6",
     "name": "Dr. M. Thenmozhi",
     "role": "",
     "designation": "",
@@ -740,11 +764,11 @@ export const officialCommitteeMembers = [
     "imageUrl": null,
     "imagePublicId": null,
     "isActive": true,
-    "displayOrder": 47
+    "displayOrder": 48
   },
   {
-    "id": "nat-adv-comm-7",
     "_id": "nat-adv-comm-7",
+    "id": "nat-adv-comm-7",
     "name": "Dr. K. L. V. Sai Prakash Sakuru",
     "role": "",
     "designation": "",
@@ -758,11 +782,11 @@ export const officialCommitteeMembers = [
     "imageUrl": null,
     "imagePublicId": null,
     "isActive": true,
-    "displayOrder": 48
+    "displayOrder": 49
   },
   {
-    "id": "nat-adv-comm-8",
     "_id": "nat-adv-comm-8",
+    "id": "nat-adv-comm-8",
     "name": "Dr. Tajinder Singh Arora",
     "role": "",
     "designation": "",
@@ -776,11 +800,11 @@ export const officialCommitteeMembers = [
     "imageUrl": null,
     "imagePublicId": null,
     "isActive": true,
-    "displayOrder": 49
+    "displayOrder": 50
   },
   {
-    "id": "nat-adv-comm-9",
     "_id": "nat-adv-comm-9",
+    "id": "nat-adv-comm-9",
     "name": "Dr. Subhojit Ghosh",
     "role": "",
     "designation": "",
@@ -794,11 +818,11 @@ export const officialCommitteeMembers = [
     "imageUrl": null,
     "imagePublicId": null,
     "isActive": true,
-    "displayOrder": 50
+    "displayOrder": 51
   },
   {
-    "id": "nat-adv-comm-10",
     "_id": "nat-adv-comm-10",
+    "id": "nat-adv-comm-10",
     "name": "Dr. Anuradha Banerjee",
     "role": "",
     "designation": "",
@@ -812,11 +836,11 @@ export const officialCommitteeMembers = [
     "imageUrl": null,
     "imagePublicId": null,
     "isActive": true,
-    "displayOrder": 51
+    "displayOrder": 52
   },
   {
-    "id": "nat-adv-comm-11",
     "_id": "nat-adv-comm-11",
+    "id": "nat-adv-comm-11",
     "name": "Dr. Tejavathu Ramesh",
     "role": "",
     "designation": "",
@@ -830,11 +854,11 @@ export const officialCommitteeMembers = [
     "imageUrl": null,
     "imagePublicId": null,
     "isActive": true,
-    "displayOrder": 52
+    "displayOrder": 53
   },
   {
-    "id": "nat-adv-comm-12",
     "_id": "nat-adv-comm-12",
+    "id": "nat-adv-comm-12",
     "name": "Dr. Amit Rathi",
     "role": "",
     "designation": "",
@@ -848,11 +872,11 @@ export const officialCommitteeMembers = [
     "imageUrl": null,
     "imagePublicId": null,
     "isActive": true,
-    "displayOrder": 53
+    "displayOrder": 54
   },
   {
-    "id": "nat-adv-comm-13",
     "_id": "nat-adv-comm-13",
+    "id": "nat-adv-comm-13",
     "name": "Dr. Virender Ranga",
     "role": "",
     "designation": "",
@@ -866,11 +890,11 @@ export const officialCommitteeMembers = [
     "imageUrl": null,
     "imagePublicId": null,
     "isActive": true,
-    "displayOrder": 54
+    "displayOrder": 55
   },
   {
-    "id": "nat-adv-comm-14",
     "_id": "nat-adv-comm-14",
+    "id": "nat-adv-comm-14",
     "name": "Dr. Ngangbam Herojit Singh",
     "role": "",
     "designation": "",
@@ -884,11 +908,11 @@ export const officialCommitteeMembers = [
     "imageUrl": null,
     "imagePublicId": null,
     "isActive": true,
-    "displayOrder": 55
+    "displayOrder": 56
   },
   {
-    "id": "nat-adv-comm-15",
     "_id": "nat-adv-comm-15",
+    "id": "nat-adv-comm-15",
     "name": "Dr. Jayendra Kumar",
     "role": "",
     "designation": "",
@@ -902,11 +926,11 @@ export const officialCommitteeMembers = [
     "imageUrl": null,
     "imagePublicId": null,
     "isActive": true,
-    "displayOrder": 56
+    "displayOrder": 57
   },
   {
-    "id": "nat-adv-comm-16",
     "_id": "nat-adv-comm-16",
+    "id": "nat-adv-comm-16",
     "name": "Dr. Anirban Banik",
     "role": "",
     "designation": "",
@@ -920,11 +944,11 @@ export const officialCommitteeMembers = [
     "imageUrl": null,
     "imagePublicId": null,
     "isActive": true,
-    "displayOrder": 57
+    "displayOrder": 58
   },
   {
-    "id": "nat-adv-comm-17",
     "_id": "nat-adv-comm-17",
+    "id": "nat-adv-comm-17",
     "name": "Dr. S. Chitra",
     "role": "",
     "designation": "",
@@ -938,11 +962,11 @@ export const officialCommitteeMembers = [
     "imageUrl": null,
     "imagePublicId": null,
     "isActive": true,
-    "displayOrder": 58
+    "displayOrder": 59
   },
   {
-    "id": "nat-adv-comm-18",
     "_id": "nat-adv-comm-18",
+    "id": "nat-adv-comm-18",
     "name": "Dr. J. Satheesh Kumar",
     "role": "",
     "designation": "",
@@ -956,11 +980,11 @@ export const officialCommitteeMembers = [
     "imageUrl": null,
     "imagePublicId": null,
     "isActive": true,
-    "displayOrder": 59
+    "displayOrder": 60
   },
   {
-    "id": "nat-adv-comm-19",
     "_id": "nat-adv-comm-19",
+    "id": "nat-adv-comm-19",
     "name": "Dr. John Clement Singh C",
     "role": "",
     "designation": "",
@@ -974,11 +998,11 @@ export const officialCommitteeMembers = [
     "imageUrl": null,
     "imagePublicId": null,
     "isActive": true,
-    "displayOrder": 60
+    "displayOrder": 61
   },
   {
-    "id": "nat-adv-comm-20",
     "_id": "nat-adv-comm-20",
+    "id": "nat-adv-comm-20",
     "name": "Dr. Nandhini Gayathri",
     "role": "",
     "designation": "",
@@ -992,11 +1016,11 @@ export const officialCommitteeMembers = [
     "imageUrl": null,
     "imagePublicId": null,
     "isActive": true,
-    "displayOrder": 61
+    "displayOrder": 62
   },
   {
-    "id": "nat-adv-comm-21",
     "_id": "nat-adv-comm-21",
+    "id": "nat-adv-comm-21",
     "name": "Dr. Dilip Singh Sisodia",
     "role": "",
     "designation": "",
@@ -1010,11 +1034,11 @@ export const officialCommitteeMembers = [
     "imageUrl": null,
     "imagePublicId": null,
     "isActive": true,
-    "displayOrder": 62
+    "displayOrder": 63
   },
   {
-    "id": "nat-adv-comm-22",
     "_id": "nat-adv-comm-22",
+    "id": "nat-adv-comm-22",
     "name": "Dr. Angeline Vijila D",
     "role": "",
     "designation": "",
@@ -1028,11 +1052,11 @@ export const officialCommitteeMembers = [
     "imageUrl": null,
     "imagePublicId": null,
     "isActive": true,
-    "displayOrder": 63
+    "displayOrder": 64
   },
   {
-    "id": "nat-adv-comm-23",
     "_id": "nat-adv-comm-23",
+    "id": "nat-adv-comm-23",
     "name": "Dr. Bhargava Rama",
     "role": "",
     "designation": "",
@@ -1046,24 +1070,11 @@ export const officialCommitteeMembers = [
     "imageUrl": null,
     "imagePublicId": null,
     "isActive": true,
-    "displayOrder": 64
+    "displayOrder": 65
   },
   {
-    "id": "cm-26",
-    "_id": "cm-26",
-    "displayOrder": 65,
-    "name": "Dr. G. Balu Narasimha Rao G",
-    "role": "Finance Chair",
-    "designation": "Finance Chair",
-    "institution": "VFSTR (Deemed to be University)",
-    "org": "VFSTR (Deemed to be University)",
-    "category": "Finance Chair",
-    "country": "India",
-    "isActive": true
-  },
-  {
-    "id": "cm-27",
     "_id": "cm-27",
+    "id": "cm-27",
     "displayOrder": 66,
     "name": "Dr. Sunil Babu",
     "role": "Publicity Chair",
@@ -1075,8 +1086,8 @@ export const officialCommitteeMembers = [
     "isActive": true
   },
   {
-    "id": "cm-28",
     "_id": "cm-28",
+    "id": "cm-28",
     "displayOrder": 67,
     "name": "Dr. Vinoj",
     "role": "Publicity Chair",
@@ -1088,8 +1099,8 @@ export const officialCommitteeMembers = [
     "isActive": true
   },
   {
-    "id": "cm-29",
     "_id": "cm-29",
+    "id": "cm-29",
     "displayOrder": 68,
     "name": "Dr. Simhadri Chinna Gopi",
     "role": "Organizing Committee Member",
@@ -1101,8 +1112,8 @@ export const officialCommitteeMembers = [
     "isActive": true
   },
   {
-    "id": "cm-30",
     "_id": "cm-30",
+    "id": "cm-30",
     "displayOrder": 69,
     "name": "Dr. R. Renugadevi",
     "role": "Organizing Committee Member",
@@ -1114,8 +1125,8 @@ export const officialCommitteeMembers = [
     "isActive": true
   },
   {
-    "id": "cm-31",
     "_id": "cm-31",
+    "id": "cm-31",
     "displayOrder": 70,
     "name": "Dr. Krishna Reddy",
     "role": "Organizing Committee Member",
@@ -1127,8 +1138,8 @@ export const officialCommitteeMembers = [
     "isActive": true
   },
   {
-    "id": "cm-32",
     "_id": "cm-32",
+    "id": "cm-32",
     "displayOrder": 71,
     "name": "Dr. M. Vijay Meyyapan",
     "role": "Organizing Committee Member",
@@ -1140,8 +1151,8 @@ export const officialCommitteeMembers = [
     "isActive": true
   },
   {
-    "id": "cm-33",
     "_id": "cm-33",
+    "id": "cm-33",
     "displayOrder": 72,
     "name": "Dr. M. Bhargavi",
     "role": "Organizing Committee Member",
@@ -1153,373 +1164,9 @@ export const officialCommitteeMembers = [
     "isActive": true
   },
   {
-    "id": "cm-34",
-    "_id": "cm-34",
-    "displayOrder": 73,
-    "name": "Mr. Sk. Sikindar",
-    "role": "Technical Program Committee Member",
-    "designation": "Technical Program Committee Member",
-    "institution": "VFSTR (Deemed to be University)",
-    "org": "VFSTR (Deemed to be University)",
-    "category": "Technical Program Committee",
-    "country": "India",
-    "isActive": true
-  },
-  {
-    "id": "cm-35",
-    "_id": "cm-35",
-    "displayOrder": 74,
-    "name": "Mrs. G. Navya",
-    "role": "Technical Program Committee Member",
-    "designation": "Technical Program Committee Member",
-    "institution": "VFSTR (Deemed to be University)",
-    "org": "VFSTR (Deemed to be University)",
-    "category": "Technical Program Committee",
-    "country": "India",
-    "isActive": true
-  },
-  {
-    "id": "cm-36",
-    "_id": "cm-36",
-    "displayOrder": 75,
-    "name": "Mr. A. Kalyan Babu",
-    "role": "Technical Program Committee Member",
-    "designation": "Technical Program Committee Member",
-    "institution": "VFSTR (Deemed to be University)",
-    "org": "VFSTR (Deemed to be University)",
-    "category": "Technical Program Committee",
-    "country": "India",
-    "isActive": true
-  },
-  {
-    "id": "cm-37",
-    "_id": "cm-37",
-    "displayOrder": 76,
-    "name": "Dr. Phanindra T",
-    "role": "Technical Program Committee Member",
-    "designation": "Technical Program Committee Member",
-    "institution": "VFSTR (Deemed to be University)",
-    "org": "VFSTR (Deemed to be University)",
-    "category": "Technical Program Committee",
-    "country": "India",
-    "isActive": true
-  },
-  {
-    "id": "cm-38",
-    "_id": "cm-38",
-    "displayOrder": 77,
-    "name": "Mr. Loganathan M",
-    "role": "Technical Program Committee Member",
-    "designation": "Technical Program Committee Member",
-    "institution": "VFSTR (Deemed to be University)",
-    "org": "VFSTR (Deemed to be University)",
-    "category": "Technical Program Committee",
-    "country": "India",
-    "isActive": true
-  },
-  {
-    "id": "cm-39",
-    "_id": "cm-39",
-    "displayOrder": 78,
-    "name": "Mrs. V. Anusha",
-    "role": "Technical Program Committee Member",
-    "designation": "Technical Program Committee Member",
-    "institution": "VFSTR (Deemed to be University)",
-    "org": "VFSTR (Deemed to be University)",
-    "category": "Technical Program Committee",
-    "country": "India",
-    "isActive": true
-  },
-  {
-    "id": "cm-40",
-    "_id": "cm-40",
-    "displayOrder": 79,
-    "name": "Mrs. S.Anitha",
-    "role": "Technical Program Committee Member",
-    "designation": "Technical Program Committee Member",
-    "institution": "VFSTR (Deemed to be University)",
-    "org": "VFSTR (Deemed to be University)",
-    "category": "Technical Program Committee",
-    "country": "India",
-    "isActive": true
-  },
-  {
-    "id": "cm-41",
-    "_id": "cm-41",
-    "displayOrder": 80,
-    "name": "Mrs. L. Yuvana Lagadapati",
-    "role": "Technical Program Committee Member",
-    "designation": "Technical Program Committee Member",
-    "institution": "VFSTR (Deemed to be University)",
-    "org": "VFSTR (Deemed to be University)",
-    "category": "Technical Program Committee",
-    "country": "India",
-    "isActive": true
-  },
-  {
-    "id": "cm-43",
-    "_id": "cm-43",
-    "displayOrder": 81,
-    "name": "Mrs. V. Tejaswi",
-    "role": "Technical Program Committee Member",
-    "designation": "Technical Program Committee Member",
-    "institution": "VFSTR (Deemed to be University)",
-    "org": "VFSTR (Deemed to be University)",
-    "category": "Technical Program Committee",
-    "country": "India",
-    "isActive": true
-  },
-  {
-    "id": "cm-44",
-    "_id": "cm-44",
-    "displayOrder": 82,
-    "name": "Mr. P Kiran Kumar Raja",
-    "role": "Technical Program Committee Member",
-    "designation": "Technical Program Committee Member",
-    "institution": "VFSTR (Deemed to be University)",
-    "org": "VFSTR (Deemed to be University)",
-    "category": "Technical Program Committee",
-    "country": "India",
-    "isActive": true
-  },
-  {
-    "id": "cm-45",
-    "_id": "cm-45",
-    "displayOrder": 83,
-    "name": "Dr G Veerabhadra Chary",
-    "role": "Technical Program Committee Member",
-    "designation": "Technical Program Committee Member",
-    "institution": "VFSTR (Deemed to be University)",
-    "org": "VFSTR (Deemed to be University)",
-    "category": "Technical Program Committee",
-    "country": "India",
-    "isActive": true
-  },
-  {
-    "id": "cm-46",
-    "_id": "cm-46",
-    "displayOrder": 84,
-    "name": "Dr. M. Rajarao",
-    "role": "Technical Program Committee Member",
-    "designation": "Technical Program Committee Member",
-    "institution": "VFSTR (Deemed to be University)",
-    "org": "VFSTR (Deemed to be University)",
-    "category": "Technical Program Committee",
-    "country": "India",
-    "isActive": true
-  },
-  {
-    "id": "cm-47",
-    "_id": "cm-47",
-    "displayOrder": 85,
-    "name": "Mr. B. Anil Babu",
-    "role": "Technical Program Committee Member",
-    "designation": "Technical Program Committee Member",
-    "institution": "VFSTR (Deemed to be University)",
-    "org": "VFSTR (Deemed to be University)",
-    "category": "Technical Program Committee",
-    "country": "India",
-    "isActive": true
-  },
-  {
-    "id": "cm-48",
-    "_id": "cm-48",
-    "displayOrder": 86,
-    "name": "Mrs. K. Pavani",
-    "role": "Technical Program Committee Member",
-    "designation": "Technical Program Committee Member",
-    "institution": "VFSTR (Deemed to be University)",
-    "org": "VFSTR (Deemed to be University)",
-    "category": "Technical Program Committee",
-    "country": "India",
-    "isActive": true
-  },
-  {
-    "id": "cm-49",
-    "_id": "cm-49",
-    "displayOrder": 87,
-    "name": "Mr. O. Gandhi",
-    "role": "Technical Program Committee Member",
-    "designation": "Technical Program Committee Member",
-    "institution": "VFSTR (Deemed to be University)",
-    "org": "VFSTR (Deemed to be University)",
-    "category": "Technical Program Committee",
-    "country": "India",
-    "isActive": true
-  },
-  {
-    "id": "cm-50",
-    "_id": "cm-50",
-    "displayOrder": 88,
-    "name": "Mr. P. Vijaya Babu",
-    "role": "Publicity Committee Member",
-    "designation": "Publicity Committee Member",
-    "institution": "VFSTR (Deemed to be University)",
-    "org": "VFSTR (Deemed to be University)",
-    "category": "Publicity Committee",
-    "country": "India",
-    "isActive": true
-  },
-  {
-    "id": "cm-51",
-    "_id": "cm-51",
-    "displayOrder": 89,
-    "name": "Ms. B. Jyothika",
-    "role": "Publicity Committee Member",
-    "designation": "Publicity Committee Member",
-    "institution": "VFSTR (Deemed to be University)",
-    "org": "VFSTR (Deemed to be University)",
-    "category": "Publicity Committee",
-    "country": "India",
-    "isActive": true
-  },
-  {
-    "id": "cm-52",
-    "_id": "cm-52",
-    "displayOrder": 90,
-    "name": "Mr. Syed Nafees Ahamed",
-    "role": "Publicity Committee Member",
-    "designation": "Publicity Committee Member",
-    "institution": "VFSTR (Deemed to be University)",
-    "org": "VFSTR (Deemed to be University)",
-    "category": "Publicity Committee",
-    "country": "India",
-    "isActive": true
-  },
-  {
-    "id": "cm-53",
-    "_id": "cm-53",
-    "displayOrder": 91,
-    "name": "Mrs. D. Tipura",
-    "role": "Publicity Committee Member",
-    "designation": "Publicity Committee Member",
-    "institution": "VFSTR (Deemed to be University)",
-    "org": "VFSTR (Deemed to be University)",
-    "category": "Publicity Committee",
-    "country": "India",
-    "isActive": true
-  },
-  {
-    "id": "cm-54",
-    "_id": "cm-54",
-    "displayOrder": 92,
-    "name": "Ms. K. Raja Rajeswari",
-    "role": "Publicity Committee Member",
-    "designation": "Publicity Committee Member",
-    "institution": "VFSTR (Deemed to be University)",
-    "org": "VFSTR (Deemed to be University)",
-    "category": "Publicity Committee",
-    "country": "India",
-    "isActive": true
-  },
-  {
-    "id": "cm-55",
-    "_id": "cm-55",
-    "displayOrder": 93,
-    "name": "Ms. K. Mercy Bhishayathi",
-    "role": "Publicity Committee Member",
-    "designation": "Publicity Committee Member",
-    "institution": "VFSTR (Deemed to be University)",
-    "org": "VFSTR (Deemed to be University)",
-    "category": "Publicity Committee",
-    "country": "India",
-    "isActive": true
-  },
-  {
-    "id": "cm-56",
-    "_id": "cm-56",
-    "displayOrder": 94,
-    "name": "Mrs. M. Sumalatha",
-    "role": "Publicity Committee Member",
-    "designation": "Publicity Committee Member",
-    "institution": "VFSTR (Deemed to be University)",
-    "org": "VFSTR (Deemed to be University)",
-    "category": "Publicity Committee",
-    "country": "India",
-    "isActive": true
-  },
-  {
-    "id": "cm-57",
-    "_id": "cm-57",
-    "displayOrder": 95,
-    "name": "Mrs. J Davanika",
-    "role": "Publicity Committee Member",
-    "designation": "Publicity Committee Member",
-    "institution": "VFSTR (Deemed to be University)",
-    "org": "VFSTR (Deemed to be University)",
-    "category": "Publicity Committee",
-    "country": "India",
-    "isActive": true
-  },
-  {
-    "id": "cm-58",
-    "_id": "cm-58",
-    "displayOrder": 96,
-    "name": "Mrs. N. Archana",
-    "role": "Publicity Committee Member",
-    "designation": "Publicity Committee Member",
-    "institution": "VFSTR (Deemed to be University)",
-    "org": "VFSTR (Deemed to be University)",
-    "category": "Publicity Committee",
-    "country": "India",
-    "isActive": true
-  },
-  {
-    "id": "cm-59",
-    "_id": "cm-59",
-    "displayOrder": 97,
-    "name": "Ms. K. Vyshnavi",
-    "role": "Publicity Committee Member",
-    "designation": "Publicity Committee Member",
-    "institution": "VFSTR (Deemed to be University)",
-    "org": "VFSTR (Deemed to be University)",
-    "category": "Publicity Committee",
-    "country": "India",
-    "isActive": true
-  },
-  {
-    "id": "cm-60",
-    "_id": "cm-60",
-    "displayOrder": 98,
-    "name": "Mr. Kumar Devapogu",
-    "role": "Publicity Committee Member",
-    "designation": "Publicity Committee Member",
-    "institution": "VFSTR (Deemed to be University)",
-    "org": "VFSTR (Deemed to be University)",
-    "category": "Publicity Committee",
-    "country": "India",
-    "isActive": true
-  },
-  {
-    "id": "cm-61",
-    "_id": "cm-61",
-    "displayOrder": 99,
-    "name": "Mrs. R. Lalitha",
-    "role": "Publicity Committee Member",
-    "designation": "Publicity Committee Member",
-    "institution": "VFSTR (Deemed to be University)",
-    "org": "VFSTR (Deemed to be University)",
-    "category": "Publicity Committee",
-    "country": "India",
-    "isActive": true
-  },
-  {
-    "id": "cm-62",
-    "_id": "cm-62",
-    "displayOrder": 100,
-    "name": "Ms. Y. Sravani",
-    "role": "Publicity Committee Member",
-    "designation": "Publicity Committee Member",
-    "institution": "VFSTR (Deemed to be University)",
-    "org": "VFSTR (Deemed to be University)",
-    "category": "Publicity Committee",
-    "country": "India",
-    "isActive": true
-  },
-  {
-    "id": "cm-63",
     "_id": "cm-63",
-    "displayOrder": 101,
+    "id": "cm-63",
+    "displayOrder": 73,
     "name": "Ms. M. Sirisha",
     "role": "Organizing Committee Member",
     "designation": "Organizing Committee Member",
@@ -1530,9 +1177,9 @@ export const officialCommitteeMembers = [
     "isActive": true
   },
   {
-    "id": "cm-64",
     "_id": "cm-64",
-    "displayOrder": 102,
+    "id": "cm-64",
+    "displayOrder": 74,
     "name": "Dr. Shyam Sunder Jannu Soloman",
     "role": "Organizing Committee Member",
     "designation": "Organizing Committee Member",
@@ -1543,9 +1190,9 @@ export const officialCommitteeMembers = [
     "isActive": true
   },
   {
-    "id": "cm-65",
     "_id": "cm-65",
-    "displayOrder": 103,
+    "id": "cm-65",
+    "displayOrder": 75,
     "name": "Mr. B. Krishnakanth",
     "role": "Organizing Committee Member",
     "designation": "Organizing Committee Member",
@@ -1556,9 +1203,9 @@ export const officialCommitteeMembers = [
     "isActive": true
   },
   {
-    "id": "cm-66",
     "_id": "cm-66",
-    "displayOrder": 104,
+    "id": "cm-66",
+    "displayOrder": 76,
     "name": "Mrs. G.Siva Naga Malleswari",
     "role": "Organizing Committee Member",
     "designation": "Organizing Committee Member",
@@ -1569,9 +1216,9 @@ export const officialCommitteeMembers = [
     "isActive": true
   },
   {
-    "id": "cm-67",
     "_id": "cm-67",
-    "displayOrder": 105,
+    "id": "cm-67",
+    "displayOrder": 77,
     "name": "Mrs. K. Jyotsna",
     "role": "Organizing Committee Member",
     "designation": "Organizing Committee Member",
@@ -1582,9 +1229,9 @@ export const officialCommitteeMembers = [
     "isActive": true
   },
   {
-    "id": "cm-68",
     "_id": "cm-68",
-    "displayOrder": 106,
+    "id": "cm-68",
+    "displayOrder": 78,
     "name": "Mr. E. Akhil Babu",
     "role": "Organizing Committee Member",
     "designation": "Organizing Committee Member",
@@ -1595,9 +1242,9 @@ export const officialCommitteeMembers = [
     "isActive": true
   },
   {
-    "id": "cm-69",
     "_id": "cm-69",
-    "displayOrder": 107,
+    "id": "cm-69",
+    "displayOrder": 79,
     "name": "Ms. Sk. Sajida Sultana",
     "role": "Organizing Committee Member",
     "designation": "Organizing Committee Member",
@@ -1608,9 +1255,9 @@ export const officialCommitteeMembers = [
     "isActive": true
   },
   {
-    "id": "cm-70",
     "_id": "cm-70",
-    "displayOrder": 108,
+    "id": "cm-70",
+    "displayOrder": 80,
     "name": "Mrs. V. Sai Spandana",
     "role": "Organizing Committee Member",
     "designation": "Organizing Committee Member",
@@ -1621,9 +1268,9 @@ export const officialCommitteeMembers = [
     "isActive": true
   },
   {
-    "id": "cm-71",
     "_id": "cm-71",
-    "displayOrder": 109,
+    "id": "cm-71",
+    "displayOrder": 81,
     "name": "Mr. D. Balakotaiah",
     "role": "Organizing Committee Member",
     "designation": "Organizing Committee Member",
@@ -1634,9 +1281,9 @@ export const officialCommitteeMembers = [
     "isActive": true
   },
   {
-    "id": "cm-72",
     "_id": "cm-72",
-    "displayOrder": 110,
+    "id": "cm-72",
+    "displayOrder": 82,
     "name": "Mr. P. Venkata Rajulu",
     "role": "Organizing Committee Member",
     "designation": "Organizing Committee Member",
@@ -1647,9 +1294,9 @@ export const officialCommitteeMembers = [
     "isActive": true
   },
   {
-    "id": "cm-73",
     "_id": "cm-73",
-    "displayOrder": 111,
+    "id": "cm-73",
+    "displayOrder": 83,
     "name": "Mr. Sk. Dehtaj",
     "role": "Organizing Committee Member",
     "designation": "Organizing Committee Member",
@@ -1660,9 +1307,9 @@ export const officialCommitteeMembers = [
     "isActive": true
   },
   {
-    "id": "cm-74",
     "_id": "cm-74",
-    "displayOrder": 112,
+    "id": "cm-74",
+    "displayOrder": 84,
     "name": "Ms. Bhavanari Satya Gnyana Sri",
     "role": "Organizing Committee Member",
     "designation": "Organizing Committee Member",
@@ -1673,9 +1320,9 @@ export const officialCommitteeMembers = [
     "isActive": true
   },
   {
-    "id": "cm-75",
     "_id": "cm-75",
-    "displayOrder": 113,
+    "id": "cm-75",
+    "displayOrder": 85,
     "name": "Ms. K. Divya",
     "role": "Organizing Committee Member",
     "designation": "Organizing Committee Member",
@@ -1686,9 +1333,9 @@ export const officialCommitteeMembers = [
     "isActive": true
   },
   {
-    "id": "cm-76",
     "_id": "cm-76",
-    "displayOrder": 114,
+    "id": "cm-76",
+    "displayOrder": 86,
     "name": "Mr. G. Murali",
     "role": "Organizing Committee Member",
     "designation": "Organizing Committee Member",
@@ -1699,9 +1346,9 @@ export const officialCommitteeMembers = [
     "isActive": true
   },
   {
-    "id": "cm-77",
     "_id": "cm-77",
-    "displayOrder": 115,
+    "id": "cm-77",
+    "displayOrder": 87,
     "name": "Mr. K Pavan Kumar",
     "role": "Organizing Committee Member",
     "designation": "Organizing Committee Member",
@@ -1712,9 +1359,9 @@ export const officialCommitteeMembers = [
     "isActive": true
   },
   {
-    "id": "cm-78",
     "_id": "cm-78",
-    "displayOrder": 116,
+    "id": "cm-78",
+    "displayOrder": 88,
     "name": "Mr. M. Anil",
     "role": "Organizing Committee Member",
     "designation": "Organizing Committee Member",
@@ -1725,9 +1372,9 @@ export const officialCommitteeMembers = [
     "isActive": true
   },
   {
-    "id": "cm-79",
     "_id": "cm-79",
-    "displayOrder": 117,
+    "id": "cm-79",
+    "displayOrder": 89,
     "name": "Ms. U. Vara Lakshmi",
     "role": "Organizing Committee Member",
     "designation": "Organizing Committee Member",
@@ -1738,9 +1385,9 @@ export const officialCommitteeMembers = [
     "isActive": true
   },
   {
-    "id": "cm-80",
     "_id": "cm-80",
-    "displayOrder": 118,
+    "id": "cm-80",
+    "displayOrder": 90,
     "name": "Mr. P. Vamsi Krishna",
     "role": "Organizing Committee Member",
     "designation": "Organizing Committee Member",
@@ -1751,9 +1398,9 @@ export const officialCommitteeMembers = [
     "isActive": true
   },
   {
-    "id": "cm-81",
     "_id": "cm-81",
-    "displayOrder": 119,
+    "id": "cm-81",
+    "displayOrder": 91,
     "name": "Ms. P. Deepthi Sowmya",
     "role": "Organizing Committee Member",
     "designation": "Organizing Committee Member",
@@ -1764,9 +1411,9 @@ export const officialCommitteeMembers = [
     "isActive": true
   },
   {
-    "id": "cm-82",
     "_id": "cm-82",
-    "displayOrder": 120,
+    "id": "cm-82",
+    "displayOrder": 92,
     "name": "Ms. K. Anitha",
     "role": "Organizing Committee Member",
     "designation": "Organizing Committee Member",
@@ -1777,8 +1424,372 @@ export const officialCommitteeMembers = [
     "isActive": true
   },
   {
-    "id": "cm-83",
+    "_id": "cm-34",
+    "id": "cm-34",
+    "displayOrder": 93,
+    "name": "Mr. Sk. Sikindar",
+    "role": "Technical Program Committee Member",
+    "designation": "Technical Program Committee Member",
+    "institution": "VFSTR (Deemed to be University)",
+    "org": "VFSTR (Deemed to be University)",
+    "category": "Technical Program Committee",
+    "country": "India",
+    "isActive": true
+  },
+  {
+    "_id": "cm-35",
+    "id": "cm-35",
+    "displayOrder": 94,
+    "name": "Mrs. G. Navya",
+    "role": "Technical Program Committee Member",
+    "designation": "Technical Program Committee Member",
+    "institution": "VFSTR (Deemed to be University)",
+    "org": "VFSTR (Deemed to be University)",
+    "category": "Technical Program Committee",
+    "country": "India",
+    "isActive": true
+  },
+  {
+    "_id": "cm-36",
+    "id": "cm-36",
+    "displayOrder": 95,
+    "name": "Mr. A. Kalyan Babu",
+    "role": "Technical Program Committee Member",
+    "designation": "Technical Program Committee Member",
+    "institution": "VFSTR (Deemed to be University)",
+    "org": "VFSTR (Deemed to be University)",
+    "category": "Technical Program Committee",
+    "country": "India",
+    "isActive": true
+  },
+  {
+    "_id": "cm-37",
+    "id": "cm-37",
+    "displayOrder": 96,
+    "name": "Dr. Phanindra T",
+    "role": "Technical Program Committee Member",
+    "designation": "Technical Program Committee Member",
+    "institution": "VFSTR (Deemed to be University)",
+    "org": "VFSTR (Deemed to be University)",
+    "category": "Technical Program Committee",
+    "country": "India",
+    "isActive": true
+  },
+  {
+    "_id": "cm-38",
+    "id": "cm-38",
+    "displayOrder": 97,
+    "name": "Mr. Loganathan M",
+    "role": "Technical Program Committee Member",
+    "designation": "Technical Program Committee Member",
+    "institution": "VFSTR (Deemed to be University)",
+    "org": "VFSTR (Deemed to be University)",
+    "category": "Technical Program Committee",
+    "country": "India",
+    "isActive": true
+  },
+  {
+    "_id": "cm-39",
+    "id": "cm-39",
+    "displayOrder": 98,
+    "name": "Mrs. V. Anusha",
+    "role": "Technical Program Committee Member",
+    "designation": "Technical Program Committee Member",
+    "institution": "VFSTR (Deemed to be University)",
+    "org": "VFSTR (Deemed to be University)",
+    "category": "Technical Program Committee",
+    "country": "India",
+    "isActive": true
+  },
+  {
+    "_id": "cm-40",
+    "id": "cm-40",
+    "displayOrder": 99,
+    "name": "Mrs. S.Anitha",
+    "role": "Technical Program Committee Member",
+    "designation": "Technical Program Committee Member",
+    "institution": "VFSTR (Deemed to be University)",
+    "org": "VFSTR (Deemed to be University)",
+    "category": "Technical Program Committee",
+    "country": "India",
+    "isActive": true
+  },
+  {
+    "_id": "cm-41",
+    "id": "cm-41",
+    "displayOrder": 100,
+    "name": "Mrs. L. Yuvana Lagadapati",
+    "role": "Technical Program Committee Member",
+    "designation": "Technical Program Committee Member",
+    "institution": "VFSTR (Deemed to be University)",
+    "org": "VFSTR (Deemed to be University)",
+    "category": "Technical Program Committee",
+    "country": "India",
+    "isActive": true
+  },
+  {
+    "_id": "cm-43",
+    "id": "cm-43",
+    "displayOrder": 101,
+    "name": "Mrs. V. Tejaswi",
+    "role": "Technical Program Committee Member",
+    "designation": "Technical Program Committee Member",
+    "institution": "VFSTR (Deemed to be University)",
+    "org": "VFSTR (Deemed to be University)",
+    "category": "Technical Program Committee",
+    "country": "India",
+    "isActive": true
+  },
+  {
+    "_id": "cm-44",
+    "id": "cm-44",
+    "displayOrder": 102,
+    "name": "Mr. P Kiran Kumar Raja",
+    "role": "Technical Program Committee Member",
+    "designation": "Technical Program Committee Member",
+    "institution": "VFSTR (Deemed to be University)",
+    "org": "VFSTR (Deemed to be University)",
+    "category": "Technical Program Committee",
+    "country": "India",
+    "isActive": true
+  },
+  {
+    "_id": "cm-45",
+    "id": "cm-45",
+    "displayOrder": 103,
+    "name": "Dr G Veerabhadra Chary",
+    "role": "Technical Program Committee Member",
+    "designation": "Technical Program Committee Member",
+    "institution": "VFSTR (Deemed to be University)",
+    "org": "VFSTR (Deemed to be University)",
+    "category": "Technical Program Committee",
+    "country": "India",
+    "isActive": true
+  },
+  {
+    "_id": "cm-46",
+    "id": "cm-46",
+    "displayOrder": 104,
+    "name": "Dr. M. Rajarao",
+    "role": "Technical Program Committee Member",
+    "designation": "Technical Program Committee Member",
+    "institution": "VFSTR (Deemed to be University)",
+    "org": "VFSTR (Deemed to be University)",
+    "category": "Technical Program Committee",
+    "country": "India",
+    "isActive": true
+  },
+  {
+    "_id": "cm-47",
+    "id": "cm-47",
+    "displayOrder": 105,
+    "name": "Mr. B. Anil Babu",
+    "role": "Technical Program Committee Member",
+    "designation": "Technical Program Committee Member",
+    "institution": "VFSTR (Deemed to be University)",
+    "org": "VFSTR (Deemed to be University)",
+    "category": "Technical Program Committee",
+    "country": "India",
+    "isActive": true
+  },
+  {
+    "_id": "cm-48",
+    "id": "cm-48",
+    "displayOrder": 106,
+    "name": "Mrs. K. Pavani",
+    "role": "Technical Program Committee Member",
+    "designation": "Technical Program Committee Member",
+    "institution": "VFSTR (Deemed to be University)",
+    "org": "VFSTR (Deemed to be University)",
+    "category": "Technical Program Committee",
+    "country": "India",
+    "isActive": true
+  },
+  {
+    "_id": "cm-49",
+    "id": "cm-49",
+    "displayOrder": 107,
+    "name": "Mr. O. Gandhi",
+    "role": "Technical Program Committee Member",
+    "designation": "Technical Program Committee Member",
+    "institution": "VFSTR (Deemed to be University)",
+    "org": "VFSTR (Deemed to be University)",
+    "category": "Technical Program Committee",
+    "country": "India",
+    "isActive": true
+  },
+  {
+    "_id": "cm-50",
+    "id": "cm-50",
+    "displayOrder": 108,
+    "name": "Mr. P. Vijaya Babu",
+    "role": "Publicity Committee Member",
+    "designation": "Publicity Committee Member",
+    "institution": "VFSTR (Deemed to be University)",
+    "org": "VFSTR (Deemed to be University)",
+    "category": "Publicity Committee",
+    "country": "India",
+    "isActive": true
+  },
+  {
+    "_id": "cm-51",
+    "id": "cm-51",
+    "displayOrder": 109,
+    "name": "Ms. B. Jyothika",
+    "role": "Publicity Committee Member",
+    "designation": "Publicity Committee Member",
+    "institution": "VFSTR (Deemed to be University)",
+    "org": "VFSTR (Deemed to be University)",
+    "category": "Publicity Committee",
+    "country": "India",
+    "isActive": true
+  },
+  {
+    "_id": "cm-52",
+    "id": "cm-52",
+    "displayOrder": 110,
+    "name": "Mr. Syed Nafees Ahamed",
+    "role": "Publicity Committee Member",
+    "designation": "Publicity Committee Member",
+    "institution": "VFSTR (Deemed to be University)",
+    "org": "VFSTR (Deemed to be University)",
+    "category": "Publicity Committee",
+    "country": "India",
+    "isActive": true
+  },
+  {
+    "_id": "cm-53",
+    "id": "cm-53",
+    "displayOrder": 111,
+    "name": "Mrs. D. Tipura",
+    "role": "Publicity Committee Member",
+    "designation": "Publicity Committee Member",
+    "institution": "VFSTR (Deemed to be University)",
+    "org": "VFSTR (Deemed to be University)",
+    "category": "Publicity Committee",
+    "country": "India",
+    "isActive": true
+  },
+  {
+    "_id": "cm-54",
+    "id": "cm-54",
+    "displayOrder": 112,
+    "name": "Ms. K. Raja Rajeswari",
+    "role": "Publicity Committee Member",
+    "designation": "Publicity Committee Member",
+    "institution": "VFSTR (Deemed to be University)",
+    "org": "VFSTR (Deemed to be University)",
+    "category": "Publicity Committee",
+    "country": "India",
+    "isActive": true
+  },
+  {
+    "_id": "cm-55",
+    "id": "cm-55",
+    "displayOrder": 113,
+    "name": "Ms. K. Mercy Bhishayathi",
+    "role": "Publicity Committee Member",
+    "designation": "Publicity Committee Member",
+    "institution": "VFSTR (Deemed to be University)",
+    "org": "VFSTR (Deemed to be University)",
+    "category": "Publicity Committee",
+    "country": "India",
+    "isActive": true
+  },
+  {
+    "_id": "cm-56",
+    "id": "cm-56",
+    "displayOrder": 114,
+    "name": "Mrs. M. Sumalatha",
+    "role": "Publicity Committee Member",
+    "designation": "Publicity Committee Member",
+    "institution": "VFSTR (Deemed to be University)",
+    "org": "VFSTR (Deemed to be University)",
+    "category": "Publicity Committee",
+    "country": "India",
+    "isActive": true
+  },
+  {
+    "_id": "cm-57",
+    "id": "cm-57",
+    "displayOrder": 115,
+    "name": "Mrs. J Davanika",
+    "role": "Publicity Committee Member",
+    "designation": "Publicity Committee Member",
+    "institution": "VFSTR (Deemed to be University)",
+    "org": "VFSTR (Deemed to be University)",
+    "category": "Publicity Committee",
+    "country": "India",
+    "isActive": true
+  },
+  {
+    "_id": "cm-58",
+    "id": "cm-58",
+    "displayOrder": 116,
+    "name": "Mrs. N. Archana",
+    "role": "Publicity Committee Member",
+    "designation": "Publicity Committee Member",
+    "institution": "VFSTR (Deemed to be University)",
+    "org": "VFSTR (Deemed to be University)",
+    "category": "Publicity Committee",
+    "country": "India",
+    "isActive": true
+  },
+  {
+    "_id": "cm-59",
+    "id": "cm-59",
+    "displayOrder": 117,
+    "name": "Ms. K. Vyshnavi",
+    "role": "Publicity Committee Member",
+    "designation": "Publicity Committee Member",
+    "institution": "VFSTR (Deemed to be University)",
+    "org": "VFSTR (Deemed to be University)",
+    "category": "Publicity Committee",
+    "country": "India",
+    "isActive": true
+  },
+  {
+    "_id": "cm-60",
+    "id": "cm-60",
+    "displayOrder": 118,
+    "name": "Mr. Kumar Devapogu",
+    "role": "Publicity Committee Member",
+    "designation": "Publicity Committee Member",
+    "institution": "VFSTR (Deemed to be University)",
+    "org": "VFSTR (Deemed to be University)",
+    "category": "Publicity Committee",
+    "country": "India",
+    "isActive": true
+  },
+  {
+    "_id": "cm-61",
+    "id": "cm-61",
+    "displayOrder": 119,
+    "name": "Mrs. R. Lalitha",
+    "role": "Publicity Committee Member",
+    "designation": "Publicity Committee Member",
+    "institution": "VFSTR (Deemed to be University)",
+    "org": "VFSTR (Deemed to be University)",
+    "category": "Publicity Committee",
+    "country": "India",
+    "isActive": true
+  },
+  {
+    "_id": "cm-62",
+    "id": "cm-62",
+    "displayOrder": 120,
+    "name": "Ms. Y. Sravani",
+    "role": "Publicity Committee Member",
+    "designation": "Publicity Committee Member",
+    "institution": "VFSTR (Deemed to be University)",
+    "org": "VFSTR (Deemed to be University)",
+    "category": "Publicity Committee",
+    "country": "India",
+    "isActive": true
+  },
+  {
     "_id": "cm-83",
+    "id": "cm-83",
     "displayOrder": 121,
     "name": "Mrs. Ch. Pushya",
     "role": "Protocol & Hospitality Committee Member",
@@ -1790,8 +1801,8 @@ export const officialCommitteeMembers = [
     "isActive": true
   },
   {
-    "id": "cm-84",
     "_id": "cm-84",
+    "id": "cm-84",
     "displayOrder": 122,
     "name": "Mr. N. Brahma Naidu",
     "role": "Protocol & Hospitality Committee Member",
@@ -1803,8 +1814,8 @@ export const officialCommitteeMembers = [
     "isActive": true
   },
   {
-    "id": "cm-85",
     "_id": "cm-85",
+    "id": "cm-85",
     "displayOrder": 123,
     "name": "Mrs. Ch. Swarna Lalitha",
     "role": "Protocol & Hospitality Committee Member",
@@ -1816,8 +1827,8 @@ export const officialCommitteeMembers = [
     "isActive": true
   },
   {
-    "id": "cm-86",
     "_id": "cm-86",
+    "id": "cm-86",
     "displayOrder": 124,
     "name": "Mrs. K. Sravanthi",
     "role": "Protocol & Hospitality Committee Member",
@@ -1829,8 +1840,8 @@ export const officialCommitteeMembers = [
     "isActive": true
   },
   {
-    "id": "cm-87",
     "_id": "cm-87",
+    "id": "cm-87",
     "displayOrder": 125,
     "name": "Ms. K. Deepika Sri Sai",
     "role": "Protocol & Hospitality Committee Member",
@@ -1842,8 +1853,8 @@ export const officialCommitteeMembers = [
     "isActive": true
   },
   {
-    "id": "cm-88",
     "_id": "cm-88",
+    "id": "cm-88",
     "displayOrder": 126,
     "name": "Ms. G. Tejaswi",
     "role": "Protocol & Hospitality Committee Member",
@@ -1855,8 +1866,8 @@ export const officialCommitteeMembers = [
     "isActive": true
   },
   {
-    "id": "cm-89",
     "_id": "cm-89",
+    "id": "cm-89",
     "displayOrder": 127,
     "name": "Mrs. Sk. Nazeema",
     "role": "Protocol & Hospitality Committee Member",
@@ -1868,8 +1879,8 @@ export const officialCommitteeMembers = [
     "isActive": true
   },
   {
-    "id": "cm-90",
     "_id": "cm-90",
+    "id": "cm-90",
     "displayOrder": 128,
     "name": "Mrs. G Prasanthi",
     "role": "Protocol & Hospitality Committee Member",
@@ -1881,8 +1892,8 @@ export const officialCommitteeMembers = [
     "isActive": true
   },
   {
-    "id": "cm-91",
     "_id": "cm-91",
+    "id": "cm-91",
     "displayOrder": 129,
     "name": "Ms. A. Gopya Sri",
     "role": "Protocol & Hospitality Committee Member",

@@ -377,23 +377,7 @@ export const getInitialData = () => {
         answer: "You can email the secretariat at info@vignan.ac.in or icccns2027@vignan.ac.in, call +91-863-2344 700 / 701, or use the online Contact Form on this portal."
       }
     ],
-    registrations: [
-      {
-        id: "REG-2027-1001",
-        fullName: "Dr. Amitava Bhattacharya",
-        email: "amitava.b@iitk.ac.in",
-        phone: "+91 94321 67890",
-        country: "India",
-        institution: "IIT Kanpur",
-        participantType: "Faculty / Academician",
-        mode: "Offline (In-person)",
-        paperId: "N/A (Attendee Only)",
-        paperTitle: "",
-        amountPaid: "INR 6,500",
-        status: "Confirmed",
-        registeredAt: "2027-01-20T10:30:00.000Z"
-      }
-    ],
+    registrations: [],
     counters: {
       paperSequence: 0
     },

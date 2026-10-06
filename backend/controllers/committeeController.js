@@ -25,7 +25,12 @@ export const getCommittee = async (req, res) => {
       .sort({ displayOrder: 1, name: 1 })
       .lean();
 
-    const data = members || [];
+    const data = (members || []).sort((a, b) => {
+      const orderA = typeof a.displayOrder === 'number' && !isNaN(a.displayOrder) ? a.displayOrder : Infinity;
+      const orderB = typeof b.displayOrder === 'number' && !isNaN(b.displayOrder) ? b.displayOrder : Infinity;
+      if (orderA !== orderB) return orderA - orderB;
+      return (a.name || '').localeCompare(b.name || '');
+    });
     serverCache.set(cacheKey, data, 600);
 
     res.setHeader('Cache-Control', 'public, max-age=120, stale-while-revalidate=600');

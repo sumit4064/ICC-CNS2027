@@ -109,26 +109,87 @@ export const About = () => {
                 Department of Computer Science and Engineering (Est. 1997)
               </h3>
             </div>
-            <p style={{ fontSize: '0.95rem', color: 'var(--text-secondary)', lineHeight: '1.7', marginBottom: '1rem' }}>
+            <p style={{ fontSize: '0.95rem', color: 'var(--text-secondary)', lineHeight: '1.7', marginBottom: '1.5rem' }}>
               Established in <strong>1997</strong> under the School of Computing and Informatics at Vignan's Foundation for Science, Technology and Research (VFSTR), the Department of Computer Science & Engineering is dedicated to imparting world-class technical education and fostering interdisciplinary research.
             </p>
+
+            {/* Vision & Mission of the Department */}
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))',
+              gap: '1.25rem',
+              marginBottom: '1.5rem'
+            }}>
+              {/* Vision Card */}
+              <div style={{
+                background: 'var(--surface-light)',
+                padding: '1.35rem',
+                borderRadius: 'var(--radius-md)',
+                border: '1px solid var(--border-cyan)',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '0.6rem'
+              }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', color: 'var(--primary-navy)' }}>
+                  <Target size={20} color="var(--primary-cyan)" />
+                  <h4 style={{ fontSize: '1.05rem', margin: 0, fontWeight: 700 }}>Vision of the Department</h4>
+                </div>
+                <p style={{ fontSize: '0.92rem', color: 'var(--text-secondary)', lineHeight: '1.65', margin: 0 }}>
+                  To be recognized as a premier centre in Computer Science and Engineering education and research, developing ethically grounded computing professionals who drive innovative, sustainable solutions for industry and society.
+                </p>
+              </div>
+
+              {/* Mission Card */}
+              <div style={{
+                background: 'var(--surface-light)',
+                padding: '1.35rem',
+                borderRadius: 'var(--radius-md)',
+                border: '1px solid var(--border-cyan)',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '0.6rem'
+              }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', color: 'var(--primary-navy)' }}>
+                  <BookCheck size={20} color="var(--primary-cyan)" />
+                  <h4 style={{ fontSize: '1.05rem', margin: 0, fontWeight: 700 }}>Mission of the Department</h4>
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.55rem', fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: '1.6' }}>
+                  <div style={{ display: 'flex', gap: '0.6rem', alignItems: 'flex-start' }}>
+                    <span style={{ fontWeight: 700, color: 'var(--primary-cyan)', minWidth: '26px' }}>M<sub>1</sub>:</span>
+                    <span>To impart rigorous, outcome-based computing education through curricula, experiential learning, and infrastructure that prepare students for evolving technological frontiers.</span>
+                  </div>
+                  <div style={{ display: 'flex', gap: '0.6rem', alignItems: 'flex-start' }}>
+                    <span style={{ fontWeight: 700, color: 'var(--primary-cyan)', minWidth: '26px' }}>M<sub>2</sub>:</span>
+                    <span>To foster a collaborative ecosystem for interdisciplinary research, entrepreneurship, and industry partnerships that yields innovative and sustainable technological solutions to real-world problems.</span>
+                  </div>
+                  <div style={{ display: 'flex', gap: '0.6rem', alignItems: 'flex-start' }}>
+                    <span style={{ fontWeight: 700, color: 'var(--primary-cyan)', minWidth: '26px' }}>M<sub>3</sub>:</span>
+                    <span>To instil professional ethics, social responsibility, environmental consciousness, and a commitment to lifelong learning in future computing leaders.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Academic Programs Offered */}
             <div style={{
               background: 'var(--surface-light)',
-              padding: '1.2rem',
+              padding: '1.2rem 1.35rem',
               borderRadius: 'var(--radius-md)',
               border: '1px solid var(--border-cyan)',
-              marginBottom: '1rem'
+              marginBottom: '1.25rem'
             }}>
-              <div style={{ fontSize: '0.85rem', color: 'var(--primary-cyan)', fontWeight: 700, marginBottom: '0.3rem' }}>
-                ACADEMIC PROGRAMS OFFERED:
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.85rem', color: 'var(--primary-cyan)', fontWeight: 700, marginBottom: '0.5rem' }}>
+                <GraduationCap size={16} />
+                <span>ACADEMIC PROGRAMS OFFERED:</span>
               </div>
-              <ul style={{ listStyle: 'none', display: 'flex', flexWrap: 'wrap', gap: '1.5rem', fontSize: '0.9rem', color: 'var(--primary-navy)' }}>
+              <ul style={{ listStyle: 'none', display: 'flex', flexWrap: 'wrap', gap: '1.5rem', fontSize: '0.9rem', color: 'var(--primary-navy)', margin: 0, padding: 0 }}>
                 <li>• B.Tech in Computer Science and Engineering</li>
                 <li>• M.Tech in Computer Science and Engineering</li>
                 <li>• Ph.D. in Computer Science and Engineering</li>
               </ul>
             </div>
-            <p style={{ fontSize: '0.95rem', color: 'var(--text-secondary)', lineHeight: '1.7' }}>
+
+            <p style={{ fontSize: '0.95rem', color: 'var(--text-secondary)', lineHeight: '1.7', margin: 0 }}>
               The department houses advanced research centers in Artificial Intelligence, Cloud Systems, Cybersecurity, and IoT, actively undertaking sponsored research projects and contributing to high-impact international journals and conferences.
             </p>
           </div>

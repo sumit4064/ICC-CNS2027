@@ -14,17 +14,20 @@ export const getConference = async (req, res) => {
     const confDoc = await Conference.findOne().lean();
     const conf = confDoc || {};
 
-    const [speakerCount, regCount, paperCount] = await Promise.all([
+    const [speakerCount, regCount, paperCount, uniqueCountries] = await Promise.all([
       Speaker.countDocuments(),
       Registration.countDocuments(),
-      Submission.countDocuments()
+      Submission.countDocuments(),
+      Registration.distinct('country')
     ]);
+
+    const countryCount = uniqueCountries ? uniqueCountries.filter(c => c && String(c).trim().length > 0).length : 0;
 
     const data = {
       ...conf,
       dynamicStats: {
         speakers: `${speakerCount}+`,
-        countries: '6+',
+        countries: `${countryCount}+`,
         registered: `${regCount}+`,
         papersSubmitted: `${paperCount}+`
       }
