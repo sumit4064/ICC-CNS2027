@@ -17,6 +17,8 @@ import { Committee } from './pages/Committee';
 import { Venue } from './pages/Venue';
 import { Gallery } from './pages/Gallery';
 import { Contact } from './pages/Contact';
+import { CmtAcknowledgement } from './pages/CmtAcknowledgement';
+import { PastConferences } from './pages/PastConferences';
 import { Login } from './pages/Login';
 import { AdminDashboard } from './pages/AdminDashboard';
 
@@ -53,6 +55,8 @@ export function App() {
                 <Route path="/venue" element={<Venue />} />
                 <Route path="/gallery" element={<Gallery />} />
                 <Route path="/contact" element={<Contact />} />
+                <Route path="/cmt-acknowledgement" element={<CmtAcknowledgement />} />
+                <Route path="/past-conferences" element={<PastConferences />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/admin" element={<AdminDashboard />} />
                 <Route path="/admin/:tab" element={<AdminDashboard />} />

@@ -127,7 +127,9 @@ export const Navbar = () => {
     { name: 'Committee', path: '/committee' },
     { name: 'Venue', path: '/venue' },
     { name: 'Gallery', path: '/gallery' },
-    { name: 'Contact', path: '/contact' }
+    { name: 'Contact', path: '/contact' },
+    { name: 'CMT Acknowledgement', path: '/cmt-acknowledgement' },
+    { name: 'Past Conferences', path: '/past-conferences' }
   ];
 
   const allNavLinks = [...primaryNavLinks, ...secondaryNavLinks];
