@@ -109,7 +109,7 @@ export const Speakers = () => {
           ) : (
             <div className="glass-panel" style={{ padding: '3rem', textAlign: 'center' }}>
               <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem' }}>
-                No speakers found matching your search criteria.
+                Distinguished speakers will be announced soon.
               </p>
             </div>
           )}

@@ -54,19 +54,19 @@ export const Registration = () => {
   const defaultTiers = [
     {
       type: 'Student / Research Scholar',
-      inr: 'INR 8,000',
+      inr: 'INR 9,000',
       usd: 'USD 150',
       desc: 'Valid student/scholar institutional identity proof required at registration.'
     },
     {
       type: 'Faculty / Academician',
-      inr: 'INR 9,000',
+      inr: 'INR 10,500',
       usd: 'USD 220',
       desc: 'Full access to all technical sessions, conference kit, lunch & banquet.'
     },
     {
       type: 'Industry Professional',
-      inr: 'INR 10,000',
+      inr: 'INR 10,500',
       usd: 'USD 300',
       desc: 'Access to conference tracks, industry panels, exhibition & networking.'
     },
@@ -94,7 +94,7 @@ export const Registration = () => {
   const getEstimatedFee = () => {
     const isIndia = formData.country.trim().toLowerCase() === 'india';
     const tier = activeTiers.find((t) => t.type === formData.participantType);
-    return isIndia ? tier?.inr || 'INR 9,000' : tier?.usd || 'USD 220';
+    return isIndia ? tier?.inr || 'INR 10,500' : tier?.usd || 'USD 220';
   };
 
   const handleSubmit = async (e) => {
