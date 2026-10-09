@@ -5,7 +5,6 @@ import { Countdown } from '../components/Countdown';
 import { StatCounter } from '../components/StatCounter';
 import { SpeakerCard } from '../components/SpeakerCard';
 import { SpeakerModal } from '../components/SpeakerModal';
-import { ConferenceIntro } from '../components/ConferenceIntro';
 import { HeroBackground } from '../components/HeroBackground';
 import {
   Calendar,
@@ -29,10 +28,7 @@ import {
   Download
 } from 'lucide-react';
 
-let hasPlayedIntroSession = false;
-
 export const Home = () => {
-  const [showIntro, setShowIntro] = useState(!hasPlayedIntroSession);
   const [conference, setConference] = useState(null);
   const [dates, setDates] = useState([]);
   const [tracks, setTracks] = useState([]);
@@ -133,16 +129,6 @@ export const Home = () => {
 
   return (
     <div className="home-page">
-      {/* 3.5-4.0s Technological Neural Network Intro Animation Overlay */}
-      {showIntro && (
-        <ConferenceIntro
-          onComplete={() => {
-            hasPlayedIntroSession = true;
-            setShowIntro(false);
-          }}
-        />
-      )}
-
       {/* ========================================================
           1. HERO SECTION (Second International Conference on Cognitive Computing and Networking Systems)
          ======================================================== */}

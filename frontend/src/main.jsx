@@ -10,7 +10,6 @@ import './styles/forms.css';
 import './styles/admin.css';
 import './styles/committee.css';
 import './styles/responsive.css';
-import './styles/ConferenceIntro.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
