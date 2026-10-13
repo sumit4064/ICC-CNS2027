@@ -154,13 +154,12 @@ export const Navbar = () => {
 
             <div className="brand-divider" />
 
-            <div className="brand-info">
-              <div className="conference-name">
-                ICCCNS-<span className="conference-name-accent">2027</span>
-              </div>
-              <div className="university-name">
-                VFSTR, AP
-              </div>
+            <div className="conference-logo-wrap">
+              <img
+                src="/logos/icccns-2027-logo.png"
+                alt="ICC-CNS 2027 Conference Logo"
+                className="conference-logo"
+              />
             </div>
           </Link>
 
@@ -307,13 +306,12 @@ export const Navbar = () => {
               />
             </div>
             <div className="brand-divider" />
-            <div className="brand-info">
-              <div className="conference-name">
-                ICCCNS-<span className="conference-name-accent">2027</span>
-              </div>
-              <div className="university-name">
-                VFSTR, AP
-              </div>
+            <div className="conference-logo-wrap">
+              <img
+                src="/logos/icccns-2027-logo.png"
+                alt="ICC-CNS 2027 Conference Logo"
+                className="conference-logo"
+              />
             </div>
           </Link>
 

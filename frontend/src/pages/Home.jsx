@@ -560,8 +560,32 @@ export const Home = () => {
         </div>
       </section>
 
+      {/* ========================================================
+          8. MICROSOFT CMT ACKNOWLEDGEMENT (Pre-Footer)
+         ======================================================== */}
+      {/* MICROSOFT CMT ACKNOWLEDGMENT */}
+      <section
+        style={{
+          padding: '1.5rem 1.5rem 2rem',
+          background: '#ffffff'
+        }}
+      >
+        <div
+          style={{
+            maxWidth: '960px',
+            margin: '0 auto'
+          }}
+        >
+          <p>
+            The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.
+          </p>
+        </div>
+      </section>
+
       {/* Speaker Biography Modal */}
       <SpeakerModal speaker={selectedSpeaker} onClose={() => setSelectedSpeaker(null)} />
     </div>
   );
 };
+
+export default Home;

@@ -106,39 +106,24 @@
   margin: 0 1px;
 }
 
-.brand-info {
+.conference-logo-wrap {
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
+  height: 58px;
   flex-shrink: 0;
 }
 
-.conference-name {
-  font-family: var(--font-heading, 'Poppins', sans-serif);
-  font-size: 20px;
-  font-weight: 850;
-  white-space: nowrap;
-  line-height: 1.05;
-  letter-spacing: -0.02em;
-  color: var(--primary-navy, #0B2D6B);
-  margin: 0;
-}
-
-.conference-name-accent {
-  color: var(--primary-cyan, #00A3C7);
-  margin-left: 1px;
-}
-
-.university-name {
-  font-family: var(--font-body, 'Inter', sans-serif);
-  font-size: 8.5px;
-  font-weight: 800;
-  letter-spacing: 0.8px;
-  text-transform: uppercase;
-  color: var(--primary-cyan, #00A3C7);
-  margin-top: 2px;
-  line-height: 1;
-  white-space: nowrap;
+.conference-logo {
+  height: 48px;
+  max-height: 50px;
+  width: auto;
+  max-width: 140px;
+  aspect-ratio: 1024 / 420;
+  object-fit: contain;
+  display: block;
+  mix-blend-mode: multiply;
+  transition: transform 0.2s ease;
 }
 
 /* ==========================================================================
@@ -431,12 +416,13 @@
     max-width: 215px;
   }
 
-  .conference-name {
-    font-size: 18.5px;
+  .conference-logo-wrap {
+    height: 54px;
   }
 
-  .university-name {
-    font-size: 8px;
+  .conference-logo {
+    height: 44px;
+    max-width: 125px;
   }
 
   .nav-links {
@@ -485,8 +471,13 @@
     max-width: 160px;
   }
 
-  .conference-name {
-    font-size: 18px;
+  .conference-logo-wrap {
+    height: 42px;
+  }
+
+  .conference-logo {
+    height: 36px;
+    max-width: 105px;
   }
 }
 
@@ -532,22 +523,16 @@
     margin: 0;
   }
 
-  .brand-info {
-    min-width: 0;
-    flex-shrink: 1;
-    overflow: hidden;
+  .conference-logo-wrap {
+    height: 36px;
+    flex-shrink: 0;
   }
 
-  .conference-name {
-    font-size: 15px;
-    line-height: 1.05;
-    white-space: nowrap;
-  }
-
-  .university-name {
-    font-size: 7.5px;
-    letter-spacing: 0.5px;
-    white-space: nowrap;
+  .conference-logo {
+    height: 30px;
+    max-width: 85px;
+    width: auto;
+    object-fit: contain;
   }
 
   .nav-actions {
@@ -594,13 +579,13 @@
     height: 18px;
   }
 
-  .conference-name {
-    font-size: 13px;
+  .conference-logo-wrap {
+    height: 30px;
   }
 
-  .university-name {
-    font-size: 6.5px;
-    letter-spacing: 0.3px;
+  .conference-logo {
+    height: 24px;
+    max-width: 70px;
   }
 
   .mobile-hamburger-btn {
@@ -628,13 +613,17 @@
   background: rgba(255, 255, 255, 0.2);
 }
 
-.mobile-drawer-top .conference-name {
-  color: #FFFFFF;
-  font-size: 18px;
+.mobile-drawer-top .conference-logo-wrap {
+  height: 36px;
 }
 
-.mobile-drawer-top .university-name {
-  color: #38BDF8;
+.mobile-drawer-top .conference-logo {
+  height: 32px;
+  max-width: 95px;
+  mix-blend-mode: normal;
+  background: #ffffff;
+  border-radius: 4px;
+  padding: 1px 3px;
 }
 
 /* ==========================================================================
